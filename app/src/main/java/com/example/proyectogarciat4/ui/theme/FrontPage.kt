@@ -22,30 +22,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 
-/*@Composable
-fun Greeting( modifier: Modifier = Modifier) {
-    Text(
-        text = stringResource(id = R.string.playJuegos),
-        fontSize = 40.sp,
-        textAlign = TextAlign.Center,
-        modifier =  modifier
-    )
-
-    Spacer(modifier = Modifier.size(50.dp))
-
-    Button(onClick = { /*TODO*/ }, modifier = Modifier.width(200.dp)) {
-        Text(text = "Play")
-    }
-    Button(onClick = { /*TODO*/ }, modifier = Modifier.width(200.dp)) {
-        Text(text = "New Play")
-    }
-    Button(onClick = { /*TODO*/ }, modifier = Modifier.width(200.dp)) {
-        Text(text = "Preferences")
-    }
-    Button(onClick = { /*TODO*/ }, modifier = Modifier.width(200.dp)) {
-        Text(text = "About")
-    }
-}*/
 
 @Composable
 fun FrontPage(navController: NavHostController){
@@ -97,6 +73,13 @@ fun FrontPage(navController: NavHostController){
                 Button(onClick = {   navController.navigate("Project7")},modifier = Modifier.width(200.dp).padding(15.dp, 0.dp)) {
                     Text(text = "Project 7")
                 }
+                Button(onClick = { navController.navigate("Project8") }, modifier = Modifier.width(200.dp).padding(15.dp, 0.dp)) {
+                    Text(text = "Project 8")
+                }
+                Button(onClick = {   navController.navigate("Project9")},modifier = Modifier.width(200.dp).padding(15.dp, 0.dp)) {
+                    Text(text = "Project 9")
+                }
+
 
             }
         }

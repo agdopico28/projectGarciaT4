@@ -14,19 +14,21 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project6() {
-    Column(modifier = Modifier.padding(20.dp)) {
-        Text(text = "Project6",textAlign = TextAlign.Center,color= Color.Green,
-            fontWeight = FontWeight.Bold)
+    Column(modifier = Modifier.padding(20.dp), verticalArrangement = Arrangement.Center) {
+        Text(text = "Project6",textAlign = TextAlign.Center,color= Blue20, fontSize = 20.sp)
     }
 
     Column(

@@ -27,6 +27,9 @@ class MainActivity : ComponentActivity() {
                     NavHost(navController = navController, startDestination = "FrontPage"){
                         composable("Project5") { Project5() }
                         composable("Project6") { Project6() }
+                        composable("Project7") { Project7() }
+                        composable("Project8") { Project8() }
+                        composable("Project9") { Project9() }
                         composable("FrontPage") { FrontPage(navController = navController) }
                     }
 

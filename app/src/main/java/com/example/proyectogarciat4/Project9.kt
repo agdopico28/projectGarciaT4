@@ -26,7 +26,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project5() {
+fun Project9() {
     Column(modifier = Modifier.padding(20.dp)) {
         Text(
             text = "Project5", textAlign = TextAlign.Center, color = Blue20,
