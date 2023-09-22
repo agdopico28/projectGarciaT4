@@ -17,31 +17,35 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project8() {
-    Column(modifier = Modifier.padding(20.dp)) {
-        Text(
-            text = "Project5", textAlign = TextAlign.Center, color = Blue20,
-            fontWeight = FontWeight.Bold
-        )
-    }
-
     Column(
         modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
 
         var num1 by remember { mutableStateOf("") }
         var num2 by remember { mutableStateOf("") }
+        var num3 by remember { mutableStateOf("") }
         var outcome by remember { mutableStateOf("Inconclusive") }
+
+        Row(Modifier.padding(top = 20.dp).fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center)
+        {
+            Text(
+                text = "Project 8", textAlign = TextAlign.Center, color = Blue20, fontSize = 30.sp,
+                fontWeight = FontWeight.Bold
+            )
+        }
+
 
         OutlinedTextField(
             value = num1,
@@ -66,16 +70,32 @@ fun Project8() {
                 .padding(10.dp),
             singleLine = true
         )
+
+        OutlinedTextField(
+            value = num3,
+            onValueChange = { num3 = it },
+            label = {
+                Text("Third number")
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp),
+            singleLine = true
+        )
         Row(
+            Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
             Button(
                 onClick = {
                     var catena = ""
-                    if (num2.toIntOrNull() != null && num1.toIntOrNull() != null) {
-                        var result = 0
-                        result = num1.toInt() + num2.toInt()
-                        catena += "Adittion: $result"
+                    if (num2.toFloatOrNull() != null && num1.toFloatOrNull() != null && num3.toFloatOrNull() != null) {
+                        var resultAdd: Float
+                        var resultMultiply: Float
+                        resultAdd = num1.toFloat() + num2.toFloat()
+                        resultMultiply = num2.toFloat() * num3.toFloat()
+                        catena += "Adittion: $resultAdd. Multiply: $resultMultiply"
                     } else {
                         catena += "Some field is empty"
                     }
@@ -87,30 +107,7 @@ fun Project8() {
                 Text(text = "Add")
             }
 
-            Button(
-                onClick = {
-                    var catena = ""
-                    if (num2.toIntOrNull() != null && num1.toIntOrNull() != null) {
-                        var result = 0
-                        result = num1.toInt() * num2.toInt()
-                        catena += "Multiply: $result"
-                    } else {
-                        catena += "Some field is empty"
-                    }
-                    outcome = catena
-
-                },
-                modifier = Modifier.padding(10.dp)
-            ) {
-                Text(text = "Multiply")
-            }
         }
-
-        Text(
-            text = outcome,
-            modifier = Modifier.padding(20.dp)
-        )
-
     }
 }
 
