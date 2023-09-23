@@ -27,7 +27,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project9() {
+fun Project10() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -36,9 +36,7 @@ fun Project9() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var num1 by remember { mutableStateOf("") }
-                var num2 by remember { mutableStateOf("") }
-                var num3 by remember { mutableStateOf("") }
+                var salary by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -50,7 +48,7 @@ fun Project9() {
                 )
                 {
                     Text(
-                        text = "Project 9",
+                        text = "Project 10",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -60,8 +58,8 @@ fun Project9() {
 
 
                 OutlinedTextField(
-                    value = num1,
-                    onValueChange = { num1 = it },
+                    value = salary,
+                    onValueChange = { salary = it },
                     label = {
                         Text("First number")
                     },
@@ -71,29 +69,6 @@ fun Project9() {
                     singleLine = true
                 )
 
-                OutlinedTextField(
-                    value = num2,
-                    onValueChange = { num2 = it },
-                    label = {
-                        Text("Second number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-                OutlinedTextField(
-                    value = num3,
-                    onValueChange = { num3 = it },
-                    label = {
-                        Text("Third number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -102,12 +77,11 @@ fun Project9() {
                     Button(
                         onClick = {
                             var catena = ""
-                            if (num2.toFloatOrNull() != null && num1.toFloatOrNull() != null) {
-                                var resultAdd: Float
-                                var resultPromedio: Float
-                                resultAdd = num1.toFloat() + num2.toFloat() + num3.toFloat()
-                                resultPromedio = resultAdd / 3
-                                catena += "Adittion: $resultAdd  . Average: $resultPromedio"
+                            if (salary.toFloatOrNull() != null) {
+                                var result: Float
+                                if(salary.toFloat() > 3000){
+                                    catena+= "You must pay taxes"
+                                }
                             } else {
                                 catena += "Some field is empty"
                             }
@@ -116,7 +90,7 @@ fun Project9() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Add and Average")
+                        Text(text = "Taxes")
                     }
 
 
@@ -136,9 +110,7 @@ fun Project9() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var num1 by remember { mutableStateOf("") }
-                var num2 by remember { mutableStateOf("") }
-                var num3 by remember { mutableStateOf("") }
+                var salary by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -150,7 +122,7 @@ fun Project9() {
                 )
                 {
                     Text(
-                        text = "Project 9",
+                        text = "Project 10",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -160,8 +132,8 @@ fun Project9() {
 
 
                 OutlinedTextField(
-                    value = num1,
-                    onValueChange = { num1 = it },
+                    value = salary,
+                    onValueChange = { salary = it },
                     label = {
                         Text("First number")
                     },
@@ -171,29 +143,6 @@ fun Project9() {
                     singleLine = true
                 )
 
-                OutlinedTextField(
-                    value = num2,
-                    onValueChange = { num2 = it },
-                    label = {
-                        Text("Second number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-                OutlinedTextField(
-                    value = num3,
-                    onValueChange = { num3 = it },
-                    label = {
-                        Text("Third number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -202,12 +151,11 @@ fun Project9() {
                     Button(
                         onClick = {
                             var catena = ""
-                            if (num2.toFloatOrNull() != null && num1.toFloatOrNull() != null) {
-                                var resultAdd: Float
-                                var resultPromedio: Float
-                                resultAdd = num1.toFloat() + num2.toFloat() + num3.toFloat()
-                                resultPromedio = resultAdd / 3
-                                catena += "Adittion: $resultAdd  . Average: $resultPromedio"
+                            if (salary.toFloatOrNull() != null) {
+                                var result: Float
+                                if(salary.toFloat() > 3000){
+                                    catena+= "You must pay taxes"
+                                }
                             } else {
                                 catena += "Some field is empty"
                             }
@@ -216,7 +164,7 @@ fun Project9() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Add and Average")
+                        Text(text = "Taxes")
                     }
 
 

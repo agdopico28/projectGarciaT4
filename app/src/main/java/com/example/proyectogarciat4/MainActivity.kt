@@ -21,7 +21,6 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-
                 ) {
                     val navController  = rememberNavController()
                     NavHost(navController = navController, startDestination = "FrontPage"){
@@ -30,6 +29,9 @@ class MainActivity : ComponentActivity() {
                         composable("Project7") { Project7() }
                         composable("Project8") { Project8() }
                         composable("Project9") { Project9() }
+                        composable("Unit4"){ Unit4(navController = navController)}
+                        composable("Unit5"){ Unit5(navController = navController)}
+                        composable("Project10") { Project10() }
                         composable("FrontPage") { FrontPage(navController = navController) }
                     }
 
