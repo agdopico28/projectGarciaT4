@@ -152,9 +152,10 @@ fun Project10() {
                         onClick = {
                             var catena = ""
                             if (salary.toFloatOrNull() != null) {
-                                var result: Float
                                 if(salary.toFloat() > 3000){
                                     catena+= "You must pay taxes"
+                                }else{
+                                    catena+= "You mustn't pay taxes"
                                 }
                             } else {
                                 catena += "Some field is empty"
