@@ -27,7 +27,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project12() {
+fun Project14() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -36,8 +36,7 @@ fun Project12() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var num1 by remember { mutableStateOf("") }
-                var num2 by remember { mutableStateOf("") }
+                var note1 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -49,7 +48,7 @@ fun Project12() {
                 )
                 {
                     Text(
-                        text = "Project 10",
+                        text = "Project 13",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -59,8 +58,8 @@ fun Project12() {
 
 
                 OutlinedTextField(
-                    value = num1,
-                    onValueChange = { num1 = it },
+                    value = note1,
+                    onValueChange = { note1 = it },
                     label = {
                         Text("First number")
                     },
@@ -70,17 +69,7 @@ fun Project12() {
                     singleLine = true
                 )
 
-                OutlinedTextField(
-                    value = num2,
-                    onValueChange = { num2 = it },
-                    label = {
-                        Text("Second number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
+
 
                 Row(
                     Modifier.fillMaxWidth(),
@@ -91,18 +80,11 @@ fun Project12() {
                         onClick = {
                             var catena = ""
 
-                            if (num1.toFloatOrNull() != null && num2.toFloatOrNull() != null) {
-                                var result1: Float
-                                var result2: Float
-                                if(num1.toFloat() > num2.toFloat()){
-                                    result1 = num1.toFloat() * num2.toFloat()
-                                    result2 = num1.toFloat() / num2.toFloat()
-                                    catena+= "The largest number is $num1. \n Multiply $result1 \n Split $result2 "
-
+                            if (note1.toFloatOrNull() != null ) {
+                                if(note1.toFloat() < 10){
+                                    catena+= "Has one digit"
                                 }else{
-                                    result1 = num1.toFloat() + num2.toFloat()
-                                    result2 = num1.toFloat() - num2.toFloat()
-                                    catena+= "The largest number is $num2. \n Add $result1 \n Subtraction $result2 "
+                                    catena+= "Has two digit"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -132,8 +114,7 @@ fun Project12() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var num1 by remember { mutableStateOf("") }
-                var num2 by remember { mutableStateOf("") }
+                var note1 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -145,7 +126,7 @@ fun Project12() {
                 )
                 {
                     Text(
-                        text = "Project 10",
+                        text = "Project 13",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -155,8 +136,8 @@ fun Project12() {
 
 
                 OutlinedTextField(
-                    value = num1,
-                    onValueChange = { num1 = it },
+                    value = note1,
+                    onValueChange = { note1 = it },
                     label = {
                         Text("First number")
                     },
@@ -166,17 +147,7 @@ fun Project12() {
                     singleLine = true
                 )
 
-                OutlinedTextField(
-                    value = num2,
-                    onValueChange = { num2 = it },
-                    label = {
-                        Text("First number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
+
 
                 Row(
                     Modifier.fillMaxWidth(),
@@ -187,18 +158,11 @@ fun Project12() {
                         onClick = {
                             var catena = ""
 
-                            if (num1.toFloatOrNull() != null && num2.toFloatOrNull() != null) {
-                                var result1: Float
-                                var result2: Float
-                                if(num1.toFloat() > num2.toFloat()){
-                                    result1 = num1.toFloat() * num2.toFloat()
-                                    result2 = num1.toFloat() / num2.toFloat()
-                                    catena+= "The largest number is $num1. \n Multiply $result1 \n Split $result2 "
-
+                            if (note1.toFloatOrNull() != null ) {
+                                if(note1.toFloat() < 10){
+                                    catena+= "Has one digit"
                                 }else{
-                                    result1 = num1.toFloat() + num2.toFloat()
-                                    result2 = num1.toFloat() - num2.toFloat()
-                                    catena+= "The largest number is $num2. \n Add $result1 \n Subtraction $result2 "
+                                    catena+= "Has two digit"
                                 }
                             } else {
                                 catena += "Some field is empty"

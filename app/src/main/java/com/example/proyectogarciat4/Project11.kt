@@ -74,7 +74,7 @@ fun Project11() {
                     value = num2,
                     onValueChange = { num2 = it },
                     label = {
-                        Text("First number")
+                        Text("Second number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()

@@ -104,39 +104,39 @@ fun Unit5(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
 
                 Button(
-                    onClick = { navController.navigate("Project5") }, modifier = Modifier
+                    onClick = { navController.navigate("Project10") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 5")
+                    Text(text = "Project 10")
                 }
                 Button(
-                    onClick = { navController.navigate("Project6") }, modifier = Modifier
+                    onClick = { navController.navigate("Project11") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 6")
+                    Text(text = "Project 11")
                 }
                 Button(
-                    onClick = { navController.navigate("Project7") }, modifier = Modifier
+                    onClick = { navController.navigate("Project12") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 7")
+                    Text(text = "Project 12")
                 }
                 Button(
-                    onClick = { navController.navigate("Project8") }, modifier = Modifier
+                    onClick = { navController.navigate("Project13") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 8")
+                    Text(text = "Project 13")
                 }
                 Button(
-                    onClick = { navController.navigate("Project9") }, modifier = Modifier
+                    onClick = { navController.navigate("Project14") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 9")
+                    Text(text = "Project 14")
                 }
 
 
