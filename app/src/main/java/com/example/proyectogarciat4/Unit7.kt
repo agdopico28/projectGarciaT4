@@ -17,14 +17,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 @Composable
-fun FrontPage(navController: NavHostController) {
+fun Unit7(navController: NavHostController) {
 
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
@@ -37,7 +36,7 @@ fun FrontPage(navController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = stringResource(id = R.string.playJuegos),
+                    text = "Unit 7",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center
 
@@ -46,36 +45,47 @@ fun FrontPage(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
                 Row {
                     Button(
-                        onClick = { navController.navigate("Unit4") }, modifier = Modifier
+                        onClick = { navController.navigate("Project18") }, modifier = Modifier
                             .width(200.dp)
                             .padding(15.dp, 0.dp)
                     ) {
-                        Text(text = "Unit 4")
+                        Text(text = "Project 18")
                     }
                     Button(
-                        onClick = { navController.navigate("Unit5") }, modifier = Modifier
+                        onClick = { navController.navigate("Project19") }, modifier = Modifier
                             .width(200.dp)
                             .padding(15.dp, 0.dp)
                     ) {
-                        Text(text = "Unit 5")
+                        Text(text = "Project 19")
+                    }
+                }
+                Row {
+                    Button(
+                        onClick = { navController.navigate("Project20") }, modifier = Modifier
+                            .width(200.dp)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Project 20")
                     }
                     Button(
-                        onClick = { navController.navigate("Unit6") }, modifier = Modifier
+                        onClick = { navController.navigate("Project21") }, modifier = Modifier
                             .width(200.dp)
                             .padding(15.dp, 0.dp)
                     ) {
-                        Text(text = "Unit 6")
-                    }
-                    Button(
-                        onClick = { navController.navigate("Unit7") }, modifier = Modifier
-                            .width(200.dp)
-                            .padding(15.dp, 0.dp)
-                    ) {
-                        Text(text = "Unit 7")
+                        Text(text = "Project 21")
                     }
 
                 }
+                Row {
+                    Button(
+                        onClick = { navController.navigate("Project22") }, modifier = Modifier
+                            .width(200.dp)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Project 22")
+                    }
 
+                }
             }
         }
 
@@ -86,7 +96,7 @@ fun FrontPage(navController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = stringResource(id = R.string.playJuegos),
+                    text = "Unit 5",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center,
                 )
@@ -94,33 +104,43 @@ fun FrontPage(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
 
                 Button(
-                    onClick = { navController.navigate("Unit4") }, modifier = Modifier
+                    onClick = { navController.navigate("Project18") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Unit 4")
+                    Text(text = "Project 18")
                 }
                 Button(
-                    onClick = { navController.navigate("Unit5") }, modifier = Modifier
+                    onClick = { navController.navigate("Project19") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Unit 5")
+                    Text(text = "Project 19")
                 }
                 Button(
-                    onClick = { navController.navigate("Unit6") }, modifier = Modifier
+                    onClick = { navController.navigate("Project20") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Unit 6")
+                    Text(text = "Project 20")
                 }
                 Button(
-                    onClick = { navController.navigate("Unit7") }, modifier = Modifier
+                    onClick = { navController.navigate("Project21") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Unit 7")
+                    Text(text = "Project 21")
                 }
+                Button(
+                    onClick = { navController.navigate("Project22") }, modifier = Modifier
+                        .width(200.dp)
+                        .padding(15.dp, 0.dp)
+                ) {
+                    Text(text = "Project 22")
+                }
+
+
+
             }
         }
     }
