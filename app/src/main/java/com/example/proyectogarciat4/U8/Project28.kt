@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U8
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project10() {
+fun Project28() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -36,7 +36,7 @@ fun Project10() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var salary by remember { mutableStateOf("") }
+                var note1 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -48,7 +48,7 @@ fun Project10() {
                 )
                 {
                     Text(
-                        text = "Project 10",
+                        text = "Project 21",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -58,8 +58,8 @@ fun Project10() {
 
 
                 OutlinedTextField(
-                    value = salary,
-                    onValueChange = { salary = it },
+                    value = note1,
+                    onValueChange = { note1 = it },
                     label = {
                         Text("First number")
                     },
@@ -69,6 +69,7 @@ fun Project10() {
                     singleLine = true
                 )
 
+
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -77,10 +78,21 @@ fun Project10() {
                     Button(
                         onClick = {
                             var catena = ""
-                            if (salary.toFloatOrNull() != null) {
-                                var result: Float
-                                if(salary.toFloat() > 3000){
-                                    catena+= "You must pay taxes"
+
+                            if (note1.toIntOrNull() != null) {
+
+                                var result1: Int
+                                if (note1.toInt() < 10) {
+                                    result1 = 1
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 100) {
+                                    result1 = 2
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 1000) {
+                                    result1 = 3
+                                    catena += "The number $note1 has $result1 digits"
+                                }else {
+                                    catena += "The number $note1 is out of range"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -90,7 +102,7 @@ fun Project10() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Claculate")
                     }
 
 
@@ -110,7 +122,7 @@ fun Project10() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var salary by remember { mutableStateOf("") }
+                var note1 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -122,7 +134,7 @@ fun Project10() {
                 )
                 {
                     Text(
-                        text = "Project 10",
+                        text = "Project 21",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -132,8 +144,8 @@ fun Project10() {
 
 
                 OutlinedTextField(
-                    value = salary,
-                    onValueChange = { salary = it },
+                    value = note1,
+                    onValueChange = { note1 = it },
                     label = {
                         Text("First number")
                     },
@@ -143,6 +155,7 @@ fun Project10() {
                     singleLine = true
                 )
 
+
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -151,11 +164,21 @@ fun Project10() {
                     Button(
                         onClick = {
                             var catena = ""
-                            if (salary.toFloatOrNull() != null) {
-                                if(salary.toFloat() > 3000){
-                                    catena+= "You must pay taxes"
-                                }else{
-                                    catena+= "You mustn't pay taxes"
+
+                            if (note1.toIntOrNull() != null) {
+
+                                var result1: Int
+                                if (note1.toInt() < 10) {
+                                    result1 = 1
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 100) {
+                                    result1 = 2
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 1000) {
+                                    result1 = 3
+                                    catena += "The number $note1 has $result1 digits"
+                                }else {
+                                    catena += "The number $note1 is out of range"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -165,7 +188,7 @@ fun Project10() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Claculate")
                     }
 
 
@@ -180,4 +203,3 @@ fun Project10() {
         }
     }
 }
-

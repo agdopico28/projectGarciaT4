@@ -11,6 +11,32 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.proyectogarciat4.U4.Project5
+import com.example.proyectogarciat4.U4.Project6
+import com.example.proyectogarciat4.U4.Project7
+import com.example.proyectogarciat4.U4.Project8
+import com.example.proyectogarciat4.U4.Project9
+import com.example.proyectogarciat4.U5.Project10
+import com.example.proyectogarciat4.U5.Project11
+import com.example.proyectogarciat4.U5.Project12
+import com.example.proyectogarciat4.U5.Project13
+import com.example.proyectogarciat4.U5.Project14
+import com.example.proyectogarciat4.U6.Project15
+import com.example.proyectogarciat4.U6.Project16
+import com.example.proyectogarciat4.U6.Project17
+import com.example.proyectogarciat4.U7.Project18
+import com.example.proyectogarciat4.U7.Project19
+import com.example.proyectogarciat4.U7.Project20
+import com.example.proyectogarciat4.U7.Project21
+import com.example.proyectogarciat4.U7.Project22
+import com.example.proyectogarciat4.U8.Project23
+import com.example.proyectogarciat4.U8.Project24
+import com.example.proyectogarciat4.U8.Project25
+import com.example.proyectogarciat4.U8.Project26
+import com.example.proyectogarciat4.U8.Project27
+import com.example.proyectogarciat4.U8.Project28
+import com.example.proyectogarciat4.U8.Project29
+import com.example.proyectogarciat4.U8.Project30
 import com.example.proyectogarciat4.ui.theme.ProyectoGarciaT4Theme
 
 class MainActivity : ComponentActivity() {
@@ -46,6 +72,24 @@ class MainActivity : ComponentActivity() {
                         composable("Project20") { Project20() }
                         composable("Project21") { Project21() }
                         composable("Project22") { Project22() }
+                        composable("Unit8"){ Unit8(navController = navController)}
+                        composable("Project23") { Project23() }
+                        composable("Project24") { Project24() }
+                        composable("Project25") { Project25() }
+                        composable("Project26") { Project26() }
+                        composable("Project27") { Project27() }
+                        composable("Project28") { Project28() }
+                        composable("Project29") { Project29() }
+                        composable("Project30") { Project30() }
+                        composable("Unit9"){ Unit9(navController = navController)}
+                        composable("Project23") { Project23() }
+                        composable("Project24") { Project24() }
+                        composable("Project25") { Project25() }
+                        composable("Project26") { Project26() }
+                        composable("Project27") { Project27() }
+                        composable("Project28") { Project28() }
+                        composable("Project29") { Project29() }
+                        composable("Project30") { Project30() }
                         composable("FrontPage") { FrontPage(navController = navController) }
                     }
 

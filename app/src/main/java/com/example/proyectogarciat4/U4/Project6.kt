@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U4
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement

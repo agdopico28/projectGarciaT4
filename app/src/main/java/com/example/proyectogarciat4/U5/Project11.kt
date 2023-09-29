@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U5
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project9() {
+fun Project11() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -38,7 +38,6 @@ fun Project9() {
 
                 var num1 by remember { mutableStateOf("") }
                 var num2 by remember { mutableStateOf("") }
-                var num3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -50,7 +49,7 @@ fun Project9() {
                 )
                 {
                     Text(
-                        text = "Project 9",
+                        text = "Project 10",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -83,17 +82,6 @@ fun Project9() {
                     singleLine = true
                 )
 
-                OutlinedTextField(
-                    value = num3,
-                    onValueChange = { num3 = it },
-                    label = {
-                        Text("Third number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -102,12 +90,12 @@ fun Project9() {
                     Button(
                         onClick = {
                             var catena = ""
-                            if (num2.toFloatOrNull() != null && num1.toFloatOrNull() != null) {
-                                var resultAdd: Float
-                                var resultPromedio: Float
-                                resultAdd = num1.toFloat() + num2.toFloat() + num3.toFloat()
-                                resultPromedio = resultAdd / 3
-                                catena += "Adittion: $resultAdd  . Average: $resultPromedio"
+                            if (num1.toFloatOrNull() != null && num2.toFloatOrNull() != null) {
+                                if(num1.toFloat() > num2.toFloat()){
+                                    catena+= "The largest number is $num1"
+                                }else{
+                                    catena+= "The largest number is $num2"
+                                }
                             } else {
                                 catena += "Some field is empty"
                             }
@@ -116,7 +104,7 @@ fun Project9() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Add and Average")
+                        Text(text = "Taxes")
                     }
 
 
@@ -138,7 +126,6 @@ fun Project9() {
 
                 var num1 by remember { mutableStateOf("") }
                 var num2 by remember { mutableStateOf("") }
-                var num3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -150,7 +137,7 @@ fun Project9() {
                 )
                 {
                     Text(
-                        text = "Project 9",
+                        text = "Project 10",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -175,7 +162,7 @@ fun Project9() {
                     value = num2,
                     onValueChange = { num2 = it },
                     label = {
-                        Text("Second number")
+                        Text("First number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -183,17 +170,6 @@ fun Project9() {
                     singleLine = true
                 )
 
-                OutlinedTextField(
-                    value = num3,
-                    onValueChange = { num3 = it },
-                    label = {
-                        Text("Third number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -202,12 +178,12 @@ fun Project9() {
                     Button(
                         onClick = {
                             var catena = ""
-                            if (num2.toFloatOrNull() != null && num1.toFloatOrNull() != null) {
-                                var resultAdd: Float
-                                var resultPromedio: Float
-                                resultAdd = num1.toFloat() + num2.toFloat() + num3.toFloat()
-                                resultPromedio = resultAdd / 3
-                                catena += "Adittion: $resultAdd  . Average: $resultPromedio"
+                            if (num1.toFloatOrNull() != null && num2.toFloatOrNull() != null) {
+                                if(num1.toFloat() > num2.toFloat()){
+                                    catena+= "The largest number is $num1"
+                                }else{
+                                    catena+= "The largest number is $num2"
+                                }
                             } else {
                                 catena += "Some field is empty"
                             }
@@ -216,7 +192,7 @@ fun Project9() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Add and Average")
+                        Text(text = "Taxes")
                     }
 
 
@@ -231,4 +207,3 @@ fun Project9() {
         }
     }
 }
-

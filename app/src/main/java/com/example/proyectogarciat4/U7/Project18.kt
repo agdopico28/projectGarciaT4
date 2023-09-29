@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U7
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project16() {
+fun Project18() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -36,7 +36,9 @@ fun Project16() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var number by remember { mutableStateOf("") }
+                var num1 by remember { mutableStateOf("") }
+                var num2 by remember { mutableStateOf("") }
+                var num3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -48,7 +50,7 @@ fun Project16() {
                 )
                 {
                     Text(
-                        text = "Project 16",
+                        text = "Project 18",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -58,8 +60,8 @@ fun Project16() {
 
 
                 OutlinedTextField(
-                    value = number,
-                    onValueChange = { number = it },
+                    value = num1,
+                    onValueChange = { num1 = it },
                     label = {
                         Text("First number")
                     },
@@ -68,6 +70,31 @@ fun Project16() {
                         .padding(10.dp),
                     singleLine = true
                 )
+
+                OutlinedTextField(
+                    value = num2,
+                    onValueChange = { num2 = it },
+                    label = {
+                        Text("Second number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num3,
+                    onValueChange = { num3 = it },
+                    label = {
+                        Text("Third number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
 
                 Row(
                     Modifier.fillMaxWidth(),
@@ -78,16 +105,18 @@ fun Project16() {
                         onClick = {
                             var catena = ""
 
-                            if (number.toIntOrNull() != null) {
+                            if (num1.toIntOrNull() != null &&
+                                num2.toIntOrNull() != null &&
+                                num3.toIntOrNull() != null) {
 
                                 var result1: Int
-                                var operation = number.toInt()
-                                if (operation %2 == 0) {
-                                    result1 = operation * operation
-                                    catena += "Squared: $result1"
+                                result1 = (num1.toInt() + num2.toInt() + num3.toInt())/ 3
+                                if (result1 >= 7) {
+                                    catena += "Promoted"
+                                } else if (result1 >= 4 && result1 < 7) {
+                                    catena += "Regular"
                                 } else {
-                                    result1 =  operation * operation * operation
-                                    catena += "Cubed: $result1"
+                                    catena += "Free"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -97,7 +126,7 @@ fun Project16() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Calculate")
+                        Text(text = "Claculate")
                     }
 
 
@@ -117,7 +146,9 @@ fun Project16() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var number by remember { mutableStateOf("") }
+                var num1 by remember { mutableStateOf("") }
+                var num2 by remember { mutableStateOf("") }
+                var num3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -129,7 +160,7 @@ fun Project16() {
                 )
                 {
                     Text(
-                        text = "Project 16",
+                        text = "Project 18",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -139,8 +170,8 @@ fun Project16() {
 
 
                 OutlinedTextField(
-                    value = number,
-                    onValueChange = { number = it },
+                    value = num1,
+                    onValueChange = { num1 = it },
                     label = {
                         Text("First number")
                     },
@@ -149,6 +180,31 @@ fun Project16() {
                         .padding(10.dp),
                     singleLine = true
                 )
+
+                OutlinedTextField(
+                    value = num2,
+                    onValueChange = { num2 = it },
+                    label = {
+                        Text("Second number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num3,
+                    onValueChange = { num3 = it },
+                    label = {
+                        Text("Third number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
 
                 Row(
                     Modifier.fillMaxWidth(),
@@ -159,16 +215,18 @@ fun Project16() {
                         onClick = {
                             var catena = ""
 
-                            if (number.toIntOrNull() != null) {
+                            if (num1.toIntOrNull() != null &&
+                                num2.toIntOrNull() != null &&
+                                num3.toIntOrNull() != null) {
 
                                 var result1: Int
-                                var operation = number.toInt()
-                                if (operation %2 == 0) {
-                                    result1 = operation * operation
-                                    catena += "Squared: $result1"
+                                result1 = (num1.toInt() + num2.toInt() + num3.toInt())/ 3
+                                if (result1 >= 7) {
+                                    catena += "Promoted"
+                                } else if (result1 >= 4 && result1 < 7) {
+                                    catena += "Regular"
                                 } else {
-                                    result1 =  operation * operation * operation
-                                    catena += "Cubed: $result1"
+                                    catena += "Free"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -178,7 +236,7 @@ fun Project16() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Calculate")
+                        Text(text = "Claculate")
                     }
 
 

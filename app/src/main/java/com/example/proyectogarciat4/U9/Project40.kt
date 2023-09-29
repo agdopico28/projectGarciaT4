@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U9
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project18() {
+fun Project40() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -48,7 +48,7 @@ fun Project18() {
                 )
                 {
                     Text(
-                        text = "Project 17",
+                        text = "Project 21",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -88,7 +88,10 @@ fun Project18() {
                                 } else if (note1.toInt() < 100) {
                                     result1 = 2
                                     catena += "The number $note1 has $result1 digits"
-                                } else {
+                                } else if (note1.toInt() < 1000) {
+                                    result1 = 3
+                                    catena += "The number $note1 has $result1 digits"
+                                }else {
                                     catena += "The number $note1 is out of range"
                                 }
                             } else {
@@ -131,7 +134,7 @@ fun Project18() {
                 )
                 {
                     Text(
-                        text = "Project 17",
+                        text = "Project 21",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -171,7 +174,10 @@ fun Project18() {
                                 } else if (note1.toInt() < 100) {
                                     result1 = 2
                                     catena += "The number $note1 has $result1 digits"
-                                } else {
+                                } else if (note1.toInt() < 1000) {
+                                    result1 = 3
+                                    catena += "The number $note1 has $result1 digits"
+                                }else {
                                     catena += "The number $note1 is out of range"
                                 }
                             } else {

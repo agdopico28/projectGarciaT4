@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U4
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -27,17 +29,19 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project11() {
+fun Project7() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var num1 by remember { mutableStateOf("") }
-                var num2 by remember { mutableStateOf("") }
+                var price by remember { mutableStateOf("") }
+                var amount by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -49,7 +53,7 @@ fun Project11() {
                 )
                 {
                     Text(
-                        text = "Project 10",
+                        text = "Project 7",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -57,12 +61,11 @@ fun Project11() {
                     )
                 }
 
-
                 OutlinedTextField(
-                    value = num1,
-                    onValueChange = { num1 = it },
+                    value = price,
+                    onValueChange = { price = it },
                     label = {
-                        Text("First number")
+                        Text("Price")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -71,17 +74,16 @@ fun Project11() {
                 )
 
                 OutlinedTextField(
-                    value = num2,
-                    onValueChange = { num2 = it },
+                    value = amount,
+                    onValueChange = { amount = it },
                     label = {
-                        Text("Second number")
+                        Text("Amount")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
                     singleLine = true
                 )
-
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -90,12 +92,10 @@ fun Project11() {
                     Button(
                         onClick = {
                             var catena = ""
-                            if (num1.toFloatOrNull() != null && num2.toFloatOrNull() != null) {
-                                if(num1.toFloat() > num2.toFloat()){
-                                    catena+= "The largest number is $num1"
-                                }else{
-                                    catena+= "The largest number is $num2"
-                                }
+                            if (amount.toFloatOrNull() != null && price.toFloatOrNull() != null) {
+                                var result: Float
+                                result = price.toFloat() * amount.toFloat()
+                                catena += "Total: $result"
                             } else {
                                 catena += "Some field is empty"
                             }
@@ -104,9 +104,8 @@ fun Project11() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Total")
                     }
-
 
                 }
 
@@ -124,8 +123,8 @@ fun Project11() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var num1 by remember { mutableStateOf("") }
-                var num2 by remember { mutableStateOf("") }
+                var price by remember { mutableStateOf("") }
+                var amount by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -137,7 +136,7 @@ fun Project11() {
                 )
                 {
                     Text(
-                        text = "Project 10",
+                        text = "Project 7",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -145,12 +144,11 @@ fun Project11() {
                     )
                 }
 
-
                 OutlinedTextField(
-                    value = num1,
-                    onValueChange = { num1 = it },
+                    value = price,
+                    onValueChange = { price = it },
                     label = {
-                        Text("First number")
+                        Text("Price")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -159,17 +157,16 @@ fun Project11() {
                 )
 
                 OutlinedTextField(
-                    value = num2,
-                    onValueChange = { num2 = it },
+                    value = amount,
+                    onValueChange = { amount = it },
                     label = {
-                        Text("First number")
+                        Text("Amount")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
                     singleLine = true
                 )
-
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -178,12 +175,10 @@ fun Project11() {
                     Button(
                         onClick = {
                             var catena = ""
-                            if (num1.toFloatOrNull() != null && num2.toFloatOrNull() != null) {
-                                if(num1.toFloat() > num2.toFloat()){
-                                    catena+= "The largest number is $num1"
-                                }else{
-                                    catena+= "The largest number is $num2"
-                                }
+                            if (amount.toFloatOrNull() != null && price.toFloatOrNull() != null) {
+                                var result: Float
+                                result = price.toFloat() * amount.toFloat()
+                                catena += "Total: $result"
                             } else {
                                 catena += "Some field is empty"
                             }
@@ -192,9 +187,8 @@ fun Project11() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Total")
                     }
-
 
                 }
 
@@ -207,3 +201,4 @@ fun Project11() {
         }
     }
 }
+

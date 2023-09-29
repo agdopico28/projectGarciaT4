@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U9
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project14() {
+fun Project41() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -48,7 +48,7 @@ fun Project14() {
                 )
                 {
                     Text(
-                        text = "Project 13",
+                        text = "Project 21",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -70,7 +70,6 @@ fun Project14() {
                 )
 
 
-
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -80,11 +79,20 @@ fun Project14() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toFloatOrNull() != null ) {
-                                if(note1.toFloat() < 10){
-                                    catena+= "Has one digit"
-                                }else{
-                                    catena+= "Has two digit"
+                            if (note1.toIntOrNull() != null) {
+
+                                var result1: Int
+                                if (note1.toInt() < 10) {
+                                    result1 = 1
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 100) {
+                                    result1 = 2
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 1000) {
+                                    result1 = 3
+                                    catena += "The number $note1 has $result1 digits"
+                                }else {
+                                    catena += "The number $note1 is out of range"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -94,7 +102,7 @@ fun Project14() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Claculate")
                     }
 
 
@@ -126,7 +134,7 @@ fun Project14() {
                 )
                 {
                     Text(
-                        text = "Project 13",
+                        text = "Project 21",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -148,7 +156,6 @@ fun Project14() {
                 )
 
 
-
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -158,11 +165,20 @@ fun Project14() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toFloatOrNull() != null ) {
-                                if(note1.toFloat() < 10){
-                                    catena+= "Has one digit"
-                                }else{
-                                    catena+= "Has two digit"
+                            if (note1.toIntOrNull() != null) {
+
+                                var result1: Int
+                                if (note1.toInt() < 10) {
+                                    result1 = 1
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 100) {
+                                    result1 = 2
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 1000) {
+                                    result1 = 3
+                                    catena += "The number $note1 has $result1 digits"
+                                }else {
+                                    catena += "The number $note1 is out of range"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -172,7 +188,7 @@ fun Project14() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Claculate")
                     }
 
 

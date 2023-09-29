@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U8
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project13() {
+fun Project26() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -37,8 +37,6 @@ fun Project13() {
             ) {
 
                 var note1 by remember { mutableStateOf("") }
-                var note2 by remember { mutableStateOf("") }
-                var note3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -50,7 +48,7 @@ fun Project13() {
                 )
                 {
                     Text(
-                        text = "Project 13",
+                        text = "Project 21",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -71,29 +69,6 @@ fun Project13() {
                     singleLine = true
                 )
 
-                OutlinedTextField(
-                    value = note2,
-                    onValueChange = { note2 = it },
-                    label = {
-                        Text("Second number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-                OutlinedTextField(
-                    value = note3,
-                    onValueChange = { note3 = it },
-                    label = {
-                        Text("Third number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
 
                 Row(
                     Modifier.fillMaxWidth(),
@@ -104,17 +79,20 @@ fun Project13() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toFloatOrNull() != null &&
-                                note2.toFloatOrNull() != null &&
-                                note3.toFloatOrNull() != null
-                            ) {
+                            if (note1.toIntOrNull() != null) {
 
-                                var result1: Float
-                                result1 = (note1.toFloat() + note2.toFloat() + note3.toFloat()) / 3
-                                if (result1 >= 7) {
-                                    catena += "Promoted"
-                                } else {
-
+                                var result1: Int
+                                if (note1.toInt() < 10) {
+                                    result1 = 1
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 100) {
+                                    result1 = 2
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 1000) {
+                                    result1 = 3
+                                    catena += "The number $note1 has $result1 digits"
+                                }else {
+                                    catena += "The number $note1 is out of range"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -124,7 +102,7 @@ fun Project13() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Claculate")
                     }
 
 
@@ -145,8 +123,6 @@ fun Project13() {
             ) {
 
                 var note1 by remember { mutableStateOf("") }
-                var note2 by remember { mutableStateOf("") }
-                var note3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -158,7 +134,7 @@ fun Project13() {
                 )
                 {
                     Text(
-                        text = "Project 13",
+                        text = "Project 21",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -179,29 +155,6 @@ fun Project13() {
                     singleLine = true
                 )
 
-                OutlinedTextField(
-                    value = note2,
-                    onValueChange = { note2 = it },
-                    label = {
-                        Text("Second number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-                OutlinedTextField(
-                    value = note3,
-                    onValueChange = { note3 = it },
-                    label = {
-                        Text("Third number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
 
                 Row(
                     Modifier.fillMaxWidth(),
@@ -212,16 +165,20 @@ fun Project13() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toFloatOrNull() != null &&
-                                note2.toFloatOrNull() != null &&
-                                note3.toFloatOrNull() !=null) {
+                            if (note1.toIntOrNull() != null) {
 
-                                var result1: Float
-                                result1 = (note1 . toFloat() + note2.toFloat()+ note3.toFloat()) / 3
-                                if(result1 >= 7){
-                                    catena+= "Promoted"
-                                }else{
-
+                                var result1: Int
+                                if (note1.toInt() < 10) {
+                                    result1 = 1
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 100) {
+                                    result1 = 2
+                                    catena += "The number $note1 has $result1 digits"
+                                } else if (note1.toInt() < 1000) {
+                                    result1 = 3
+                                    catena += "The number $note1 has $result1 digits"
+                                }else {
+                                    catena += "The number $note1 is out of range"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -231,7 +188,7 @@ fun Project13() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Claculate")
                     }
 
 

@@ -73,6 +73,20 @@ fun FrontPage(navController: NavHostController) {
                     ) {
                         Text(text = "Unit 7")
                     }
+                    Button(
+                        onClick = { navController.navigate("Unit8") }, modifier = Modifier
+                            .width(200.dp)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 8")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit9") }, modifier = Modifier
+                            .width(200.dp)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 9")
+                    }
 
                 }
 
@@ -120,6 +134,21 @@ fun FrontPage(navController: NavHostController) {
                         .padding(15.dp, 0.dp)
                 ) {
                     Text(text = "Unit 7")
+                }
+
+                Button(
+                    onClick = { navController.navigate("Unit8") }, modifier = Modifier
+                        .width(200.dp)
+                        .padding(15.dp, 0.dp)
+                ) {
+                    Text(text = "Unit 8")
+                }
+                Button(
+                    onClick = { navController.navigate("Unit9") }, modifier = Modifier
+                        .width(200.dp)
+                        .padding(15.dp, 0.dp)
+                ) {
+                    Text(text = "Unit 9")
                 }
             }
         }

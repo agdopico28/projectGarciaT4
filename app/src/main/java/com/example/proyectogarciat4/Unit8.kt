@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 @Composable
-fun Unit7(navController: NavHostController) {
+fun Unit8(navController: NavHostController) {
 
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
@@ -45,47 +45,66 @@ fun Unit7(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
                 Row {
                     Button(
-                        onClick = { navController.navigate("Project18") }, modifier = Modifier
+                        onClick = { navController.navigate("Project23") }, modifier = Modifier
                             .width(200.dp)
                             .padding(15.dp, 0.dp)
                     ) {
-                        Text(text = "Project 18")
+                        Text(text = "Project 23")
                     }
                     Button(
-                        onClick = { navController.navigate("Project19") }, modifier = Modifier
+                        onClick = { navController.navigate("Project24") }, modifier = Modifier
                             .width(200.dp)
                             .padding(15.dp, 0.dp)
                     ) {
-                        Text(text = "Project 19")
-                    }
-                }
-                Row {
-                    Button(
-                        onClick = { navController.navigate("Project20") }, modifier = Modifier
-                            .width(200.dp)
-                            .padding(15.dp, 0.dp)
-                    ) {
-                        Text(text = "Project 20")
+                        Text(text = "Project 24")
                     }
                     Button(
-                        onClick = { navController.navigate("Project21") }, modifier = Modifier
+                        onClick = { navController.navigate("Project25") }, modifier = Modifier
                             .width(200.dp)
                             .padding(15.dp, 0.dp)
                     ) {
-                        Text(text = "Project 21")
+                        Text(text = "Project 25")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Project26") }, modifier = Modifier
+                            .width(200.dp)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Project 26")
                     }
 
                 }
                 Row {
                     Button(
-                        onClick = { navController.navigate("Project22") }, modifier = Modifier
+                        onClick = { navController.navigate("Project27") }, modifier = Modifier
                             .width(200.dp)
                             .padding(15.dp, 0.dp)
                     ) {
-                        Text(text = "Project 22")
+                        Text(text = "Project 27")
                     }
-
+                    Button(
+                        onClick = { navController.navigate("Project28") }, modifier = Modifier
+                            .width(200.dp)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Project 28")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Project29") }, modifier = Modifier
+                            .width(200.dp)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Project 29")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Project30") }, modifier = Modifier
+                            .width(200.dp)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Project 30")
+                    }
                 }
+
             }
         }
 
@@ -104,42 +123,61 @@ fun Unit7(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
 
                 Button(
-                    onClick = { navController.navigate("Project18") }, modifier = Modifier
+                    onClick = { navController.navigate("Project23") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 18")
+                    Text(text = "Project 23")
                 }
                 Button(
-                    onClick = { navController.navigate("Project19") }, modifier = Modifier
+                    onClick = { navController.navigate("Project24") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 19")
+                    Text(text = "Project 24")
                 }
                 Button(
-                    onClick = { navController.navigate("Project20") }, modifier = Modifier
+                    onClick = { navController.navigate("Project25") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 20")
+                    Text(text = "Project 25")
                 }
                 Button(
-                    onClick = { navController.navigate("Project21") }, modifier = Modifier
+                    onClick = { navController.navigate("Project26") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 21")
+                    Text(text = "Project 26")
                 }
                 Button(
-                    onClick = { navController.navigate("Project22") }, modifier = Modifier
+                    onClick = { navController.navigate("Project27") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 22")
+                    Text(text = "Project 27")
                 }
-
-
+                Button(
+                    onClick = { navController.navigate("Project28") }, modifier = Modifier
+                        .width(200.dp)
+                        .padding(15.dp, 0.dp)
+                ) {
+                    Text(text = "Project 28")
+                }
+                Button(
+                    onClick = { navController.navigate("Project29") }, modifier = Modifier
+                        .width(200.dp)
+                        .padding(15.dp, 0.dp)
+                ) {
+                    Text(text = "Project 29")
+                }
+                Button(
+                    onClick = { navController.navigate("Project30") }, modifier = Modifier
+                        .width(200.dp)
+                        .padding(15.dp, 0.dp)
+                ) {
+                    Text(text = "Project 30")
+                }
 
             }
         }

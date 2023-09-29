@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U5
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -27,7 +27,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project19() {
+fun Project12() {
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -36,7 +36,8 @@ fun Project19() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var num1 by remember { mutableStateOf("") }
+                var num2 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -48,7 +49,7 @@ fun Project19() {
                 )
                 {
                     Text(
-                        text = "Project 17",
+                        text = "Project 10",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -58,8 +59,8 @@ fun Project19() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = num1,
+                    onValueChange = { num1 = it },
                     label = {
                         Text("First number")
                     },
@@ -69,6 +70,17 @@ fun Project19() {
                     singleLine = true
                 )
 
+                OutlinedTextField(
+                    value = num2,
+                    onValueChange = { num2 = it },
+                    label = {
+                        Text("Second number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
 
                 Row(
                     Modifier.fillMaxWidth(),
@@ -79,17 +91,18 @@ fun Project19() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toIntOrNull() != null) {
+                            if (num1.toFloatOrNull() != null && num2.toFloatOrNull() != null) {
+                                var result1: Float
+                                var result2: Float
+                                if(num1.toFloat() > num2.toFloat()){
+                                    result1 = num1.toFloat() * num2.toFloat()
+                                    result2 = num1.toFloat() / num2.toFloat()
+                                    catena+= "The largest number is $num1. \n Multiply $result1 \n Split $result2 "
 
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else {
-                                    catena += "The number $note1 is out of range"
+                                }else{
+                                    result1 = num1.toFloat() + num2.toFloat()
+                                    result2 = num1.toFloat() - num2.toFloat()
+                                    catena+= "The largest number is $num2. \n Add $result1 \n Subtraction $result2 "
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -99,7 +112,7 @@ fun Project19() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Taxes")
                     }
 
 
@@ -119,7 +132,8 @@ fun Project19() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var num1 by remember { mutableStateOf("") }
+                var num2 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -131,7 +145,7 @@ fun Project19() {
                 )
                 {
                     Text(
-                        text = "Project 17",
+                        text = "Project 10",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -141,8 +155,8 @@ fun Project19() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = num1,
+                    onValueChange = { num1 = it },
                     label = {
                         Text("First number")
                     },
@@ -152,6 +166,17 @@ fun Project19() {
                     singleLine = true
                 )
 
+                OutlinedTextField(
+                    value = num2,
+                    onValueChange = { num2 = it },
+                    label = {
+                        Text("First number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
 
                 Row(
                     Modifier.fillMaxWidth(),
@@ -162,17 +187,18 @@ fun Project19() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toIntOrNull() != null) {
+                            if (num1.toFloatOrNull() != null && num2.toFloatOrNull() != null) {
+                                var result1: Float
+                                var result2: Float
+                                if(num1.toFloat() > num2.toFloat()){
+                                    result1 = num1.toFloat() * num2.toFloat()
+                                    result2 = num1.toFloat() / num2.toFloat()
+                                    catena+= "The largest number is $num1. \n Multiply $result1 \n Split $result2 "
 
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else {
-                                    catena += "The number $note1 is out of range"
+                                }else{
+                                    result1 = num1.toFloat() + num2.toFloat()
+                                    result2 = num1.toFloat() - num2.toFloat()
+                                    catena+= "The largest number is $num2. \n Add $result1 \n Subtraction $result2 "
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -182,7 +208,7 @@ fun Project19() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Taxes")
                     }
 
 
