@@ -36,8 +36,10 @@ fun Project26() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("Inconclusive") }
+                var num1 by remember { mutableStateOf("") }
+                var num2 by remember { mutableStateOf("") }
+                var num3 by remember { mutableStateOf("") }
+                var outcome by remember { mutableStateOf(" ") }
 
                 Row(
                     Modifier
@@ -48,7 +50,7 @@ fun Project26() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 19",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -58,10 +60,34 @@ fun Project26() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = num1,
+                    onValueChange = { num1 = it },
                     label = {
-                        Text("First number")
+                        Text("Day")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num2,
+                    onValueChange = { num2 = it },
+                    label = {
+                        Text("Month")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num3,
+                    onValueChange = { num3 = it },
+                    label = {
+                        Text("Year")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -79,20 +105,13 @@ fun Project26() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toIntOrNull() != null) {
+                            if (num1.toIntOrNull() != null &&
+                                num2.toIntOrNull() != null &&
+                                num3.toIntOrNull() != null) {
 
                                 var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                                if (num2.toInt() < 10 && num1.toInt() <10 && num3.toInt() <10 ) {
+                                    catena += "All numbers are less than 10"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -122,8 +141,10 @@ fun Project26() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("Inconclusive") }
+                var num1 by remember { mutableStateOf("") }
+                var num2 by remember { mutableStateOf("") }
+                var num3 by remember { mutableStateOf("") }
+                var outcome by remember { mutableStateOf(" ") }
 
                 Row(
                     Modifier
@@ -134,7 +155,7 @@ fun Project26() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 19",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -144,10 +165,34 @@ fun Project26() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = num1,
+                    onValueChange = { num1 = it },
                     label = {
-                        Text("First number")
+                        Text("Day")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num2,
+                    onValueChange = { num2 = it },
+                    label = {
+                        Text("Month")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num3,
+                    onValueChange = { num3 = it },
+                    label = {
+                        Text("Year")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -165,20 +210,14 @@ fun Project26() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toIntOrNull() != null) {
+                            if (num1.toIntOrNull() != null &&
+                                num2.toIntOrNull() != null &&
+                                num3.toIntOrNull() != null) {
 
                                 var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                                if (num2.toInt() == num1.toInt() && num3.toInt() == num2.toInt() ) {
+                                    result1 = num1.toInt() * num1.toInt()*num1.toInt()
+                                    catena += "Cube $result1"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -201,5 +240,6 @@ fun Project26() {
 
             }
         }
+
     }
 }

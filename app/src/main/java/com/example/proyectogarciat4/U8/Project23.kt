@@ -36,7 +36,9 @@ fun Project23() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var num1 by remember { mutableStateOf("") }
+                var num2 by remember { mutableStateOf("") }
+                var num3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -48,7 +50,7 @@ fun Project23() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 23",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -58,10 +60,34 @@ fun Project23() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = num1,
+                    onValueChange = { num1 = it },
                     label = {
                         Text("First number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num2,
+                    onValueChange = { num2 = it },
+                    label = {
+                        Text("Second number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num3,
+                    onValueChange = { num3 = it },
+                    label = {
+                        Text("Third number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -79,20 +105,20 @@ fun Project23() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toIntOrNull() != null) {
+                            if (num1.toIntOrNull() != null &&
+                                num2.toIntOrNull() != null &&
+                                num3.toIntOrNull() != null) {
 
                                 var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                                if (num1.toInt() > num2.toInt() && num1.toInt() > num3.toInt()) {
+                                    result1 = num1.toInt()
+                                    catena += "The highest is $result1"
+                                } else if (num1.toInt() < num2.toInt() && num2.toInt() > num3.toInt()) {
+                                    result1 = num2.toInt()
+                                    catena += "The highest is $result1"
+                                } else {
+                                    result1 = num3.toInt()
+                                    catena += "The highest is $result1"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -122,7 +148,9 @@ fun Project23() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var num1 by remember { mutableStateOf("") }
+                var num2 by remember { mutableStateOf("") }
+                var num3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -134,7 +162,7 @@ fun Project23() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 19",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -144,10 +172,34 @@ fun Project23() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = num1,
+                    onValueChange = { num1 = it },
                     label = {
                         Text("First number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num2,
+                    onValueChange = { num2 = it },
+                    label = {
+                        Text("Second number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num3,
+                    onValueChange = { num3 = it },
+                    label = {
+                        Text("Third number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -165,20 +217,20 @@ fun Project23() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toIntOrNull() != null) {
+                            if (num1.toIntOrNull() != null &&
+                                num2.toIntOrNull() != null &&
+                                num3.toIntOrNull() != null) {
 
                                 var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                                if (num1.toInt() > num2.toInt() && num1.toInt() > num3.toInt()) {
+                                    result1 = num1.toInt()
+                                    catena += "The highest is $result1"
+                                } else if (num1.toInt() < num2.toInt() && num2.toInt() > num3.toInt()) {
+                                    result1 = num2.toInt()
+                                    catena += "The highest is $result1"
+                                } else {
+                                    result1 = num3.toInt()
+                                    catena += "The highest is $result1"
                                 }
                             } else {
                                 catena += "Some field is empty"

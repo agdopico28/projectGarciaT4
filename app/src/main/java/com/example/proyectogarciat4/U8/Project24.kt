@@ -36,7 +36,9 @@ fun Project24() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var day by remember { mutableStateOf("") }
+                var month by remember { mutableStateOf("") }
+                var year by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -48,7 +50,7 @@ fun Project24() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 19",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -58,10 +60,34 @@ fun Project24() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = day,
+                    onValueChange = { day = it },
                     label = {
-                        Text("First number")
+                        Text("Day")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = month,
+                    onValueChange = { month = it },
+                    label = {
+                        Text("Month")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = year,
+                    onValueChange = { year = it },
+                    label = {
+                        Text("Year")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -79,20 +105,13 @@ fun Project24() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toIntOrNull() != null) {
+                            if (day.toIntOrNull() != null &&
+                                month.toIntOrNull() != null &&
+                                year.toIntOrNull() != null) {
 
                                 var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                                if (month.toInt() == 1|| month.toInt() == 2 || month.toInt() == 3 ) {
+                                    catena += "This date corresponds to the first quarter"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -122,7 +141,9 @@ fun Project24() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var day by remember { mutableStateOf("") }
+                var month by remember { mutableStateOf("") }
+                var year by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -134,7 +155,7 @@ fun Project24() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 19",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -144,10 +165,34 @@ fun Project24() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = day,
+                    onValueChange = { day = it },
                     label = {
-                        Text("First number")
+                        Text("Day")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = month,
+                    onValueChange = { month = it },
+                    label = {
+                        Text("Month")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = year,
+                    onValueChange = { year = it },
+                    label = {
+                        Text("Year")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -165,20 +210,13 @@ fun Project24() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toIntOrNull() != null) {
+                            if (day.toIntOrNull() != null &&
+                                month.toIntOrNull() != null &&
+                                year.toIntOrNull() != null) {
 
                                 var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                                if (month.toInt() == 1|| month.toInt() == 2 || month.toInt() == 3 ) {
+                                    catena += "This date corresponds to the first quarter"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -198,6 +236,7 @@ fun Project24() {
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
+
 
             }
         }

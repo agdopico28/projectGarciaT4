@@ -36,8 +36,9 @@ fun Project29() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("Inconclusive") }
+                var x by remember { mutableStateOf("") }
+                var y by remember { mutableStateOf("") }
+                var outcome by remember { mutableStateOf(" ") }
 
                 Row(
                     Modifier
@@ -48,7 +49,7 @@ fun Project29() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 29",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -58,16 +59,29 @@ fun Project29() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = x,
+                    onValueChange = { x = it },
                     label = {
-                        Text("First number")
+                        Text("X")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
                     singleLine = true
                 )
+
+                OutlinedTextField(
+                    value = y,
+                    onValueChange = { y = it },
+                    label = {
+                        Text("Y")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
 
 
                 Row(
@@ -79,20 +93,18 @@ fun Project29() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toIntOrNull() != null) {
+                            if (x.toFloatOrNull() != null &&
+                                y.toFloatOrNull() != null ) {
 
                                 var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                                if (y.toFloat() > 0 && x.toFloat() > 0 ) {
+                                    catena += "This is the first quadrant"
+                                }else if( x.toFloat() < 0 && y.toFloat() < 0){
+                                    catena += "This is the third quadrant"
+                                }else if( x.toFloat() > 0 && y.toFloat() < 0){
+                                    catena += "This is the fourth quadrant"
+                                }else{
+                                    catena += "This is the second quadrant"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -112,6 +124,7 @@ fun Project29() {
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
+
 
             }
         }
@@ -122,8 +135,9 @@ fun Project29() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("Inconclusive") }
+                var x by remember { mutableStateOf("") }
+                var y by remember { mutableStateOf("") }
+                var outcome by remember { mutableStateOf(" ") }
 
                 Row(
                     Modifier
@@ -134,7 +148,7 @@ fun Project29() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 29",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -144,16 +158,29 @@ fun Project29() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = x,
+                    onValueChange = { x = it },
                     label = {
-                        Text("First number")
+                        Text("X")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
                     singleLine = true
                 )
+
+                OutlinedTextField(
+                    value = y,
+                    onValueChange = { y = it },
+                    label = {
+                        Text("Y")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
 
 
                 Row(
@@ -165,20 +192,18 @@ fun Project29() {
                         onClick = {
                             var catena = ""
 
-                            if (note1.toIntOrNull() != null) {
+                            if (x.toFloatOrNull() != null &&
+                                y.toFloatOrNull() != null ) {
 
                                 var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                                if (y.toFloat() > 0 && x.toFloat() > 0 ) {
+                                    catena += "This is the first quadrant"
+                                }else if( x.toFloat() < 0 && y.toFloat() < 0){
+                                    catena += "This is the third quadrant"
+                                }else if( x.toFloat() > 0 && y.toFloat() < 0){
+                                    catena += "This is the fourth quadrant"
+                                }else{
+                                    catena += "This is the second quadrant"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -199,7 +224,9 @@ fun Project29() {
                     modifier = Modifier.padding(20.dp)
                 )
 
+
             }
         }
+
     }
 }
