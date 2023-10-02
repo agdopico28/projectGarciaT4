@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -32,11 +34,10 @@ fun Project31() {
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -56,20 +57,6 @@ fun Project31() {
                     )
                 }
 
-
-                OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
-                    label = {
-                        Text("First number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -78,31 +65,18 @@ fun Project31() {
                     Button(
                         onClick = {
                             var catena = ""
-
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
-                                }
-                            } else {
-                                catena += "Some field is empty"
+                            var number = 1
+                            while (number<= 100){
+                                catena += "$number \n"
+                                number++
                             }
+
                             outcome = catena
 
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Show")
                     }
 
 
@@ -112,17 +86,17 @@ fun Project31() {
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
+
 
             }
         }
 
         else -> {
             Column(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -142,20 +116,6 @@ fun Project31() {
                     )
                 }
 
-
-                OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
-                    label = {
-                        Text("First number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-
                 Row(
                     Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
@@ -164,31 +124,18 @@ fun Project31() {
                     Button(
                         onClick = {
                             var catena = ""
-
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                            var number = 1
+                                while (number<= 100){
+                                    catena += "$number \n"
+                                    number++
                                 }
-                            } else {
-                                catena += "Some field is empty"
-                            }
+
                             outcome = catena
 
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Show")
                     }
 
 
@@ -198,6 +145,7 @@ fun Project31() {
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
+
 
             }
         }
