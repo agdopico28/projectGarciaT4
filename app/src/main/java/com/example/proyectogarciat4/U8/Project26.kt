@@ -50,7 +50,7 @@ fun Project26() {
                 )
                 {
                     Text(
-                        text = "Project 19",
+                        text = "Project 26",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -63,7 +63,7 @@ fun Project26() {
                     value = num1,
                     onValueChange = { num1 = it },
                     label = {
-                        Text("Day")
+                        Text("First number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -75,7 +75,7 @@ fun Project26() {
                     value = num2,
                     onValueChange = { num2 = it },
                     label = {
-                        Text("Month")
+                        Text("Second number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -87,7 +87,7 @@ fun Project26() {
                     value = num3,
                     onValueChange = { num3 = it },
                     label = {
-                        Text("Year")
+                        Text("Third number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -110,8 +110,9 @@ fun Project26() {
                                 num3.toIntOrNull() != null) {
 
                                 var result1: Int
-                                if (num2.toInt() < 10 && num1.toInt() <10 && num3.toInt() <10 ) {
-                                    catena += "All numbers are less than 10"
+                                if (num2.toInt() == num1.toInt() && num3.toInt() == num2.toInt() ) {
+                                    result1 = num1.toInt() * num1.toInt()*num1.toInt()
+                                    catena += "Cube $result1"
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -131,6 +132,7 @@ fun Project26() {
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
+
 
             }
         }
@@ -155,7 +157,7 @@ fun Project26() {
                 )
                 {
                     Text(
-                        text = "Project 19",
+                        text = "Project 26",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -168,7 +170,7 @@ fun Project26() {
                     value = num1,
                     onValueChange = { num1 = it },
                     label = {
-                        Text("Day")
+                        Text("First number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -180,7 +182,7 @@ fun Project26() {
                     value = num2,
                     onValueChange = { num2 = it },
                     label = {
-                        Text("Month")
+                        Text("Second number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -192,7 +194,7 @@ fun Project26() {
                     value = num3,
                     onValueChange = { num3 = it },
                     label = {
-                        Text("Year")
+                        Text("Third number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()

@@ -109,16 +109,24 @@ fun Project30() {
                                 num2.toIntOrNull() != null &&
                                 num3.toIntOrNull() != null) {
 
-                                var minor : Int
-                                var greater :Int
-                                if (num2.toInt() < num1.toInt() && num3.toInt() < num2.toInt() ) {
-                                    minor = num3.toInt()
-                                    greater = num1.toInt()
-                                    catena += "The largest number is $greater and the smallest is $minor"
-                                }else  if (num1.toInt() < num2.toInt() && num3.toInt() < num2.toInt() ) {
-                                    minor = num3.toInt()
-                                    greater = num1.toInt()
-                                    catena += "The largest number is $greater and the smallest is $minor"
+                                 if (num1.toFloat() > num2.toFloat() && num1.toFloat() >  num3.toFloat()) {
+                                    if (num2.toFloat() > num3.toFloat()) {
+                                        "The largest is $num1 and the smallest is $num3"
+                                    } else {
+                                        "The largest is $num1 and the smallest is $num2"
+                                    }
+                                } else if (num2.toFloat() > num1.toFloat() && num2.toFloat() >  num3.toFloat()){
+                                    if (num1.toFloat() > num3.toFloat()) {
+                                        "The largest is $num2 and the smallest is $num3"
+                                    } else {
+                                        "The largest is $num2 and the smallest is $num1"
+                                    }
+                                } else {
+                                    if (num1.toFloat() > num2.toFloat()) {
+                                        "The largest is $num3 and the smallest is $num2"
+                                    } else {
+                                        "The largest is $num3 and the smallest is $num1"
+                                    }
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -162,7 +170,7 @@ fun Project30() {
                 )
                 {
                     Text(
-                        text = "Project 19",
+                        text = "Project 30",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -175,7 +183,7 @@ fun Project30() {
                     value = num1,
                     onValueChange = { num1 = it },
                     label = {
-                        Text("Day")
+                        Text("First number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -187,7 +195,7 @@ fun Project30() {
                     value = num2,
                     onValueChange = { num2 = it },
                     label = {
-                        Text("Month")
+                        Text("Second number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -199,7 +207,7 @@ fun Project30() {
                     value = num3,
                     onValueChange = { num3 = it },
                     label = {
-                        Text("Year")
+                        Text("Third number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -221,9 +229,24 @@ fun Project30() {
                                 num2.toIntOrNull() != null &&
                                 num3.toIntOrNull() != null) {
 
-                                var result1: Int
-                                if (num2.toInt() < 10 && num1.toInt() <10 && num3.toInt() <10 ) {
-                                    catena += "All numbers are less than 10"
+                                if (num1.toFloat() > num2.toFloat() && num1.toFloat() >  num3.toFloat()) {
+                                    if (num2.toFloat() > num3.toFloat()) {
+                                        "The largest is $num1 and the smallest is $num3"
+                                    } else {
+                                        "The largest is $num1 and the smallest is $num2"
+                                    }
+                                } else if (num2.toFloat() > num1.toFloat() && num2.toFloat() >  num3.toFloat()){
+                                    if (num1.toFloat() > num3.toFloat()) {
+                                        "The largest is $num2 and the smallest is $num3"
+                                    } else {
+                                        "The largest is $num2 and the smallest is $num1"
+                                    }
+                                } else {
+                                    if (num1.toFloat() > num2.toFloat()) {
+                                        "The largest is $num3 and the smallest is $num2"
+                                    } else {
+                                        "The largest is $num3 and the smallest is $num1"
+                                    }
                                 }
                             } else {
                                 catena += "Some field is empty"
@@ -243,6 +266,7 @@ fun Project30() {
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
+
             }
         }
     }
