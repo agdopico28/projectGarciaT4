@@ -38,7 +38,9 @@ fun Project33() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var number1 by remember { mutableStateOf("") }
+                var number2 by remember { mutableStateOf("") }
+                var number3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -60,8 +62,8 @@ fun Project33() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = number1,
+                    onValueChange = { number1 = it },
                     label = {
                         Text("First number")
                     },
@@ -70,6 +72,31 @@ fun Project33() {
                         .padding(10.dp),
                     singleLine = true
                 )
+
+                OutlinedTextField(
+                    value = number2,
+                    onValueChange = { number2 = it },
+                    label = {
+                        Text("Second number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = number3,
+                    onValueChange = { number3 = it },
+                    label = {
+                        Text("Third number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
 
 
                 Row(
@@ -80,31 +107,27 @@ fun Project33() {
                     Button(
                         onClick = {
                             var catena = ""
+                            if (number1.toIntOrNull() != null &&
+                                    number2.toIntOrNull() != null &&
+                                    number3.toIntOrNull() != null) {
+                               var add = 0
+                                var average = 0
+                                add = number1.toInt() + number2.toInt() + number3.toInt()
+                                average = add /3
+                                catena += "The sum of the 10 values entered is $add. \n The average is $average"
 
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
-                                }
                             } else {
-                                catena += "Some field is empty"
-                            }
+                            catena += "Some field is empty"
+                        }
+
+
+
                             outcome = catena
 
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Show")
                     }
 
 
@@ -115,6 +138,7 @@ fun Project33() {
                     modifier = Modifier.padding(20.dp)
                 )
 
+
             }
         }
 
@@ -124,7 +148,9 @@ fun Project33() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var number1 by remember { mutableStateOf("") }
+                var number2 by remember { mutableStateOf("") }
+                var number3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -146,8 +172,8 @@ fun Project33() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = number1,
+                    onValueChange = { number1 = it },
                     label = {
                         Text("First number")
                     },
@@ -156,6 +182,31 @@ fun Project33() {
                         .padding(10.dp),
                     singleLine = true
                 )
+
+                OutlinedTextField(
+                    value = number2,
+                    onValueChange = { number2 = it },
+                    label = {
+                        Text("Second number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = number3,
+                    onValueChange = { number3 = it },
+                    label = {
+                        Text("Third number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
 
 
                 Row(
@@ -166,31 +217,27 @@ fun Project33() {
                     Button(
                         onClick = {
                             var catena = ""
+                            if (number1.toIntOrNull() != null &&
+                                number2.toIntOrNull() != null &&
+                                number3.toIntOrNull() != null) {
+                                var add = 0
+                                var average = 0
+                                add = number1.toInt() + number2.toInt() + number3.toInt()
+                                average = add /3
+                                catena += "The sum of the 10 values entered is $add. \n The average is $average"
 
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
-                                }
                             } else {
                                 catena += "Some field is empty"
                             }
+
+
+
                             outcome = catena
 
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Show")
                     }
 
 

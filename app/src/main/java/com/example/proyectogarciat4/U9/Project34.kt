@@ -7,6 +7,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -20,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -32,11 +36,12 @@ fun Project34() {
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var piece by remember { mutableStateOf("") }
+                var profile by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -58,8 +63,8 @@ fun Project34() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = piece,
+                    onValueChange = { piece = it },
                     label = {
                         Text("First number")
                     },
@@ -68,6 +73,20 @@ fun Project34() {
                         .padding(10.dp),
                     singleLine = true
                 )
+
+                OutlinedTextField(
+                    value = profile,
+                    onValueChange = { profile = it },
+                    label = {
+                        Text("Second number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                )
+
 
 
                 Row(
@@ -78,31 +97,30 @@ fun Project34() {
                     Button(
                         onClick = {
                             var catena = ""
+                            if (piece.toIntOrNull() != null &&
+                                profile.toFloatOrNull() != null
+                                ) {
+                                var x = 1
+                                if(x == piece.toInt()){
+                                    if(profile.toFloat() >= 1.20  && profile.toFloat() <= 1.30){
 
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                                    }
                                 }
+
+
+
                             } else {
                                 catena += "Some field is empty"
                             }
+
+
+
                             outcome = catena
 
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Show")
                     }
 
 
@@ -113,16 +131,19 @@ fun Project34() {
                     modifier = Modifier.padding(20.dp)
                 )
 
+
             }
         }
 
         else -> {
             Column(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var number1 by remember { mutableStateOf("") }
+                var number2 by remember { mutableStateOf("") }
+                var number3 by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -144,8 +165,8 @@ fun Project34() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = number1,
+                    onValueChange = { number1 = it },
                     label = {
                         Text("First number")
                     },
@@ -154,6 +175,31 @@ fun Project34() {
                         .padding(10.dp),
                     singleLine = true
                 )
+
+                OutlinedTextField(
+                    value = number2,
+                    onValueChange = { number2 = it },
+                    label = {
+                        Text("Second number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = number3,
+                    onValueChange = { number3 = it },
+                    label = {
+                        Text("Third number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
 
 
                 Row(
@@ -164,31 +210,27 @@ fun Project34() {
                     Button(
                         onClick = {
                             var catena = ""
+                            if (number1.toIntOrNull() != null &&
+                                number2.toIntOrNull() != null &&
+                                number3.toIntOrNull() != null) {
+                                var add = 0
+                                var average = 0
+                                add = number1.toInt() + number2.toInt() + number3.toInt()
+                                average = add /3
+                                catena += "The sum of the 10 values entered is $add. \n The average is $average"
 
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
-                                }
                             } else {
                                 catena += "Some field is empty"
                             }
+
+
+
                             outcome = catena
 
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Show")
                     }
 
 
