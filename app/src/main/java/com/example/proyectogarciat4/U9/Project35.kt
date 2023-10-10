@@ -7,6 +7,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -20,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -32,11 +36,15 @@ fun Project35() {
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var grades by remember { mutableStateOf("") }
+                var x by remember { mutableStateOf(1) }
+                var goodGrades by remember { mutableStateOf(0) }
+                var badGrades by remember { mutableStateOf(0) }
+                var left by remember { mutableStateOf(10) }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -48,7 +56,7 @@ fun Project35() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 35",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -58,16 +66,19 @@ fun Project35() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = grades,
+                    onValueChange = { grades = it },
                     label = {
-                        Text("First number")
+                        Text("Number pieces ")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
                     singleLine = true
                 )
+
+
+
 
 
                 Row(
@@ -77,32 +88,37 @@ fun Project35() {
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                            if (grades.toFloatOrNull() != null ) {
+                                if (x != 10) {
+                                    left --
+                                    outcome = "$left grade/s left"
+                                    if (grades.toFloat() >= 7.00){
+                                        goodGrades++
+                                    }else{
+                                        badGrades++
+                                    }
+                                    x++
+                                } else {
+                                    if (grades.toFloat() >= 7.00){
+                                        goodGrades++
+                                    }else{
+                                        badGrades++
+                                    }
+                                    outcome = "Number of students with grades greater than or equal to 7: $goodGrades. \n Number of students with grades below 7:$badGrades "
+                                    x = 1
+                                    left = 10
+                                    goodGrades = 0
+                                    badGrades = 0
                                 }
                             } else {
-                                catena += "Some field is empty"
+                                outcome = "Introduce grades"
                             }
-                            outcome = catena
+                            grades = ""
 
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Check")
                     }
 
 
@@ -112,17 +128,21 @@ fun Project35() {
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
+
 
             }
         }
 
         else -> {
             Column(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
-
-                var note1 by remember { mutableStateOf("") }
+                var grades by remember { mutableStateOf("") }
+                var x by remember { mutableStateOf(1) }
+                var goodGrades by remember { mutableStateOf(0) }
+                var badGrades by remember { mutableStateOf(0) }
+                var left by remember { mutableStateOf(10) }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -134,7 +154,7 @@ fun Project35() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 35",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -144,16 +164,19 @@ fun Project35() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = grades,
+                    onValueChange = { grades = it },
                     label = {
-                        Text("First number")
+                        Text("Grades ")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
                     singleLine = true
                 )
+
+
+
 
 
                 Row(
@@ -163,32 +186,37 @@ fun Project35() {
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                            if (grades.toFloatOrNull() != null ) {
+                                if (x != 10) {
+                                    left --
+                                    outcome = "$left grade/s left"
+                                    if (grades.toFloat() >= 7.00){
+                                        goodGrades++
+                                    }else{
+                                        badGrades++
+                                    }
+                                    x++
+                                } else {
+                                    if (grades.toFloat() >= 7.00){
+                                        goodGrades++
+                                    }else{
+                                        badGrades++
+                                    }
+                                    outcome = "Number of students with grades greater than or equal to 7: $goodGrades. \nNumber of students with grades below 7: $badGrades "
+                                    x = 1
+                                    left = 10
+                                    goodGrades = 0
+                                    badGrades = 0
                                 }
                             } else {
-                                catena += "Some field is empty"
+                                outcome = "Introduce grades"
                             }
-                            outcome = catena
+                            grades = ""
 
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Check")
                     }
 
 
@@ -198,6 +226,9 @@ fun Project35() {
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
+
+
+
 
             }
         }

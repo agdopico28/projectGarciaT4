@@ -42,6 +42,112 @@ fun Project34() {
 
                 var piece by remember { mutableStateOf("") }
                 var profile by remember { mutableStateOf("") }
+                var x by remember { mutableStateOf(1) }
+                var validPieces by remember { mutableStateOf(0) }
+                var left by remember { mutableStateOf(10) }
+                var outcome by remember { mutableStateOf("Inconclusive") }
+
+                Row(
+                    Modifier
+                        .padding(top = 20.dp)
+                        .fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                )
+                {
+                    Text(
+                        text = "Project 34",
+                        textAlign = TextAlign.Center,
+                        color = Blue20,
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+
+
+                OutlinedTextField(
+                    value = piece,
+                    onValueChange = { piece = it },
+                    label = {
+                        Text("Number pieces ")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = profile,
+                    onValueChange = { profile = it },
+                    label = {
+                        Text("Profile")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number)
+                )
+
+
+
+                Row(
+                    Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Button(
+                        onClick = {
+                            if (profile.toFloatOrNull() != null && piece.toIntOrNull() != null) {
+                                if (x != piece.toInt()) {
+                                    left = piece.toInt() - 1
+                                    outcome = "$left piece/s left"
+                                    if (profile.toFloat() in 1.20..1.30){
+                                        validPieces++
+                                    }
+                                    x++
+                                } else {
+                                    if (profile.toFloat() in 1.20..1.30){
+                                        validPieces++
+                                    }
+                                    outcome = "Number of valid pieces: $validPieces."
+                                    x = 1
+                                    validPieces = 0
+                                }
+                            } else {
+                                outcome = "Introduce correct parameters"
+                            }
+                            profile = ""
+
+                        },
+                        modifier = Modifier.padding(10.dp)
+                    ) {
+                        Text(text = "Check")
+                    }
+
+
+                }
+
+                Text(
+                    text = outcome,
+                    modifier = Modifier.padding(20.dp)
+                )
+
+
+            }
+        }
+
+        else -> {
+            Column(
+                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
+                verticalArrangement = Arrangement.Top
+            ) {
+                var piece by remember { mutableStateOf("") }
+                var profile by remember { mutableStateOf("") }
+                var x by remember { mutableStateOf(1) }
+                var validPieces by remember { mutableStateOf(0) }
+                var left by remember { mutableStateOf(10) }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -66,7 +172,7 @@ fun Project34() {
                     value = piece,
                     onValueChange = { piece = it },
                     label = {
-                        Text("First number")
+                        Text("Number pieces")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -78,7 +184,7 @@ fun Project34() {
                     value = profile,
                     onValueChange = { profile = it },
                     label = {
-                        Text("Second number")
+                        Text("Profile")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -96,31 +202,31 @@ fun Project34() {
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-                            if (piece.toIntOrNull() != null &&
-                                profile.toFloatOrNull() != null
-                                ) {
-                                var x = 1
-                                if(x == piece.toInt()){
-                                    if(profile.toFloat() >= 1.20  && profile.toFloat() <= 1.30){
-
+                            if (profile.toFloatOrNull() != null && piece.toIntOrNull() != null) {
+                                if (x != piece.toInt()) {
+                                    left = piece.toInt() - 1
+                                    outcome = "$left piece/s left"
+                                    if (profile.toFloat() in 1.20..1.30){
+                                        validPieces++
                                     }
+                                    x++
+                                } else {
+                                    if (profile.toFloat() in 1.20..1.30){
+                                        validPieces++
+                                    }
+                                    outcome = "Number of valid pieces: $validPieces."
+                                    x = 1
+                                    validPieces = 0
                                 }
-
-
-
                             } else {
-                                catena += "Some field is empty"
+                                outcome = "Introduce correct parameters"
                             }
-
-
-
-                            outcome = catena
+                            profile = ""
 
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Show")
+                        Text(text = "Check")
                     }
 
 
@@ -132,114 +238,6 @@ fun Project34() {
                 )
 
 
-            }
-        }
-
-        else -> {
-            Column(
-                modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
-                verticalArrangement = Arrangement.Top
-            ) {
-
-                var number1 by remember { mutableStateOf("") }
-                var number2 by remember { mutableStateOf("") }
-                var number3 by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("Inconclusive") }
-
-                Row(
-                    Modifier
-                        .padding(top = 20.dp)
-                        .fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                )
-                {
-                    Text(
-                        text = "Project 21",
-                        textAlign = TextAlign.Center,
-                        color = Blue20,
-                        fontSize = 30.sp,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-
-
-                OutlinedTextField(
-                    value = number1,
-                    onValueChange = { number1 = it },
-                    label = {
-                        Text("First number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-                OutlinedTextField(
-                    value = number2,
-                    onValueChange = { number2 = it },
-                    label = {
-                        Text("Second number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-                OutlinedTextField(
-                    value = number3,
-                    onValueChange = { number3 = it },
-                    label = {
-                        Text("Third number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-
-
-                Row(
-                    Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Button(
-                        onClick = {
-                            var catena = ""
-                            if (number1.toIntOrNull() != null &&
-                                number2.toIntOrNull() != null &&
-                                number3.toIntOrNull() != null) {
-                                var add = 0
-                                var average = 0
-                                add = number1.toInt() + number2.toInt() + number3.toInt()
-                                average = add /3
-                                catena += "The sum of the 10 values entered is $add. \n The average is $average"
-
-                            } else {
-                                catena += "Some field is empty"
-                            }
-
-
-
-                            outcome = catena
-
-                        },
-                        modifier = Modifier.padding(10.dp)
-                    ) {
-                        Text(text = "Show")
-                    }
-
-
-                }
-
-                Text(
-                    text = outcome,
-                    modifier = Modifier.padding(20.dp)
-                )
 
             }
         }
