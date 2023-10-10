@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -36,9 +34,7 @@ fun Project8() {
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .verticalScroll(rememberScrollState()),
+                modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Top
             ) {
 
@@ -110,10 +106,10 @@ fun Project8() {
                             var catena = ""
                             if (num2.toFloatOrNull() != null && num1.toFloatOrNull() != null && num3.toFloatOrNull() != null) {
                                 var resultAdd: Float
-                                var resultMultiply: Float
+                                var resultMult: Float
                                 resultAdd = num1.toFloat() + num2.toFloat()
-                                resultMultiply = num2.toFloat() * num3.toFloat()
-                                catena += "Adittion: $resultAdd. Multiply: $resultMultiply"
+                                resultMult = num2.toFloat() * num3.toFloat()
+                                catena += "Adittion: $resultAdd  . Multiply: $resultMult"
                             } else {
                                 catena += "Some field is empty"
                             }
@@ -122,100 +118,119 @@ fun Project8() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Add")
+                        Text(text = "Add and Multiply")
                     }
 
+
                 }
-            }
-        }else ->{
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Top
-        ) {
 
-            var num1 by remember { mutableStateOf("") }
-            var num2 by remember { mutableStateOf("") }
-            var num3 by remember { mutableStateOf("") }
-            var outcome by remember { mutableStateOf("Inconclusive") }
-
-            Row(
-                Modifier
-                    .padding(top = 20.dp)
-                    .fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            )
-            {
                 Text(
-                    text = "Project 8",
-                    textAlign = TextAlign.Center,
-                    color = Blue20,
-                    fontSize = 30.sp,
-                    fontWeight = FontWeight.Bold
+                    text = outcome,
+                    modifier = Modifier.padding(20.dp)
                 )
-            }
-
-
-            OutlinedTextField(
-                value = num1,
-                onValueChange = { num1 = it },
-                label = {
-                    Text("First number")
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                singleLine = true
-            )
-
-            OutlinedTextField(
-                value = num2,
-                onValueChange = { num2 = it },
-                label = {
-                    Text("Second number")
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                singleLine = true
-            )
-
-            OutlinedTextField(
-                value = num3,
-                onValueChange = { num3 = it },
-                label = {
-                    Text("Third number")
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp),
-                singleLine = true
-            )
-            Row(
-                Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
-            ) {
-                Button(
-                    onClick = {
-                        var catena = ""
-                        if (num2.toFloatOrNull() != null && num1.toFloatOrNull() != null && num3.toFloatOrNull() != null) {
-                            val resultAdd: Float = num1.toFloat() + num2.toFloat()
-                            val resultMultiply: Float = num2.toFloat() * num3.toFloat()
-                            catena += "Adittion: $resultAdd. Multiply: $resultMultiply"
-                        } else {
-                            catena += "Some field is empty"
-                        }
-                        outcome = catena
-
-                    },
-                    modifier = Modifier.padding(10.dp)
-                ) {
-                    Text(text = "Add")
-                }
 
             }
         }
+
+        else -> {
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Top
+            ) {
+
+                var num1 by remember { mutableStateOf("") }
+                var num2 by remember { mutableStateOf("") }
+                var num3 by remember { mutableStateOf("") }
+                var outcome by remember { mutableStateOf("Inconclusive") }
+
+                Row(
+                    Modifier
+                        .padding(top = 20.dp)
+                        .fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                )
+                {
+                    Text(
+                        text = "Project 8",
+                        textAlign = TextAlign.Center,
+                        color = Blue20,
+                        fontSize = 30.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+
+
+                OutlinedTextField(
+                    value = num1,
+                    onValueChange = { num1 = it },
+                    label = {
+                        Text("First number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num2,
+                    onValueChange = { num2 = it },
+                    label = {
+                        Text("Second number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+
+                OutlinedTextField(
+                    value = num3,
+                    onValueChange = { num3 = it },
+                    label = {
+                        Text("Third number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true
+                )
+                Row(
+                    Modifier.fillMaxWidth(),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Button(
+                        onClick = {
+                            var catena = ""
+                            if (num2.toFloatOrNull() != null && num1.toFloatOrNull() != null && num3.toFloatOrNull() != null) {
+                                var resultAdd: Float
+                                var resultMult: Float
+                                resultAdd = num1.toFloat() + num2.toFloat()
+                                resultMult = num2.toFloat() * num3.toFloat()
+                                catena += "Adittion: $resultAdd  . Multiply: $resultMult"
+                            } else {
+                                catena += "Some field is empty"
+                            }
+                            outcome = catena
+
+                        },
+                        modifier = Modifier.padding(10.dp)
+                    ) {
+                        Text(text = "Add and Multiply")
+                    }
+
+
+                }
+
+                Text(
+                    text = outcome,
+                    modifier = Modifier.padding(20.dp)
+                )
+
+            }
+
         }
     }
 }

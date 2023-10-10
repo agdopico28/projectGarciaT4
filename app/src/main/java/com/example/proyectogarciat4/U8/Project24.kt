@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**A date (day, month and year) is loaded by keyboard. Show a message if
+corresponds to the first quarter of the year (January, February or March)**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project24() {
@@ -50,7 +51,7 @@ fun Project24() {
                 )
                 {
                     Text(
-                        text = "Project 19",
+                        text = "Project 24",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -121,7 +122,7 @@ fun Project24() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Calculate")
                     }
 
 
@@ -155,7 +156,7 @@ fun Project24() {
                 )
                 {
                     Text(
-                        text = "Project 19",
+                        text = "Project 24",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,

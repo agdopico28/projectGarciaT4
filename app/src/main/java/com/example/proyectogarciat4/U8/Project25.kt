@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+ /**The program asks to load any date, then verify
+ if said date corresponds to Christmas.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project25() {

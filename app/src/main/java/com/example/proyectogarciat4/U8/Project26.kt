@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**Three values are entered by keyboard, if they are all equal, calculate the cube
+of the number.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project26() {
@@ -229,7 +230,7 @@ fun Project26() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Calculate")
                     }
 
 

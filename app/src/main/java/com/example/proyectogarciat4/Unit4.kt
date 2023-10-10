@@ -35,7 +35,7 @@ fun Unit4(navController: NavHostController){
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
                 Text(
-                    text = stringResource(id = R.string.playJuegos),
+                    text ="Unit 4:",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center
 
@@ -82,7 +82,7 @@ fun Unit4(navController: NavHostController){
         else -> {
             Column (modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
                 Text(
-                    text = stringResource(id = R.string.playJuegos),
+                    text ="Unit 4:",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center,
                 )

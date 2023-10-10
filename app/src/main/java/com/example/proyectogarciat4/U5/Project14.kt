@@ -49,7 +49,7 @@ fun Project14() {
                 )
                 {
                     Text(
-                        text = "Project 13",
+                        text = "Project 14",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -95,7 +95,7 @@ fun Project14() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Calculate")
                     }
 
 
@@ -127,7 +127,7 @@ fun Project14() {
                 )
                 {
                     Text(
-                        text = "Project 13",
+                        text = "Project 14",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -173,7 +173,7 @@ fun Project14() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Calculate")
                     }
 
 

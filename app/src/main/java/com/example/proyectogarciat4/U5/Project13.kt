@@ -124,7 +124,7 @@ fun Project13() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Calculate")
                     }
 
 
@@ -231,7 +231,7 @@ fun Project13() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                            Text(text = "Calculate")
                     }
 
 

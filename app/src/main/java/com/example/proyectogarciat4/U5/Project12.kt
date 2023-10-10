@@ -51,7 +51,7 @@ fun Project12() {
                 )
                 {
                     Text(
-                        text = "Project 10",
+                        text = "Project 12",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -114,7 +114,7 @@ fun Project12() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Calculate")
                     }
 
 
@@ -147,7 +147,7 @@ fun Project12() {
                 )
                 {
                     Text(
-                        text = "Project 10",
+                        text = "Project 12",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -172,7 +172,7 @@ fun Project12() {
                     value = num2,
                     onValueChange = { num2 = it },
                     label = {
-                        Text("First number")
+                        Text("Second number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -210,7 +210,7 @@ fun Project12() {
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Taxes")
+                        Text(text = "Calculate")
                     }
 
 
