@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**The price of an item and the amount that the customer takes are requested by keyboard. Shows what the buyer must pay.**/
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project7() {

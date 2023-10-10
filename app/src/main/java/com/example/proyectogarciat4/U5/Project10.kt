@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**Enter a person's salary, if it exceeds 3000 euros show a message
+on the screen indicating that you must pay taxes.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project10() {

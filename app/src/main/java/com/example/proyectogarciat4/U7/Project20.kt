@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**An integer value is entered by keyboard, a legend is displayed that indicates whether
+the number is positive, null or negative.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project20() {

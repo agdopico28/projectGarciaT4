@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**Loads two integer values, stores the largest of them in another variable and
+show it.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project15() {

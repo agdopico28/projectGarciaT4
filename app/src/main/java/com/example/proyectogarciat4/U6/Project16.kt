@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**An integer value is entered by keyboard. The square of
+said number if the value entered is even and if it is odd, save the cube.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project16() {

@@ -23,7 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+/**The total number of questions and the number of correct questions are entered. It depends on the percentage that is calculated, it outputs one level per screen.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project22() {

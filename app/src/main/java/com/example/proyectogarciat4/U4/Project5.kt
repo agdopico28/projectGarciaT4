@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Take two integers by keyboard and print their sum and their product.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project5() {

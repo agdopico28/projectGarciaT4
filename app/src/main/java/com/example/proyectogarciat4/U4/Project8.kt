@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**A program in which three integers are entered that calculates the sum of the first two and the product of the second and third.**/
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project8() {
@@ -198,10 +200,8 @@ fun Project8() {
                     onClick = {
                         var catena = ""
                         if (num2.toFloatOrNull() != null && num1.toFloatOrNull() != null && num3.toFloatOrNull() != null) {
-                            var resultAdd: Float
-                            var resultMultiply: Float
-                            resultAdd = num1.toFloat() + num2.toFloat()
-                            resultMultiply = num2.toFloat() * num3.toFloat()
+                            val resultAdd: Float = num1.toFloat() + num2.toFloat()
+                            val resultMultiply: Float = num2.toFloat() * num3.toFloat()
                             catena += "Adittion: $resultAdd. Multiply: $resultMultiply"
                         } else {
                             catena += "Some field is empty"

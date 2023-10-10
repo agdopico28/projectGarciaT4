@@ -109,10 +109,10 @@ fun Unit4(navController: NavHostController){
                     .padding(15.dp, 0.dp)) {
                     Text(text = "Project 8")
                 }
-                Button(onClick = {   navController.navigate("Project11")},modifier = Modifier
+                Button(onClick = {   navController.navigate("Project9")},modifier = Modifier
                     .width(200.dp)
                     .padding(15.dp, 0.dp)) {
-                    Text(text = "Project 11")
+                    Text(text = "Project 9")
                 }
 
 

@@ -24,7 +24,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**Loads an integer value per keyboard between 1 and 99.
+ * Stores in another variable the number of digits that the value entered by keyboard has.
+ * Shows the number of digits of the number entered by keyboard.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project17() {

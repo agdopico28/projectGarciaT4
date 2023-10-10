@@ -24,7 +24,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**Requests three notes from a student by keyboard, calculates
+the average and print one of these messages:
+If the average is >=7 it shows "Promoted".
+If the average is >=4 and <7 it shows "Fair".
+If the average is <4 it shows "Failed".**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project18() {

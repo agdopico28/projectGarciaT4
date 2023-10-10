@@ -24,7 +24,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**Enter three grades for a student, if the average is greater than or equal to seven it will show Promoted**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project13() {

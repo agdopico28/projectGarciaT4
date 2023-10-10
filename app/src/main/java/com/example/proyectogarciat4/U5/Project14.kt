@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**Enter an integer between 1 and 99 using the keyboard.
+The program will indicate if the number has one or two digits.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project14() {

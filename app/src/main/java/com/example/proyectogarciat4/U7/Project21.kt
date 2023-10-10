@@ -24,7 +24,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**Allows loading a positive integer
+up to three digits and displays a message indicating whether it has 1, 2, or 3
+figures. Displays an error message if the number of digits is greater.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project21() {

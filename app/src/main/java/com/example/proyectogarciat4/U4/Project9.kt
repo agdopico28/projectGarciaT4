@@ -25,6 +25,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/** A program that reads three numerical values by keyboard integers and report their sum and average. **/
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project9() {
