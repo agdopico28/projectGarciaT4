@@ -11,6 +11,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.proyectogarciat4.U10.Project45
+import com.example.proyectogarciat4.U10.Project46
 import com.example.proyectogarciat4.U4.Project5
 import com.example.proyectogarciat4.U4.Project6
 import com.example.proyectogarciat4.U4.Project7
@@ -104,6 +106,9 @@ class MainActivity : ComponentActivity() {
                         composable("Project39") { Project39() }
                         composable("Project40") { Project40() }
                         composable("Project41") { Project41() }
+                        composable("Unit10"){ Unit10(navController = navController)}
+                        composable("Project45") { Project45() }
+                        composable("Project46") { Project46() }
                         composable("FrontPage") { FrontPage(navController = navController) }
                     }
 

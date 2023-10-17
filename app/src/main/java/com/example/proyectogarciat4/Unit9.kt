@@ -141,7 +141,7 @@ fun Unit9(navController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Unit 7",
+                    text = "Unit 9",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center,
                 )
