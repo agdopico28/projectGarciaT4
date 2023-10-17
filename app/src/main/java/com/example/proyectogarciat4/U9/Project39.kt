@@ -36,8 +36,8 @@ fun Project39() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("Inconclusive") }
+                var outcome by remember { mutableStateOf("") }
+                var number by remember { mutableStateOf(0) }
 
                 Row(
                     Modifier
@@ -57,60 +57,34 @@ fun Project39() {
                 }
 
 
-                OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
-                    label = {
-                        Text("First number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-
                 Row(
-                    Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                            outcome = ""
+                            number = 8
+                            while (number<=500){
+                                outcome += if (number == 496) {
+                                    "$number."
+                                } else {
+                                    "$number - "
                                 }
-                            } else {
-                                catena += "Some field is empty"
+                                number += 8
                             }
-                            outcome = catena
 
                         },
-                        modifier = Modifier.padding(10.dp)
+                        modifier = Modifier.padding(10.dp),
+
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Display")
                     }
-
-
                 }
-
                 Text(
                     text = outcome,
-                    modifier = Modifier.padding(20.dp)
+                    modifier = Modifier.padding(20.dp),
                 )
 
             }

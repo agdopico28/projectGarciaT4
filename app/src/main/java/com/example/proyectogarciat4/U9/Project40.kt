@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -20,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -36,8 +38,12 @@ fun Project40() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("Inconclusive") }
+                var secondList by remember { mutableStateOf("") }
+                var firstList by remember { mutableStateOf("") }
+                var outcome by remember { mutableStateOf("") }
+                var x by remember { mutableStateOf(1) }
+                var totalList1 by remember { mutableStateOf(0.00) }
+                var totalList2 by remember { mutableStateOf(0.00) }
 
                 Row(
                     Modifier
@@ -58,54 +64,72 @@ fun Project40() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = firstList,
+                    onValueChange = { firstList = it },
                     label = {
-                        Text("First number")
+                        Text("First List")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
-                    singleLine = true
+                    singleLine = true,
+
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Number
+                    ),
                 )
+                OutlinedTextField(
+                    value = secondList,
+                    onValueChange = { secondList = it },
+                    label = {
+                        Text("Second List")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    singleLine = true,
 
-
+                )
                 Row(
-                    Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                            if (secondList.toFloatOrNull() != null && firstList.toFloatOrNull() != null) {
+                                if (x < 5) {
+                                    val left = 5 - x
+                                    outcome = "$left number/s left"
+                                    totalList1 += firstList.toFloat()
+                                    totalList2 += secondList.toFloat()
+                                    x++
+                                } else {
+                                    totalList1 += firstList.toFloat()
+                                    totalList2 += secondList.toFloat()
+                                    outcome = if (totalList1 > totalList2) {
+                                        "The biggest list is the first"
+                                    } else if (totalList2 > totalList1){
+                                        "The biggest list is the second"
+                                    } else {
+                                        "The lisThe lists are equal."
+                                    }
+                                    x = 1
+                                    totalList1 = 0.0
+                                    totalList2 = 0.0
                                 }
+                                secondList = ""
+                                firstList = ""
                             } else {
-                                catena += "Some field is empty"
+                                outcome = "Introduce correct parameters"
+                                secondList = ""
+                                firstList = ""
                             }
-                            outcome = catena
-
                         },
-                        modifier = Modifier.padding(10.dp)
+                        modifier = Modifier.padding(10.dp),
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Enter")
                     }
-
-
                 }
 
                 Text(

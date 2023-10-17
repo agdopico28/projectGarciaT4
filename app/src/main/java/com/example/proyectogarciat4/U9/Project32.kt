@@ -8,11 +8,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -38,8 +40,9 @@ fun Project32() {
                 verticalArrangement = Arrangement.Top
             ) {
 
+
                 var number by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("Inconclusive") }
+                var outcome by remember { mutableStateOf("") }
 
                 Row(
                     Modifier
@@ -63,44 +66,46 @@ fun Project32() {
                     value = number,
                     onValueChange = { number = it },
                     label = {
-                        Text("First number")
+                        Text("Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
                     singleLine = true
+
                 )
-
-
                 Row(
-                    Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-                            var i = 1
-                            while (i<=number.toInt()){
-                                catena += "$i \n"
-                                i++
+                            if (number.toIntOrNull() != null) {
+                                outcome = ""
+                                var x = 1
+                                while (x <= number.toInt()) {
+                                    outcome += if (x == number.toInt()) {
+                                        "$x."
+                                    } else {
+                                        "$x, "
+                                    }
+                                    x++
+                                }
+                            } else {
+                                outcome = "Introduce an integer"
                             }
-
-                            outcome = catena
-
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Show")
+                        Text(text = "Display")
                     }
-
-
                 }
-
                 Text(
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
+
 
 
             }
@@ -113,7 +118,7 @@ fun Project32() {
             ) {
 
                 var number by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("Inconclusive") }
+                var outcome by remember { mutableStateOf("") }
 
                 Row(
                     Modifier
@@ -137,40 +142,41 @@ fun Project32() {
                     value = number,
                     onValueChange = { number = it },
                     label = {
-                        Text("First number")
+                        Text("Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
                     singleLine = true
+
                 )
-
-
                 Row(
-                    Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-                            var i = 1
-                            while (i<=number.toInt()){
-                                catena += "$i \n"
-                                i++
+                            if (number.toIntOrNull() != null) {
+                                outcome = ""
+                                var x = 1
+                                while (x <= number.toInt()) {
+                                    outcome += if (x == number.toInt()) {
+                                        "$x."
+                                    } else {
+                                        "$x, "
+                                    }
+                                    x++
+                                }
+                            } else {
+                                outcome = "Introduce an integer"
                             }
-
-                            outcome = catena
-
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {
-                        Text(text = "Show")
+                        Text(text = "Display")
                     }
-
-
                 }
-
                 Text(
                     text = outcome,
                     modifier = Modifier.padding(20.dp)

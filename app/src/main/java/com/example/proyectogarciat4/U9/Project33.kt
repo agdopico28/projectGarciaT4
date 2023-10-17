@@ -38,9 +38,10 @@ fun Project33() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var number1 by remember { mutableStateOf("") }
-                var number2 by remember { mutableStateOf("") }
-                var number3 by remember { mutableStateOf("") }
+                var number by remember { mutableStateOf("") }
+                var x by remember { mutableStateOf(1) }
+                var addition by remember { mutableStateOf(0) }
+                var left by remember { mutableStateOf(10) }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -62,83 +63,53 @@ fun Project33() {
 
 
                 OutlinedTextField(
-                    value = number1,
-                    onValueChange = { number1 = it },
+                    value = number,
+                    onValueChange = { number = it },
                     label = {
-                        Text("First number")
+                        Text("Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
+                        .padding(8.dp),
+                    singleLine = true,
 
-                OutlinedTextField(
-                    value = number2,
-                    onValueChange = { number2 = it },
-                    label = {
-                        Text("Second number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-                OutlinedTextField(
-                    value = number3,
-                    onValueChange = { number3 = it },
-                    label = {
-                        Text("Third number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-
-
+                    )
                 Row(
-                    Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-                            if (number1.toIntOrNull() != null &&
-                                    number2.toIntOrNull() != null &&
-                                    number3.toIntOrNull() != null) {
-                               var add = 0
-                                var average = 0
-                                add = number1.toInt() + number2.toInt() + number3.toInt()
-                                average = add /3
-                                catena += "The sum of the 10 values entered is $add. \n The average is $average"
-
+                            if (number.toIntOrNull() != null) {
+                                if (x != 10) {
+                                    left--
+                                    outcome = "$left number/s left"
+                                    addition += number.toInt()
+                                    x++
+                                } else {
+                                    addition += number.toInt()
+                                    val average = addition / 10
+                                    outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
+                                    x = 1
+                                    left = 10
+                                    addition = 0
+                                }
                             } else {
-                            catena += "Some field is empty"
-                        }
-
-
-
-                            outcome = catena
-
+                                outcome = "Introduce an integer"
+                            }
+                            number = ""
                         },
-                        modifier = Modifier.padding(10.dp)
-                    ) {
-                        Text(text = "Show")
+                        modifier = Modifier.padding(10.dp),
+
+                        ) {
+                        Text(text = "Add")
                     }
-
-
                 }
-
                 Text(
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
-
-
             }
         }
 
@@ -148,9 +119,10 @@ fun Project33() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var number1 by remember { mutableStateOf("") }
-                var number2 by remember { mutableStateOf("") }
-                var number3 by remember { mutableStateOf("") }
+                var number by remember { mutableStateOf("") }
+                var x by remember { mutableStateOf(1) }
+                var addition by remember { mutableStateOf(0) }
+                var left by remember { mutableStateOf(10) }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -172,77 +144,49 @@ fun Project33() {
 
 
                 OutlinedTextField(
-                    value = number1,
-                    onValueChange = { number1 = it },
+                    value = number,
+                    onValueChange = { number = it },
                     label = {
-                        Text("First number")
+                        Text("Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
+                        .padding(8.dp),
+                    singleLine = true,
+
                 )
-
-                OutlinedTextField(
-                    value = number2,
-                    onValueChange = { number2 = it },
-                    label = {
-                        Text("Second number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-                OutlinedTextField(
-                    value = number3,
-                    onValueChange = { number3 = it },
-                    label = {
-                        Text("Third number")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
-
-
                 Row(
-                    Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-                            if (number1.toIntOrNull() != null &&
-                                number2.toIntOrNull() != null &&
-                                number3.toIntOrNull() != null) {
-                                var add = 0
-                                var average = 0
-                                add = number1.toInt() + number2.toInt() + number3.toInt()
-                                average = add /3
-                                catena += "The sum of the 10 values entered is $add. \n The average is $average"
-
+                            if (number.toIntOrNull() != null) {
+                                if (x != 10) {
+                                    left--
+                                    outcome = "$left number/s left"
+                                    addition += number.toInt()
+                                    x++
+                                } else {
+                                    addition += number.toInt()
+                                    val average = addition / 10
+                                    outcome = "The sum of all the numbers is: $addition,\nand the average is: $average."
+                                    x = 1
+                                    left = 10
+                                    addition = 0
+                                }
                             } else {
-                                catena += "Some field is empty"
+                                outcome = "Introduce an integer"
                             }
-
-
-
-                            outcome = catena
-
+                            number = ""
                         },
-                        modifier = Modifier.padding(10.dp)
+                        modifier = Modifier.padding(10.dp),
+
                     ) {
-                        Text(text = "Show")
+                        Text(text = "Add")
                     }
-
-
                 }
-
                 Text(
                     text = outcome,
                     modifier = Modifier.padding(20.dp)

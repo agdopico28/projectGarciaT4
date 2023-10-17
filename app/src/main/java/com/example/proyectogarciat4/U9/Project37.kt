@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
@@ -20,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -36,8 +38,13 @@ fun Project37() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("Inconclusive") }
+                var salary by remember { mutableStateOf("") }
+                var numberEmployees by remember { mutableStateOf("") }
+                var outcome by remember { mutableStateOf("") }
+                var x by remember { mutableStateOf(1) }
+                var highSalary by remember { mutableStateOf(0) }
+                var lowSalary by remember { mutableStateOf(0) }
+                var totalWages by remember { mutableStateOf(0.0)  }
 
                 Row(
                     Modifier
@@ -58,54 +65,79 @@ fun Project37() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = numberEmployees,
+                    onValueChange = { numberEmployees = it },
                     label = {
-                        Text("First number")
+                        Text("Number of employees")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
-                    singleLine = true
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Number
+                    ),
                 )
+                OutlinedTextField(
+                    value = salary,
+                    onValueChange = { salary = it },
+                    label = {
+                        Text("Salary")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true,
 
-
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Number
+                    ),
+                )
                 Row(
-                    Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                            if (salary.toFloatOrNull() != null && numberEmployees.toIntOrNull() != null && salary.toFloat() >= 100.0 && salary.toFloat() <= 500.0) {
+                                if (x < numberEmployees.toInt()) {
+                                    val left = numberEmployees.toInt() - x
+                                    outcome = "$left salary/s left"
+                                    if(salary.toFloat() <= 300) {
+                                        lowSalary++
+                                    } else {
+                                        highSalary++
+                                    }
+                                    totalWages += salary.toFloat()
+                                    x++
+                                } else {
+                                    if(salary.toFloat() <= 300) {
+                                        lowSalary++
+                                    } else {
+                                        highSalary++
+                                    }
+                                    totalWages += salary.toFloat()
+                                    outcome = "Number of employees with salaries between 100 and 300: $lowSalary\n" +
+                                            "Number of employees with salaries greater than 300:$highSalary\n" +
+                                            "Total expenditure of the company on salaries: $totalWages"
+                                    x = 1
+                                    highSalary = 0
+                                    lowSalary = 0
+                                    totalWages = 0.0
                                 }
+                                salary = ""
                             } else {
-                                catena += "Some field is empty"
+                                outcome = "Introduce correct parameters"
+                                salary = ""
+                                numberEmployees = ""
                             }
-                            outcome = catena
-
                         },
-                        modifier = Modifier.padding(10.dp)
+                        modifier = Modifier.padding(10.dp),
+
                     ) {
-                        Text(text = "Claculate")
+                        Text(text = "Enter")
                     }
-
-
                 }
 
                 Text(
