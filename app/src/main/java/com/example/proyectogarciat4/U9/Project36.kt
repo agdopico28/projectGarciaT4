@@ -36,7 +36,10 @@ fun Project36() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var note1 by remember { mutableStateOf("") }
+                var height by remember { mutableStateOf("") }
+                var people by remember { mutableStateOf("") }
+                var x by remember { mutableStateOf(1) }
+                var totalHeight by remember { mutableStateOf(0.0) }
                 var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
@@ -48,7 +51,7 @@ fun Project36() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 36",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -58,60 +61,56 @@ fun Project36() {
 
 
                 OutlinedTextField(
-                    value = note1,
-                    onValueChange = { note1 = it },
+                    value = height,
+                    onValueChange = { height = it },
                     label = {
-                        Text("First number")
+                        Text("Height")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
+                        .padding(8.dp),
+                    singleLine = true,
 
-
+                    )
                 Row(
-                    Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Button(
                         onClick = {
-                            var catena = ""
-
-                            if (note1.toIntOrNull() != null) {
-
-                                var result1: Int
-                                if (note1.toInt() < 10) {
-                                    result1 = 1
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 100) {
-                                    result1 = 2
-                                    catena += "The number $note1 has $result1 digits"
-                                } else if (note1.toInt() < 1000) {
-                                    result1 = 3
-                                    catena += "The number $note1 has $result1 digits"
-                                }else {
-                                    catena += "The number $note1 is out of range"
+                            if (height.toFloatOrNull() != null && people.toIntOrNull() != null) {
+                                if (x < people.toInt()) {
+                                    val left = people.toInt() - x
+                                    outcome = "$left height/s left"
+                                    totalHeight += height.toFloat()
+                                    x++
+                                } else {
+                                    totalHeight += height.toFloat()
+                                    val averageHeight = totalHeight / people.toInt()
+                                    outcome = "The average height is: $averageHeight"
+                                    x = 1
+                                    totalHeight = 0.0
                                 }
+                                height = ""
                             } else {
-                                catena += "Some field is empty"
+                                outcome = "Introduce correct parameters"
+                                height = ""
+                                people = ""
                             }
-                            outcome = catena
-
                         },
-                        modifier = Modifier.padding(10.dp)
-                    ) {
-                        Text(text = "Claculate")
+                        modifier = Modifier.padding(10.dp),
+
+                        ) {
+                        Text(text = "Calculate")
                     }
-
-
                 }
 
                 Text(
                     text = outcome,
                     modifier = Modifier.padding(20.dp)
                 )
+
 
             }
         }
@@ -137,7 +136,7 @@ fun Project36() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 36",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,

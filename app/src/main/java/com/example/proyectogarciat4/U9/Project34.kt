@@ -159,7 +159,7 @@ fun Project34() {
                 )
                 {
                     Text(
-                        text = "Project 21",
+                        text = "Project 34",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
