@@ -59,6 +59,18 @@ fun Project36() {
                     )
                 }
 
+                OutlinedTextField(
+                    value = people,
+                    onValueChange = { people = it },
+                    label = {
+                        Text("People")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    singleLine = true,
+
+                    )
 
                 OutlinedTextField(
                     value = height,
@@ -143,7 +155,18 @@ fun Project36() {
                         fontWeight = FontWeight.Bold
                     )
                 }
+                OutlinedTextField(
+                    value = people,
+                    onValueChange = { people = it },
+                    label = {
+                        Text("Height")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    singleLine = true,
 
+                    )
 
                 OutlinedTextField(
                     value = height,
