@@ -28,6 +28,8 @@ import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
 /**Reads the data of a checking account and reports the balance and the sum of the credit balances**/
+
+//reads
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project46() {
