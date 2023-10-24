@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-/****/
+/**3 numbers are entered, if a number is less than ten, the screen displays "Any of the
+numbers is less than ten"**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project28() {
