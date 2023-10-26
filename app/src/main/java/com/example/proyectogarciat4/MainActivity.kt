@@ -13,6 +13,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.proyectogarciat4.U10.Project45
 import com.example.proyectogarciat4.U10.Project46
+import com.example.proyectogarciat4.U11.Project52
+import com.example.proyectogarciat4.U11.Project53
+import com.example.proyectogarciat4.U11.Project54
+import com.example.proyectogarciat4.U11.Project55
+import com.example.proyectogarciat4.U11.Project56
+import com.example.proyectogarciat4.U11.Project57
+import com.example.proyectogarciat4.U11.Project58
 import com.example.proyectogarciat4.U4.Project5
 import com.example.proyectogarciat4.U4.Project6
 import com.example.proyectogarciat4.U4.Project7
@@ -111,14 +118,14 @@ class MainActivity : ComponentActivity() {
                         composable("Unit10"){ Unit10(navController = navController)}
                         composable("Project45") { Project45() }
                         composable("Project46") { Project46() }
-                        /*composable("Unit11"){ Unit11(navController = navController)}
+                        composable("Unit11"){ Unit11(navController = navController)}
                         composable("Project52") { Project52() }
                         composable("Project53") { Project53() }
                         composable("Project54") { Project54() }
                         composable("Project55") { Project55() }
                         composable("Project56") { Project56() }
                         composable("Project57") { Project57() }
-                        composable("Project58") { Project58() }*/
+                        composable("Project58") { Project58() }
                         composable("FrontPage") { FrontPage(navController = navController) }
                     }
 
