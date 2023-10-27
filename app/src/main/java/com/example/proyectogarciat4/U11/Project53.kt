@@ -37,10 +37,11 @@ fun Project53() {
                 modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
-
                 var number by remember { mutableStateOf("") }
-                var addition by remember { mutableStateOf(0.0) }
-                var outcome by remember { mutableStateOf("If you enter 9999 the program ends") }
+                var x by remember { mutableStateOf(1) }
+                var addition by remember { mutableStateOf(0) }
+                var left by remember { mutableStateOf(10) }
+                var outcome by remember { mutableStateOf("Inconclusive") }
 
                 Row(
                     Modifier
@@ -51,7 +52,7 @@ fun Project53() {
                 )
                 {
                     Text(
-                        text = "Project 45",
+                        text = "Project 33",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -79,18 +80,17 @@ fun Project53() {
                 ) {
                     Button(
                         onClick = {
-                            if (number.toFloatOrNull() != null) {
-                                if (number.toInt() != 9999) {
-                                    addition += number.toFloat()
-                                } else {
-                                    outcome=
-                                        if(addition < 0.0){
-                                            "Below 0 : $addition"
-                                        }else if(addition > 0.0){
-                                            "Above 0: $addition"
-                                        }else{
-                                            "0"
-                                        }
+                            if (number.toIntOrNull() != null) {
+                                if (x != 10) {
+                                    left--
+                                    outcome = "$left number/s left"
+                                    if(x > 5){
+                                        addition += number.toInt()
+                                    }
+                                    x++
+
+                                } else{
+                                    outcome = "The  5 last number added equals: $addition."
                                 }
                             } else {
                                 outcome = "Introduce an integer"
