@@ -20,6 +20,9 @@ import com.example.proyectogarciat4.U11.Project55
 import com.example.proyectogarciat4.U11.Project56
 import com.example.proyectogarciat4.U11.Project57
 import com.example.proyectogarciat4.U11.Project58
+import com.example.proyectogarciat4.U12.Project63
+import com.example.proyectogarciat4.U12.Project64
+import com.example.proyectogarciat4.U12.Project65
 import com.example.proyectogarciat4.U4.Project5
 import com.example.proyectogarciat4.U4.Project6
 import com.example.proyectogarciat4.U4.Project7
@@ -126,6 +129,10 @@ class MainActivity : ComponentActivity() {
                         composable("Project56") { Project56() }
                         composable("Project57") { Project57() }
                         composable("Project58") { Project58() }
+                        composable("Unit12"){ Unit12(navController = navController)}
+                        composable("Project63") { Project63() }
+                        composable("Project64") { Project64() }
+                        composable("Project65") { Project65() }
                         composable("FrontPage") { FrontPage(navController = navController) }
                     }
 
