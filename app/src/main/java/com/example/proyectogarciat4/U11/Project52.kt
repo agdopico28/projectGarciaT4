@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Read a number of bases and heights of a triangle and report the area*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project52() {

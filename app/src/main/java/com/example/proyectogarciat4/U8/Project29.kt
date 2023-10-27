@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Asks to enter some coordinates (x,y) and returns which quadrant it is in**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project29() {

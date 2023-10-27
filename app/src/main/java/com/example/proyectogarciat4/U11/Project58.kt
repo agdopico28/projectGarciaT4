@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Enter 10 integers by keyboard and we calculate how many are negative,
+ * how many are positive, how many multiples of 15 and the sum of the even numbers.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project58() {

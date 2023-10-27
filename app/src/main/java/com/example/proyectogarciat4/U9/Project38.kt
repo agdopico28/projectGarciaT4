@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Print 25 terms from the series 11-22-33-44*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project38() {

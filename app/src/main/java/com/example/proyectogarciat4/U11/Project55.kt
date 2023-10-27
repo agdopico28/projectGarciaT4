@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Shows the multiplication table of the number you have entered by keyboard*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project55() {
@@ -53,7 +54,7 @@ fun Project55() {
                 )
                 {
                     Text(
-                        text = "Project 54",
+                        text = "Project 55",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -116,6 +117,7 @@ fun Project55() {
                 verticalArrangement = Arrangement.Top
             ) {
 
+                var enterNum by remember { mutableStateOf("") }
                 var number by remember { mutableStateOf(1) }
                 var outcome by remember { mutableStateOf("") }
 
@@ -128,7 +130,7 @@ fun Project55() {
                 )
                 {
                     Text(
-                        text = "Project 54",
+                        text = "Project 55",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -137,6 +139,21 @@ fun Project55() {
                 }
 
 
+                OutlinedTextField(
+                    value = enterNum,
+                    onValueChange = { enterNum = it },
+                    label = {
+                        Text("Number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true,
+
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Number
+                    ),
+                )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -144,12 +161,16 @@ fun Project55() {
                 ) {
                     Button(
                         onClick = {
-                            outcome = ""
-                            for (number in 1..10){
-                                val multiply = number * 5
-                                outcome = "$number * 5 = $multiply"
+                            if(enterNum.toIntOrNull() != null) {
+                                outcome = ""
+                                for (number in 1..12) {
+                                    val multiply = number * enterNum.toInt()
+                                    outcome = "$number * $enterNum = $multiply"
+                                }
+                                number = 1
+                            }else{
+                                outcome = "Enter a number"
                             }
-                            number = 1
                         },
                         modifier = Modifier.padding(10.dp)
                     ) {

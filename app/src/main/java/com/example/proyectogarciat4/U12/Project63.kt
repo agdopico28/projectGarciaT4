@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Enter a number by keyboard and calculate if it is even, odd or null*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project63() {

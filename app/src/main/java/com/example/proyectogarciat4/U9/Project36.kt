@@ -25,6 +25,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Enter the number of heights you want to enter and the heights.
+ * With these the average is calculated**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project36() {

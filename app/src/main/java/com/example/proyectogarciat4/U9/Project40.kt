@@ -27,6 +27,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Stores five values in each list in two lists.
+ * Prints which of the two lists has the largest cumulative value
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project40() {

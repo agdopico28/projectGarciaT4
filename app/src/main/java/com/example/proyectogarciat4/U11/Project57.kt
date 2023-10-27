@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**You enter coordinates and check which plane it belongs to*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project57() {

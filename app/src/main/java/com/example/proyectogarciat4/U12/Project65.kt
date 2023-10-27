@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**You enter the number of triangles and also the length of their sides.
+ * Calculate if it is equilateral, isosceles or scalene and count how many there are*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project65() {

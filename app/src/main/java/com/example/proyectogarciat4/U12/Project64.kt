@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Enter 3 values 5 times and accumulate the largest of each list*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project64() {

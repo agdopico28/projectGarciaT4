@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**You enter the number of triangles and also the length of their sides.
+ * Calculate if it is equilateral, isosceles or scalene*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project56() {
@@ -85,24 +87,10 @@ fun Project56() {
                 )
 
                 OutlinedTextField(
-                    value = amountTriangles,
-                    onValueChange = { amountTriangles = it },
-                    label = {
-                        Text("Base")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true,
-                    keyboardOptions = KeyboardOptions.Default.copy(
-                        keyboardType = KeyboardType.Number
-                    ),
-                )
-                OutlinedTextField(
                     value = side1,
                     onValueChange = { side1 = it },
                     label = {
-                        Text("Height")
+                        Text("Size")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -114,7 +102,7 @@ fun Project56() {
                     value = side2,
                     onValueChange = { side2 = it },
                     label = {
-                        Text("Height")
+                        Text("Size")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -126,7 +114,7 @@ fun Project56() {
                     value = side3,
                     onValueChange = { side3 = it },
                     label = {
-                        Text("Height")
+                        Text("Size")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -233,25 +221,12 @@ fun Project56() {
                     ),
                 )
 
-                OutlinedTextField(
-                    value = amountTriangles,
-                    onValueChange = { amountTriangles = it },
-                    label = {
-                        Text("Base")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true,
-                    keyboardOptions = KeyboardOptions.Default.copy(
-                        keyboardType = KeyboardType.Number
-                    ),
-                )
+
                 OutlinedTextField(
                     value = side1,
                     onValueChange = { side1 = it },
                     label = {
-                        Text("Height")
+                        Text("Size")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -263,7 +238,7 @@ fun Project56() {
                     value = side2,
                     onValueChange = { side2 = it },
                     label = {
-                        Text("Height")
+                        Text("Size")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -275,7 +250,7 @@ fun Project56() {
                     value = side3,
                     onValueChange = { side3 = it },
                     label = {
-                        Text("Height")
+                        Text("Size")
                     },
                     modifier = Modifier
                         .fillMaxWidth()

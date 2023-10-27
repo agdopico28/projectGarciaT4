@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Load 10 values per keyboard and add and average them**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project33() {

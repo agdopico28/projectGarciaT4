@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Shows the multiplication table of 5*/
 @Composable
 fun Project54() {
     val configuration = LocalConfiguration.current

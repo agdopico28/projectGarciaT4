@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Enter 10 notes and report how many have more than 7 and how many have less**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project35() {

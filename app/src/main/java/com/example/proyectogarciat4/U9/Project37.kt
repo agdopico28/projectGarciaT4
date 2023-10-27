@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**The number of employees and their salaries are entered by keyboard.
+ * Calculate which one charges between 100 and 300 and how many charge more than 300**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project37() {

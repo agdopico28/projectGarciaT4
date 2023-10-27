@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Enter the number of pieces and the length of each profile using the keyboard.
+ * If the length is between 1.20 and 1.30, they are suitable and count**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project34() {

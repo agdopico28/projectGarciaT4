@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**It asks for a number of integers and then tells you how many were even and how many were odd.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project41() {

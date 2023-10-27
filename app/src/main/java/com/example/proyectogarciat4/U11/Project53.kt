@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Enter 10 values by keyboard and print the sum of the last 5 values
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project53() {
