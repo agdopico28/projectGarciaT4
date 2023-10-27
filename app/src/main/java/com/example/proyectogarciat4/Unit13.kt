@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 @Composable
-fun Unit12(navController: NavHostController) {
+fun Unit13(navController: NavHostController) {
 
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
@@ -107,9 +107,6 @@ fun Unit12(navController: NavHostController) {
                 ) {
                     Text(text = "Project 65")
                 }
-
-
-
 
 
             }
