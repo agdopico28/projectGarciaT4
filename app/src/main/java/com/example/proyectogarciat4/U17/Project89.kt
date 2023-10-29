@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4.U16
+package com.example.proyectogarciat4.U17
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -29,14 +29,11 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project84() {
+fun Project89() {
     val configuration = LocalConfiguration.current
-    var side1 by remember { mutableStateOf("") }
-    var side2 by remember { mutableStateOf("") }
+    var side by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var x by remember { mutableStateOf(1) }
-    var perimeter by remember { mutableStateOf(0.00) }
-    var left by remember { mutableStateOf(2) }
+
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
@@ -52,7 +49,7 @@ fun Project84() {
                 )
                 {
                     Text(
-                        text = "Project 83",
+                        text = "Project 89",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -63,10 +60,10 @@ fun Project84() {
 
 
                 OutlinedTextField(
-                    value = side1,
-                    onValueChange = { side1 = it },
+                    value = side,
+                    onValueChange = { side = it },
                     label = {
-                        Text("Side one of rectangle")
+                        Text("Side of square")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -75,18 +72,6 @@ fun Project84() {
 
                     )
 
-                OutlinedTextField(
-                    value = side2,
-                    onValueChange = { side2 = it },
-                    label = {
-                        Text("Side two of rectangle")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp),
-                    singleLine = true,
-
-                    )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -94,29 +79,14 @@ fun Project84() {
                 ) {
                     Button(
                         onClick = {
-                            if (side1.toFloatOrNull() != null) {
-                                if (x < 2) {
-                                    left--
-                                    outcome = "$left rectangles left"
-                                    perimeter = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    x++
-                                }else{
-                                    val perimeter2 = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    outcome = if (perimeter > perimeter2){
-                                        "The first rectangle is the largest"
-                                    }else{
-                                        "The second rectangle is the largest"
-                                    }
-                                }
-                               x = 1
-                                left = 2
-
-
+                            if (side.toFloatOrNull() != null) {
+                                val perimeter =
+                                    side.toFloat() + side.toFloat() + side.toFloat() + side.toFloat()
+                                outcome = "The perimeter of the square is: $perimeter"
                             } else {
                                 outcome = "Enter numbers"
                             }
-                            side1 = ""
-                            side2 = ""
+                            side = ""
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -146,7 +116,7 @@ fun Project84() {
                 )
                 {
                     Text(
-                        text = "Project 83",
+                        text = "Project 89",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -157,10 +127,10 @@ fun Project84() {
 
 
                 OutlinedTextField(
-                    value = side1,
-                    onValueChange = { side1 = it },
+                    value = side,
+                    onValueChange = { side = it },
                     label = {
-                        Text("Side one of rectangle")
+                        Text("Side of square")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -169,18 +139,6 @@ fun Project84() {
 
                     )
 
-                OutlinedTextField(
-                    value = side2,
-                    onValueChange = { side2 = it },
-                    label = {
-                        Text("Side two of rectangle")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp),
-                    singleLine = true,
-
-                    )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -188,29 +146,14 @@ fun Project84() {
                 ) {
                     Button(
                         onClick = {
-                            if (side1.toFloatOrNull() != null) {
-                                if (x < 2) {
-                                    left--
-                                    outcome = "$left rectangles left"
-                                    perimeter = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    x++
-                                }else{
-                                    val perimeter2 = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    outcome = if (perimeter > perimeter2){
-                                        "The first rectangle is the largest"
-                                    }else{
-                                        "The second rectangle is the largest"
-                                    }
-                                }
-                                x = 1
-                                left = 2
-
-
+                            if (side.toFloatOrNull() != null) {
+                                val perimeter =
+                                    side.toFloat() + side.toFloat() + side.toFloat() + side.toFloat()
+                                outcome = "The perimeter of the square is: $perimeter"
                             } else {
                                 outcome = "Enter numbers"
                             }
-                            side1 = ""
-                            side2 = ""
+                            side = ""
                         },
                         modifier = Modifier.padding(10.dp),
 

@@ -31,6 +31,14 @@ import com.example.proyectogarciat4.U15.Project78
 import com.example.proyectogarciat4.U16.Project82
 import com.example.proyectogarciat4.U16.Project83
 import com.example.proyectogarciat4.U16.Project84
+import com.example.proyectogarciat4.U17.Project88
+import com.example.proyectogarciat4.U17.Project89
+import com.example.proyectogarciat4.U17.Project90
+import com.example.proyectogarciat4.U17.Project91
+import com.example.proyectogarciat4.U18.Project93
+import com.example.proyectogarciat4.U19.Project95
+import com.example.proyectogarciat4.U20.Project97
+import com.example.proyectogarciat4.U21.Project103
 import com.example.proyectogarciat4.U4.Project5
 import com.example.proyectogarciat4.U4.Project6
 import com.example.proyectogarciat4.U4.Project7
@@ -153,6 +161,19 @@ class MainActivity : ComponentActivity() {
                         composable("Project82") { Project82() }
                         composable("Project83") { Project83() }
                         composable("Project84") { Project84() }
+                        composable("Unit17"){ Unit17(navController = navController) }
+                        composable("Project88") { Project88() }
+                        composable("Project89") { Project89() }
+                        composable("Project90") { Project90() }
+                        composable("Project91") { Project91() }
+                        composable("Unit18"){ Unit18(navController = navController) }
+                        composable("Project93") { Project93() }
+                        composable("Unit19"){ Unit19(navController = navController) }
+                        composable("Project95") { Project95() }
+                        composable("Unit20"){ Unit20(navController = navController) }
+                        composable("Project97") { Project97() }
+                        composable("Unit21"){ Unit21(navController = navController) }
+                        composable("Project103") { Project103() }
                         composable("FrontPage") { FrontPage(navController = navController) }
                     }
 

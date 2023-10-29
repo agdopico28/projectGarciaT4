@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4.U16
+package com.example.proyectogarciat4.U17
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -29,7 +29,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project84() {
+fun Project90() {
     val configuration = LocalConfiguration.current
     var side1 by remember { mutableStateOf("") }
     var side2 by remember { mutableStateOf("") }
@@ -52,7 +52,7 @@ fun Project84() {
                 )
                 {
                     Text(
-                        text = "Project 83",
+                        text = "Project 90",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -108,7 +108,7 @@ fun Project84() {
                                         "The second rectangle is the largest"
                                     }
                                 }
-                               x = 1
+                                x = 1
                                 left = 2
 
 
@@ -146,7 +146,7 @@ fun Project84() {
                 )
                 {
                     Text(
-                        text = "Project 83",
+                        text = "Project 90",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,

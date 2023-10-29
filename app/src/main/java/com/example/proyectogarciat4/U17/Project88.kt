@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4.U16
+package com.example.proyectogarciat4.U17
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -29,14 +29,12 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project84() {
+fun Project88() {
     val configuration = LocalConfiguration.current
-    var side1 by remember { mutableStateOf("") }
-    var side2 by remember { mutableStateOf("") }
+    var firstNumber by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var x by remember { mutableStateOf(1) }
-    var perimeter by remember { mutableStateOf(0.00) }
-    var left by remember { mutableStateOf(2) }
+    var secondNumber by remember { mutableStateOf("") }
+    var thirdNumber by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
@@ -52,7 +50,7 @@ fun Project84() {
                 )
                 {
                     Text(
-                        text = "Project 83",
+                        text = "Project 88",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -63,10 +61,22 @@ fun Project84() {
 
 
                 OutlinedTextField(
-                    value = side1,
-                    onValueChange = { side1 = it },
+                    value = firstNumber,
+                    onValueChange = { firstNumber = it },
                     label = {
-                        Text("Side one of rectangle")
+                        Text("First Number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    singleLine = true,
+
+                    )
+                OutlinedTextField(
+                    value = secondNumber,
+                    onValueChange = { secondNumber = it },
+                    label = {
+                        Text("Second Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -76,10 +86,10 @@ fun Project84() {
                     )
 
                 OutlinedTextField(
-                    value = side2,
-                    onValueChange = { side2 = it },
+                    value = thirdNumber,
+                    onValueChange = { thirdNumber = it },
                     label = {
-                        Text("Side two of rectangle")
+                        Text("Third Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -94,29 +104,20 @@ fun Project84() {
                 ) {
                     Button(
                         onClick = {
-                            if (side1.toFloatOrNull() != null) {
-                                if (x < 2) {
-                                    left--
-                                    outcome = "$left rectangles left"
-                                    perimeter = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    x++
-                                }else{
-                                    val perimeter2 = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    outcome = if (perimeter > perimeter2){
-                                        "The first rectangle is the largest"
-                                    }else{
-                                        "The second rectangle is the largest"
-                                    }
-                                }
-                               x = 1
-                                left = 2
-
-
+                            if (firstNumber.toIntOrNull() != null
+                                && secondNumber.toIntOrNull() != null
+                                && thirdNumber.toIntOrNull() != null
+                            ) {
+                                val average =
+                                    (firstNumber.toInt() + secondNumber.toInt() + thirdNumber.toInt()) / 3
+                                outcome =
+                                    "The average of $firstNumber, $secondNumber y $thirdNumber is: $average"
                             } else {
                                 outcome = "Enter numbers"
                             }
-                            side1 = ""
-                            side2 = ""
+                            firstNumber = ""
+                            secondNumber = ""
+                            thirdNumber = ""
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -146,7 +147,7 @@ fun Project84() {
                 )
                 {
                     Text(
-                        text = "Project 83",
+                        text = "Project 88",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -157,10 +158,22 @@ fun Project84() {
 
 
                 OutlinedTextField(
-                    value = side1,
-                    onValueChange = { side1 = it },
+                    value = firstNumber,
+                    onValueChange = { firstNumber = it },
                     label = {
-                        Text("Side one of rectangle")
+                        Text("First Number")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    singleLine = true,
+
+                    )
+                OutlinedTextField(
+                    value = secondNumber,
+                    onValueChange = { secondNumber = it },
+                    label = {
+                        Text("Second Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -170,10 +183,10 @@ fun Project84() {
                     )
 
                 OutlinedTextField(
-                    value = side2,
-                    onValueChange = { side2 = it },
+                    value = thirdNumber,
+                    onValueChange = { thirdNumber = it },
                     label = {
-                        Text("Side two of rectangle")
+                        Text("Third Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -188,29 +201,20 @@ fun Project84() {
                 ) {
                     Button(
                         onClick = {
-                            if (side1.toFloatOrNull() != null) {
-                                if (x < 2) {
-                                    left--
-                                    outcome = "$left rectangles left"
-                                    perimeter = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    x++
-                                }else{
-                                    val perimeter2 = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    outcome = if (perimeter > perimeter2){
-                                        "The first rectangle is the largest"
-                                    }else{
-                                        "The second rectangle is the largest"
-                                    }
-                                }
-                                x = 1
-                                left = 2
-
-
+                            if (firstNumber.toIntOrNull() != null
+                                && secondNumber.toIntOrNull() != null
+                                && thirdNumber.toIntOrNull() != null
+                            ) {
+                                val average =
+                                    (firstNumber.toInt() + secondNumber.toInt() + thirdNumber.toInt()) / 3
+                                outcome =
+                                    "The average of $firstNumber, $secondNumber y $thirdNumber is: $average"
                             } else {
                                 outcome = "Enter numbers"
                             }
-                            side1 = ""
-                            side2 = ""
+                            firstNumber = ""
+                            secondNumber = ""
+                            thirdNumber = ""
                         },
                         modifier = Modifier.padding(10.dp),
 

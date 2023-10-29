@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4.U16
+package com.example.proyectogarciat4.U19
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -22,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -29,14 +31,12 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project84() {
+fun Project95() {
     val configuration = LocalConfiguration.current
-    var side1 by remember { mutableStateOf("") }
-    var side2 by remember { mutableStateOf("") }
+    var numMultiples by remember { mutableStateOf("10") }
+    var number by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var x by remember { mutableStateOf(1) }
-    var perimeter by remember { mutableStateOf(0.00) }
-    var left by remember { mutableStateOf(2) }
+    var x by remember { mutableStateOf(0) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
@@ -52,7 +52,7 @@ fun Project84() {
                 )
                 {
                     Text(
-                        text = "Project 83",
+                        text = "Project 90",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -63,30 +63,32 @@ fun Project84() {
 
 
                 OutlinedTextField(
-                    value = side1,
-                    onValueChange = { side1 = it },
+                    value = number,
+                    onValueChange = { number = it },
                     label = {
-                        Text("Side one of rectangle")
+                        Text("Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp),
+                        .padding(10.dp),
                     singleLine = true,
 
-                    )
-
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Number
+                    ),
+                )
                 OutlinedTextField(
-                    value = side2,
-                    onValueChange = { side2 = it },
+                    value = numMultiples,
+                    onValueChange = { numMultiples = it },
                     label = {
-                        Text("Side two of rectangle")
+                        Text("Number of multiples")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp),
                     singleLine = true,
 
-                    )
+                )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -94,34 +96,24 @@ fun Project84() {
                 ) {
                     Button(
                         onClick = {
-                            if (side1.toFloatOrNull() != null) {
-                                if (x < 2) {
-                                    left--
-                                    outcome = "$left rectangles left"
-                                    perimeter = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
+                            outcome = ""
+                            if (number.toFloatOrNull() != null) {
+                                outcome += "Multiplication table of $number\n"
+                                while (x < numMultiples.toInt() + 1){
+                                    val product = number.toFloat() * x
+                                    outcome += "$number * $x = $product\n"
                                     x++
-                                }else{
-                                    val perimeter2 = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    outcome = if (perimeter > perimeter2){
-                                        "The first rectangle is the largest"
-                                    }else{
-                                        "The second rectangle is the largest"
-                                    }
                                 }
-                               x = 1
-                                left = 2
-
-
                             } else {
-                                outcome = "Enter numbers"
+                                outcome = "Introduce correct parameters"
                             }
-                            side1 = ""
-                            side2 = ""
+                            number = ""
+                            numMultiples = "10"
                         },
                         modifier = Modifier.padding(10.dp),
 
-                        ) {
-                        Text(text = "Calculate")
+                    ) {
+                        Text(text = "Enter")
                     }
                 }
                 Text(
@@ -146,7 +138,7 @@ fun Project84() {
                 )
                 {
                     Text(
-                        text = "Project 83",
+                        text = "Project 90",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -157,23 +149,25 @@ fun Project84() {
 
 
                 OutlinedTextField(
-                    value = side1,
-                    onValueChange = { side1 = it },
+                    value = number,
+                    onValueChange = { number = it },
                     label = {
-                        Text("Side one of rectangle")
+                        Text("Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp),
+                        .padding(10.dp),
                     singleLine = true,
 
-                    )
-
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Number
+                    ),
+                )
                 OutlinedTextField(
-                    value = side2,
-                    onValueChange = { side2 = it },
+                    value = numMultiples,
+                    onValueChange = { numMultiples = it },
                     label = {
-                        Text("Side two of rectangle")
+                        Text("Number of multiples")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -188,34 +182,24 @@ fun Project84() {
                 ) {
                     Button(
                         onClick = {
-                            if (side1.toFloatOrNull() != null) {
-                                if (x < 2) {
-                                    left--
-                                    outcome = "$left rectangles left"
-                                    perimeter = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
+                            outcome = ""
+                            if (number.toFloatOrNull() != null) {
+                                outcome += "Multiplication table of $number\n"
+                                while (x < numMultiples.toInt() + 1){
+                                    val product = number.toFloat() * x
+                                    outcome += "$number * $x = $product\n"
                                     x++
-                                }else{
-                                    val perimeter2 = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    outcome = if (perimeter > perimeter2){
-                                        "The first rectangle is the largest"
-                                    }else{
-                                        "The second rectangle is the largest"
-                                    }
                                 }
-                                x = 1
-                                left = 2
-
-
                             } else {
-                                outcome = "Enter numbers"
+                                outcome = "Introduce correct parameters"
                             }
-                            side1 = ""
-                            side2 = ""
+                            number = ""
+                            numMultiples = "10"
                         },
                         modifier = Modifier.padding(10.dp),
 
                         ) {
-                        Text(text = "Calculate")
+                        Text(text = "Enter")
                     }
                 }
                 Text(

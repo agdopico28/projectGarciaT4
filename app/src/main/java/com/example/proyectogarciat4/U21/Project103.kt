@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4.U16
+package com.example.proyectogarciat4.U21
 
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
@@ -29,14 +29,15 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project84() {
+fun Project103() {
     val configuration = LocalConfiguration.current
-    var side1 by remember { mutableStateOf("") }
-    var side2 by remember { mutableStateOf("") }
-    var outcome by remember { mutableStateOf("") }
     var x by remember { mutableStateOf(1) }
-    var perimeter by remember { mutableStateOf(0.00) }
-    var left by remember { mutableStateOf(2) }
+    var numbers by remember { mutableStateOf("") }
+    var accumulator by remember { mutableStateOf(0) }
+    var over36 by remember { mutableStateOf(0) }
+    var over50 by remember { mutableStateOf(0) }
+    var outcome by remember { mutableStateOf("Enter 8 numbers") }
+    var left by remember { mutableStateOf(8) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
@@ -52,7 +53,7 @@ fun Project84() {
                 )
                 {
                     Text(
-                        text = "Project 83",
+                        text = "Project 103",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -63,10 +64,10 @@ fun Project84() {
 
 
                 OutlinedTextField(
-                    value = side1,
-                    onValueChange = { side1 = it },
+                    value = numbers,
+                    onValueChange = { numbers = it },
                     label = {
-                        Text("Side one of rectangle")
+                        Text("Numbers")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -75,18 +76,6 @@ fun Project84() {
 
                     )
 
-                OutlinedTextField(
-                    value = side2,
-                    onValueChange = { side2 = it },
-                    label = {
-                        Text("Side two of rectangle")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp),
-                    singleLine = true,
-
-                    )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -94,29 +83,36 @@ fun Project84() {
                 ) {
                     Button(
                         onClick = {
-                            if (side1.toFloatOrNull() != null) {
-                                if (x < 2) {
+                            if ( numbers.toIntOrNull() != null) {
+                                if (x < 8) {
                                     left--
-                                    outcome = "$left rectangles left"
-                                    perimeter = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
+                                    outcome = "$left number/s left"
                                     x++
-                                }else{
-                                    val perimeter2 = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    outcome = if (perimeter > perimeter2){
-                                        "The first rectangle is the largest"
-                                    }else{
-                                        "The second rectangle is the largest"
+                                    accumulator += numbers.toInt()
+                                    if(numbers.toInt() > 36){
+                                        over36 += numbers.toInt()
                                     }
+                                    if(numbers.toInt() > 50){
+                                        over50++
+                                    }
+                                } else {
+                                    accumulator += numbers.toInt()
+                                    if(numbers.toInt() > 36){
+                                        over36 += numbers.toInt()
+                                    }
+                                    if(numbers.toInt() > 50){
+                                        over50++
+                                    }
+                                    outcome = "Cumulative value of all values: $accumulator\n"+
+                                            "Accumulated value of elements that are greater than 36: $over36 \n"+
+                                            "Number of values greater than 50: $over50"
+                                    x = 1
+                                    left = 8
                                 }
-                               x = 1
-                                left = 2
-
-
+                                numbers = ""
                             } else {
-                                outcome = "Enter numbers"
+                                outcome = "Introduce numbers please"
                             }
-                            side1 = ""
-                            side2 = ""
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -146,7 +142,7 @@ fun Project84() {
                 )
                 {
                     Text(
-                        text = "Project 83",
+                        text = "Project 103",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -157,10 +153,10 @@ fun Project84() {
 
 
                 OutlinedTextField(
-                    value = side1,
-                    onValueChange = { side1 = it },
+                    value = numbers,
+                    onValueChange = { numbers = it },
                     label = {
-                        Text("Side one of rectangle")
+                        Text("Numbers")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -169,18 +165,6 @@ fun Project84() {
 
                     )
 
-                OutlinedTextField(
-                    value = side2,
-                    onValueChange = { side2 = it },
-                    label = {
-                        Text("Side two of rectangle")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp),
-                    singleLine = true,
-
-                    )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -188,29 +172,36 @@ fun Project84() {
                 ) {
                     Button(
                         onClick = {
-                            if (side1.toFloatOrNull() != null) {
-                                if (x < 2) {
+                            if ( numbers.toIntOrNull() != null) {
+                                if (x < 8) {
                                     left--
-                                    outcome = "$left rectangles left"
-                                    perimeter = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
+                                    outcome = "$left number/s left"
                                     x++
-                                }else{
-                                    val perimeter2 = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    outcome = if (perimeter > perimeter2){
-                                        "The first rectangle is the largest"
-                                    }else{
-                                        "The second rectangle is the largest"
+                                    accumulator += numbers.toInt()
+                                    if(numbers.toInt() > 36){
+                                        over36 += numbers.toInt()
                                     }
+                                    if(numbers.toInt() > 50){
+                                        over50++
+                                    }
+                                } else {
+                                    accumulator += numbers.toInt()
+                                    if(numbers.toInt() > 36){
+                                        over36 += numbers.toInt()
+                                    }
+                                    if(numbers.toInt() > 50){
+                                        over50++
+                                    }
+                                    outcome = "Cumulative value of all values: $accumulator\n"+
+                                            "Accumulated value of elements that are greater than 36: $over36 \n"+
+                                            "Number of values greater than 50: $over50"
+                                    x = 1
+                                    left = 8
                                 }
-                                x = 1
-                                left = 2
-
-
+                                numbers = ""
                             } else {
-                                outcome = "Enter numbers"
+                                outcome = "Introduce numbers please"
                             }
-                            side1 = ""
-                            side2 = ""
                         },
                         modifier = Modifier.padding(10.dp),
 
