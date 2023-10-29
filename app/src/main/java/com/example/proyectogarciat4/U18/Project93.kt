@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**You enter between two and five values per keyboard.
+ * Returns the sum of these values*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project93() {

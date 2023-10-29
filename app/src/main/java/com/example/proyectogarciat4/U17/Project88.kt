@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**You enter 3 integers and take the average*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project88() {

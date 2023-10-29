@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Two words are entered by keyboard.
+ * The program calculates which of the two has more characters or if they are equal*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project91() {
@@ -63,7 +65,7 @@ fun Project91() {
                     value = firstName,
                     onValueChange = { firstName = it },
                     label = {
-                        Text("Side one of rectangle")
+                        Text("First word")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -76,7 +78,7 @@ fun Project91() {
                     value = secondName,
                     onValueChange = { secondName = it },
                     label = {
-                        Text("Side two of rectangle")
+                        Text("Second word")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -149,7 +151,7 @@ fun Project91() {
                     value = firstName,
                     onValueChange = { firstName = it },
                     label = {
-                        Text("Side one of rectangle")
+                        Text("First word")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -162,7 +164,7 @@ fun Project91() {
                     value = secondName,
                     onValueChange = { secondName = it },
                     label = {
-                        Text("Side two of rectangle")
+                        Text("Second word")
                     },
                     modifier = Modifier
                         .fillMaxWidth()

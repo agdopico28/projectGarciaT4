@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**You enter a number and the multiplication table will be displayed on the screen.
+ * You will also enter by keyboard the number of terms that you want the table to have.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project95() {

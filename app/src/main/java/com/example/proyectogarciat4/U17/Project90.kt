@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Enter two sides of the rectangle and it will show the surface of this rectangle.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project90() {

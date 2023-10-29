@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Enter the value of one side of a square and calculate the perimeter*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project83() {

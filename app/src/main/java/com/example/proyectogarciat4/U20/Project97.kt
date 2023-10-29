@@ -27,6 +27,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**You enter two integers and it shows us the largest.
+ * It does it with 5 pairs of values
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project97() {
