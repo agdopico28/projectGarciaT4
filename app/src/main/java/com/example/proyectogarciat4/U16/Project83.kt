@@ -80,7 +80,7 @@ fun Project83() {
                     Button(
                         onClick = {
                             if (side.toFloatOrNull() != null) {
-                                val perimeter = side.toFloat() * side.toFloat() * side.toFloat() * side.toFloat()
+                                val perimeter = side.toFloat() + side.toFloat() + side.toFloat() + side.toFloat()
                                 outcome = "The perimeter of the square is: $perimeter"
                             } else {
                                 outcome = "Enter numbers"
@@ -146,7 +146,7 @@ fun Project83() {
                     Button(
                         onClick = {
                             if (side.toFloatOrNull() != null) {
-                                val perimeter = side.toFloat() * side.toFloat() * side.toFloat() * side.toFloat()
+                                val perimeter = side.toFloat() + side.toFloat() + side.toFloat() + side.toFloat()
                                 outcome = "The perimeter of the square is: $perimeter"
                             } else {
                                 outcome = "Enter numbers"

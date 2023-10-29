@@ -23,6 +23,14 @@ import com.example.proyectogarciat4.U11.Project58
 import com.example.proyectogarciat4.U12.Project63
 import com.example.proyectogarciat4.U12.Project64
 import com.example.proyectogarciat4.U12.Project65
+import com.example.proyectogarciat4.U13.Project69
+import com.example.proyectogarciat4.U14.Project72
+import com.example.proyectogarciat4.U14.Project73
+import com.example.proyectogarciat4.U15.Project77
+import com.example.proyectogarciat4.U15.Project78
+import com.example.proyectogarciat4.U16.Project82
+import com.example.proyectogarciat4.U16.Project83
+import com.example.proyectogarciat4.U16.Project84
 import com.example.proyectogarciat4.U4.Project5
 import com.example.proyectogarciat4.U4.Project6
 import com.example.proyectogarciat4.U4.Project7
@@ -133,6 +141,18 @@ class MainActivity : ComponentActivity() {
                         composable("Project63") { Project63() }
                         composable("Project64") { Project64() }
                         composable("Project65") { Project65() }
+                        composable("Unit13"){ Unit13(navController = navController) }
+                        composable("Project69") { Project69() }
+                        composable("Unit14"){ Unit14(navController = navController) }
+                        composable("Project72") { Project72() }
+                        composable("Project73") { Project73() }
+                        composable("Unit15"){ Unit15(navController = navController) }
+                        composable("Project77") { Project77() }
+                        composable("Project78") { Project78() }
+                        composable("Unit16"){ Unit16(navController = navController) }
+                        composable("Project82") { Project82() }
+                        composable("Project83") { Project83() }
+                        composable("Project84") { Project84() }
                         composable("FrontPage") { FrontPage(navController = navController) }
                     }
 
