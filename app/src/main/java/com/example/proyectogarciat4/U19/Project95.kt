@@ -54,7 +54,7 @@ fun Project95() {
                 )
                 {
                     Text(
-                        text = "Project 90",
+                        text = "Project 95",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -140,7 +140,7 @@ fun Project95() {
                 )
                 {
                     Text(
-                        text = "Project 90",
+                        text = "Project 95",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,

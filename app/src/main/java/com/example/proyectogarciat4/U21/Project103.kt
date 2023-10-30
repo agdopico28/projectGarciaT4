@@ -125,7 +125,7 @@ fun Project103() {
                 }
                 Text(
                     text = outcome,
-                    modifier = Modifier.padding(bottom = 20.dp),
+                    modifier = Modifier.padding(20.dp),
                 )
             }
         }
