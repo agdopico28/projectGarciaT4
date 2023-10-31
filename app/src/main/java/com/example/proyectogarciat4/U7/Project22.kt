@@ -23,6 +23,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.proyectogarciat4.ui.theme.Blue20
+
 /**The total number of questions and the number of correct questions are entered. It depends on the percentage that is calculated, it outputs one level per screen.**/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -40,31 +42,22 @@ fun Project22() {
                 var outcome by remember { mutableStateOf("") }
 
                 Row(
-                    modifier = Modifier
-                        .padding(top = 10.dp)
+                    Modifier
+                        .padding(top = 20.dp)
                         .fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
-                ) {
+                )
+                {
                     Text(
                         text = "Project 22",
                         textAlign = TextAlign.Center,
+                        color = Blue20,
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold
                     )
                 }
-                Row(
-                    modifier = Modifier
-                        .padding(top = 7.dp)
-                        .fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Text(
-                        text = "Calculate the percentage of correct questions:",
-                        textAlign = TextAlign.Center,
-                    )
-                }
+
                 OutlinedTextField(
                     value = totalQuestions,
                     onValueChange = { totalQuestions = it },
@@ -147,32 +140,24 @@ fun Project22() {
                 var correctAnswers by remember { mutableStateOf("") }
                 var outcome by remember { mutableStateOf("") }
 
+
                 Row(
-                    modifier = Modifier
-                        .padding(top = 10.dp)
+                    Modifier
+                        .padding(top = 20.dp)
                         .fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
-                ) {
+                )
+                {
                     Text(
                         text = "Project 22",
                         textAlign = TextAlign.Center,
+                        color = Blue20,
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold
                     )
                 }
-                Row(
-                    modifier = Modifier
-                        .padding(top = 7.dp)
-                        .fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Text(
-                        text = "Calculate the percentage of correct questions:",
-                        textAlign = TextAlign.Center,
-                    )
-                }
+
                 OutlinedTextField(
                     value = totalQuestions,
                     onValueChange = { totalQuestions = it },

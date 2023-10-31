@@ -29,7 +29,7 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 
 /**You enter 8 elements and the program calculates the accumulated value of the elements,
  * the accumulated value of the elements greater than 37
- * and the number of values that are greater than 50*/
+ *  and the number of values that are greater than 50*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project103() {
