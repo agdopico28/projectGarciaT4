@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -22,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -33,6 +35,11 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 @Composable
 fun Project46() {
     val configuration = LocalConfiguration.current
+    var balance by remember { mutableStateOf("") }
+    val listBalance by remember { mutableStateOf(mutableListOf<Pair<Int, Float>>()) }
+    var accountNum by remember { mutableStateOf("") }
+    var outcome by remember { mutableStateOf("") }
+    var total by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
@@ -40,11 +47,7 @@ fun Project46() {
                 verticalArrangement = Arrangement.Top
             ) {
 
-                var accountNum by remember { mutableStateOf("") }
-                var balance by remember { mutableStateOf("") }
-                val listBalance by remember { mutableStateOf(mutableListOf<Pair<Int, Float>>()) }
-                var total by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("") }
+
 
                 Row(
                     Modifier
@@ -63,20 +66,20 @@ fun Project46() {
                     )
                 }
 
-
                 OutlinedTextField(
                     value = accountNum,
                     onValueChange = { accountNum = it },
                     label = {
-                        Text("Number")
+                        Text("Account Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp),
+                        .padding(10.dp),
                     singleLine = true,
-
-                    )
-
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Number
+                    ),
+                )
                 OutlinedTextField(
                     value = balance,
                     onValueChange = { balance = it },
@@ -87,7 +90,7 @@ fun Project46() {
                         .fillMaxWidth()
                         .padding(8.dp),
                     singleLine = true,
-                    )
+                )
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -135,11 +138,7 @@ fun Project46() {
                 modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
-                var accountNum by remember { mutableStateOf("") }
-                var balance by remember { mutableStateOf("") }
-                val listBalance by remember { mutableStateOf(mutableListOf<Pair<Int, Float>>()) }
-                var total by remember { mutableStateOf("") }
-                var outcome by remember { mutableStateOf("") }
+
 
                 Row(
                     Modifier
@@ -163,15 +162,16 @@ fun Project46() {
                     value = accountNum,
                     onValueChange = { accountNum = it },
                     label = {
-                        Text("Number")
+                        Text("Account Number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp),
+                        .padding(10.dp),
                     singleLine = true,
-
-                    )
-
+                    keyboardOptions = KeyboardOptions.Default.copy(
+                        keyboardType = KeyboardType.Number
+                    ),
+                )
                 OutlinedTextField(
                     value = balance,
                     onValueChange = { balance = it },

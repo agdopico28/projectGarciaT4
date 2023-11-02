@@ -112,21 +112,21 @@ fun Project30() {
 
                                  if (num1.toFloat() > num2.toFloat() && num1.toFloat() >  num3.toFloat()) {
                                     if (num2.toFloat() > num3.toFloat()) {
-                                        "The largest is $num1 and the smallest is $num3"
+                                        catena = "The largest is $num1 and the smallest is $num3"
                                     } else {
-                                        "The largest is $num1 and the smallest is $num2"
+                                        catena = "The largest is $num1 and the smallest is $num2"
                                     }
                                 } else if (num2.toFloat() > num1.toFloat() && num2.toFloat() >  num3.toFloat()){
                                     if (num1.toFloat() > num3.toFloat()) {
-                                        "The largest is $num2 and the smallest is $num3"
+                                        catena = "The largest is $num2 and the smallest is $num3"
                                     } else {
-                                        "The largest is $num2 and the smallest is $num1"
+                                        catena = "The largest is $num2 and the smallest is $num1"
                                     }
                                 } else {
                                     if (num1.toFloat() > num2.toFloat()) {
-                                        "The largest is $num3 and the smallest is $num2"
+                                        catena = "The largest is $num3 and the smallest is $num2"
                                     } else {
-                                        "The largest is $num3 and the smallest is $num1"
+                                        catena = "The largest is $num3 and the smallest is $num1"
                                     }
                                 }
                             } else {
@@ -232,21 +232,21 @@ fun Project30() {
 
                                 if (num1.toFloat() > num2.toFloat() && num1.toFloat() >  num3.toFloat()) {
                                     if (num2.toFloat() > num3.toFloat()) {
-                                        "The largest is $num1 and the smallest is $num3"
+                                        catena = "The largest is $num1 and the smallest is $num3"
                                     } else {
-                                        "The largest is $num1 and the smallest is $num2"
+                                        catena = "The largest is $num1 and the smallest is $num2"
                                     }
                                 } else if (num2.toFloat() > num1.toFloat() && num2.toFloat() >  num3.toFloat()){
                                     if (num1.toFloat() > num3.toFloat()) {
-                                        "The largest is $num2 and the smallest is $num3"
+                                        catena = "The largest is $num2 and the smallest is $num3"
                                     } else {
-                                        "The largest is $num2 and the smallest is $num1"
+                                        catena = "The largest is $num2 and the smallest is $num1"
                                     }
                                 } else {
                                     if (num1.toFloat() > num2.toFloat()) {
-                                        "The largest is $num3 and the smallest is $num2"
+                                        catena = "The largest is $num3 and the smallest is $num2"
                                     } else {
-                                        "The largest is $num3 and the smallest is $num1"
+                                        catena = "The largest is $num3 and the smallest is $num1"
                                     }
                                 }
                             } else {

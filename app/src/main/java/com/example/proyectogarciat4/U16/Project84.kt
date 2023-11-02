@@ -32,12 +32,11 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 @Composable
 fun Project84() {
     val configuration = LocalConfiguration.current
-    var side1 by remember { mutableStateOf("") }
-    var side2 by remember { mutableStateOf("") }
+    var side1A by remember { mutableStateOf("") }
+    var side2A by remember { mutableStateOf("") }
+    var side1B by remember { mutableStateOf("") }
+    var side2B by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
-    var x by remember { mutableStateOf(1) }
-    var perimeter by remember { mutableStateOf(0.00) }
-    var left by remember { mutableStateOf(2) }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
@@ -61,11 +60,9 @@ fun Project84() {
                     )
                 }
 
-
-
                 OutlinedTextField(
-                    value = side1,
-                    onValueChange = { side1 = it },
+                    value = side1A,
+                    onValueChange = { side1A = it },
                     label = {
                         Text("Side one of rectangle")
                     },
@@ -77,8 +74,8 @@ fun Project84() {
                     )
 
                 OutlinedTextField(
-                    value = side2,
-                    onValueChange = { side2 = it },
+                    value = side2A,
+                    onValueChange = { side2A = it },
                     label = {
                         Text("Side two of rectangle")
                     },
@@ -88,6 +85,33 @@ fun Project84() {
                     singleLine = true,
 
                     )
+
+                OutlinedTextField(
+                    value = side1B,
+                    onValueChange = { side1B = it },
+                    label = {
+                        Text("Side one of rectangle")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    singleLine = true,
+
+                    )
+
+                OutlinedTextField(
+                    value = side2B,
+                    onValueChange = { side2B = it },
+                    label = {
+                        Text("Side two of rectangle")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    singleLine = true,
+
+                    )
+
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -95,29 +119,29 @@ fun Project84() {
                 ) {
                     Button(
                         onClick = {
-                            if (side1.toFloatOrNull() != null) {
-                                if (x < 2) {
-                                    left--
-                                    outcome = "$left rectangles left"
-                                    perimeter = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    x++
-                                }else{
-                                    val perimeter2 = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    outcome = if (perimeter > perimeter2){
-                                        "The first rectangle is the largest"
-                                    }else{
-                                        "The second rectangle is the largest"
-                                    }
+                            if (side1B.toFloatOrNull() != null && side2B.toFloatOrNull()!= null && side1A.toFloatOrNull() != null && side2A.toFloatOrNull()!= null) {
+                                if (calculateArea(side1A.toFloat(),side1B.toFloat())
+                                    > calculateArea(side2A.toFloat(), side2B.toFloat()) ){
+                                    outcome = "The first rectangle is biggest"
+                                } else {
+                                    outcome = "The second rectangle is biggest"
+
+
                                 }
-                               x = 1
-                                left = 2
+                                calculateArea(side2A.toFloat(), side2B.toFloat())
+
+
+
+
+                                side1B = ""
+                                side2B = ""
+                                side1A = ""
+                                side2A = ""
 
 
                             } else {
                                 outcome = "Enter numbers"
                             }
-                            side1 = ""
-                            side2 = ""
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -158,8 +182,8 @@ fun Project84() {
 
 
                 OutlinedTextField(
-                    value = side1,
-                    onValueChange = { side1 = it },
+                    value = side1A,
+                    onValueChange = { side1A = it },
                     label = {
                         Text("Side one of rectangle")
                     },
@@ -171,8 +195,34 @@ fun Project84() {
                     )
 
                 OutlinedTextField(
-                    value = side2,
-                    onValueChange = { side2 = it },
+                    value = side2A,
+                    onValueChange = { side2A = it },
+                    label = {
+                        Text("Side two of rectangle")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    singleLine = true,
+
+                    )
+
+                OutlinedTextField(
+                    value = side1B,
+                    onValueChange = { side1B = it },
+                    label = {
+                        Text("Side one of rectangle")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(8.dp),
+                    singleLine = true,
+
+                    )
+
+                OutlinedTextField(
+                    value = side2B,
+                    onValueChange = { side2B = it },
                     label = {
                         Text("Side two of rectangle")
                     },
@@ -189,29 +239,29 @@ fun Project84() {
                 ) {
                     Button(
                         onClick = {
-                            if (side1.toFloatOrNull() != null) {
-                                if (x < 2) {
-                                    left--
-                                    outcome = "$left rectangles left"
-                                    perimeter = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    x++
-                                }else{
-                                    val perimeter2 = ((side1.toFloat() ) * (side2.toFloat())).toDouble()
-                                    outcome = if (perimeter > perimeter2){
-                                        "The first rectangle is the largest"
-                                    }else{
-                                        "The second rectangle is the largest"
-                                    }
+                            if (side1B.toFloatOrNull() != null && side2B.toFloatOrNull()!= null && side1A.toFloatOrNull() != null && side2A.toFloatOrNull()!= null) {
+                                if (calculateArea(side1A.toFloat(),side1B.toFloat())
+                                    > calculateArea(side2A.toFloat(), side2B.toFloat()) ){
+                                    outcome = "The first rectangle is biggest"
+                                } else {
+                                    outcome = "The second rectangle is biggest"
+
+
                                 }
-                                x = 1
-                                left = 2
+                                //calculateArea(side2A.toFloat(), side2B.toFloat())
+
+
+
+
+                                side1B = ""
+                                side2B = ""
+                                side1A = ""
+                                side2A = ""
 
 
                             } else {
                                 outcome = "Enter numbers"
                             }
-                            side1 = ""
-                            side2 = ""
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -226,4 +276,8 @@ fun Project84() {
             }
         }
     }
+}
+
+private fun calculateArea(side1A: Float, side2A: Float) : Float {
+    return (side1A * side2A)
 }
