@@ -39,6 +39,10 @@ import com.example.proyectogarciat4.U18.Project93
 import com.example.proyectogarciat4.U19.Project95
 import com.example.proyectogarciat4.U20.Project97
 import com.example.proyectogarciat4.U21.Project103
+import com.example.proyectogarciat4.U21.Project104
+import com.example.proyectogarciat4.U22.Project107
+import com.example.proyectogarciat4.U22.Project108
+import com.example.proyectogarciat4.U23.Project111
 import com.example.proyectogarciat4.U4.Project5
 import com.example.proyectogarciat4.U4.Project6
 import com.example.proyectogarciat4.U4.Project7
@@ -174,6 +178,12 @@ class MainActivity : ComponentActivity() {
                         composable("Project97") { Project97() }
                         composable("Unit21"){ Unit21(navController = navController) }
                         composable("Project103") { Project103() }
+                        composable("Project104") { Project104() }
+                        composable("Unit22"){ Unit22(navController = navController) }
+                        composable("Project107") { Project107() }
+                        composable("Project108") { Project108() }
+                        composable("Unit23"){ Unit23(navController = navController) }
+                        composable("Project111") { Project111() }
                         composable("FrontPage") { FrontPage(navController = navController) }
                     }
 
