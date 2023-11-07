@@ -31,13 +31,13 @@ import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.U23.Student
 import com.example.proyectogarciat4.ui.theme.Blue20
 
-
+/**We pass a name and a note on the keyboard and if it is regular (greater than or equal to 4) we show a message*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Project111() {
+fun Project115() {
     val configuration = LocalConfiguration.current
     val studentList = remember {
-        mutableStateListOf<Student>()
+        mutableStateListOf<Students>()
     }
     var nameS by remember { mutableStateOf("") }
     var markS by remember { mutableStateOf("") }
@@ -61,7 +61,7 @@ fun Project111() {
                 )
                 {
                     Text(
-                        text = "Project 111",
+                        text = "Project 115",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -108,8 +108,7 @@ fun Project111() {
                             if (nameS != null && markS.toIntOrNull() != null) {
                                 outcome = ""
                                 if(x <= 2){
-                                    val newStudent = Student()
-                                    newStudent.initialize(nameS,markS.toInt())
+                                    val newStudent = Students(nameS,markS.toInt())
                                     studentList.add(newStudent)
                                     x++
                                 }
@@ -162,7 +161,7 @@ fun Project111() {
                 )
                 {
                     Text(
-                        text = "Project 111",
+                        text = "Project 115",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -210,7 +209,7 @@ fun Project111() {
                             if (nameS != null && markS.toIntOrNull() != null) {
                                 outcome = ""
                                 if(x <= 2){
-                                    val newStudent = Student(nameS, markS.toInt())
+                                    val newStudent = Students(nameS, markS.toInt())
                                     studentList.add(newStudent)
                                     x++
                                 }
@@ -248,8 +247,8 @@ fun Project111() {
 
 
 
-
-class Student(name: String, mark: Int){
+//The student class, passing two parameters
+class Students(name: String, mark: Int){
     val name = name
     val mark = mark
     fun printStudent():String{
