@@ -29,12 +29,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**We load an array with the values entered by keyboard and print the smallest element and if it is repeated within the array*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project108() {
     val configuration = LocalConfiguration.current
     var number1 by remember { mutableStateOf("") }
-    var outcome by remember { mutableStateOf("Enter numbers") }
+    var outcome by remember { mutableStateOf("Enter numbers separated by comas") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
@@ -53,7 +54,7 @@ fun Project108() {
                 )
                 {
                     Text(
-                        text = "Project 107",
+                        text = "Project 108",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -166,25 +167,21 @@ fun Project108() {
                 ) {
                     Button(
                         onClick = {
-                            if (number1.toIntOrNull() != null) {
                                 val numbers = load(number1)
                                 if (numbers.isNotEmpty()) {
                                     val minElement = minor(numbers)
-                                    val seRepite = repeat(numbers, minElement)
+                                    val isRepeated = repeat(numbers, minElement)
                                     outcome = "The largest element is: $minElement" +
-                                            if (seRepite) "\nThe largest element is repeated in the array." else "\nThe largest element is not repeated in the array."
+                                            if (isRepeated) "\nThe largest element is repeated in the array." else "\nThe largest element is not repeated in the array."
                                 } else {
                                     outcome = "Please enter some numbers."
                                 }
-                            } else {
-                                outcome = "Introduce numbers please"
-                            }
                         },
                         modifier = Modifier.padding(10.dp),
 
 
                         ) {
-                        Text(text = "Calculate")
+                        Text(text = "Find Smaller")
                     }
                 }
                 Text(
@@ -201,7 +198,7 @@ private fun load(input: String): IntArray {
 }
 
 private fun minor(vector: IntArray): Int {
-    return vector.minOrNull() ?: vector[0] // Handle the case where the array is empty
+    return vector.minOrNull() ?: vector[0]
 }
 
 private fun repeat(vector: IntArray, buscar: Int): Boolean {
