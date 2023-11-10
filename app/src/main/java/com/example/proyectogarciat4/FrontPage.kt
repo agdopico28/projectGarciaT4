@@ -266,6 +266,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit28") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 28")
@@ -273,9 +274,117 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit29") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 29")
+                    }
+
+                    Button(
+                        onClick = { navController.navigate("Unit30") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 30")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit31") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 31")
+                    }
+                }
+                Row{
+                    Button(
+                        onClick = { navController.navigate("Unit32") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 32")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit33") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 33")
+                    }
+
+                    Button(
+                        onClick = { navController.navigate("Unit34") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 34")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit35") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 35")
+                    }
+                }
+
+                Row{
+                    Button(
+                        onClick = { navController.navigate("Unit36") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 36")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit37") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 37")
+                    }
+
+                    Button(
+                        onClick = { navController.navigate("Unit38") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 38")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit39") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 39")
+                    }
+                }
+
+                Row{
+                    Button(
+                        onClick = { navController.navigate("Unit40") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 40")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit41") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 41")
                     }
                 }
             }
@@ -308,6 +417,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit4") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 4")
@@ -315,6 +425,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit5") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 5")
@@ -325,6 +436,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit6") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 6")
@@ -332,6 +444,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit7") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 7")
@@ -341,6 +454,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit8") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 8")
@@ -348,6 +462,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit9") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 9")
@@ -357,6 +472,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit10") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 10")
@@ -364,6 +480,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit11") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 11")
@@ -373,6 +490,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit12") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 12")
@@ -380,6 +498,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit13") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 13")
@@ -390,6 +509,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit14") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 14")
@@ -397,6 +517,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit15") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 15")
@@ -406,6 +527,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit16") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 16")
@@ -413,6 +535,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit17") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 17")
@@ -422,6 +545,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit18") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 18")
@@ -429,6 +553,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit19") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 19")
@@ -439,6 +564,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit20") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 20")
@@ -446,6 +572,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit21") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 21")
@@ -456,6 +583,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit22") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 22")
@@ -463,6 +591,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit23") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 23")
@@ -472,6 +601,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit24") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 24")
@@ -479,6 +609,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit25") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 25")
@@ -489,6 +620,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit26") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 26")
@@ -496,6 +628,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit27") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 27")
@@ -506,6 +639,7 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit28") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 28")
@@ -513,9 +647,123 @@ fun FrontPage(navController: NavHostController) {
                     Button(
                         onClick = { navController.navigate("Unit29") }, modifier = Modifier
                             .width(200.dp)
+                            .weight(1f)
                             .padding(15.dp, 0.dp)
                     ) {
                         Text(text = "Unit 29")
+                    }
+                }
+
+                Row{
+                    Button(
+                        onClick = { navController.navigate("Unit30") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 30")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit31") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 31")
+                    }
+                }
+
+                Row{
+                    Button(
+                        onClick = { navController.navigate("Unit32") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 32")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit33") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 33")
+                    }
+                }
+
+                Row{
+                    Button(
+                        onClick = { navController.navigate("Unit34") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 34")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit35") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 35")
+                    }
+                }
+                Row{
+                    Button(
+                        onClick = { navController.navigate("Unit36") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 36")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit37") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 37")
+                    }
+                }
+
+                Row{
+                    Button(
+                        onClick = { navController.navigate("Unit38") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 38")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit39") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 39")
+                    }
+                }
+
+                Row{
+                    Button(
+                        onClick = { navController.navigate("Unit40") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 40")
+                    }
+                    Button(
+                        onClick = { navController.navigate("Unit41") }, modifier = Modifier
+                            .width(200.dp)
+                            .weight(1f)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Unit 41")
                     }
                 }
             }

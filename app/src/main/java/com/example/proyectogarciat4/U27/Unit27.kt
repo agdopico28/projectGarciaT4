@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U27
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
@@ -24,9 +24,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.proyectogarciat4.R
 
 @Composable
-fun Unit18(navController: NavHostController) {
+fun Unit27(navController: NavHostController) {
 
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
@@ -47,7 +48,7 @@ fun Unit18(navController: NavHostController) {
                 )
                 Spacer(modifier = Modifier.padding(5.dp))
                 Text(
-                    text = "Unit 18",
+                    text = "Unit 27",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center
 
@@ -56,12 +57,14 @@ fun Unit18(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
                 Row {
                     Button(
-                        onClick = { navController.navigate("Project93") }, modifier = Modifier
+                        onClick = { navController.navigate("Project124") }, modifier = Modifier
                             .width(200.dp)
                             .padding(15.dp, 0.dp)
                     ) {
-                        Text(text = "Project 93")
+                        Text(text = "Project 124")
                     }
+
+
 
 
                 }
@@ -84,7 +87,7 @@ fun Unit18(navController: NavHostController) {
                 )
                 Spacer(modifier = Modifier.padding(5.dp))
                 Text(
-                    text = "Unit 18",
+                    text = "Unit 27",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center,
                 )
@@ -92,11 +95,11 @@ fun Unit18(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
 
                 Button(
-                    onClick = { navController.navigate("Project93") }, modifier = Modifier
+                    onClick = { navController.navigate("Project124") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 93")
+                    Text(text = "Project 124")
                 }
 
 

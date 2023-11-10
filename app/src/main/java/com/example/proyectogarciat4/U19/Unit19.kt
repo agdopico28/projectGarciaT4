@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U19
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
@@ -24,9 +24,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.proyectogarciat4.R
 
 @Composable
-fun Unit22(navController: NavHostController) {
+fun Unit19(navController: NavHostController) {
 
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
@@ -47,7 +48,7 @@ fun Unit22(navController: NavHostController) {
                 )
                 Spacer(modifier = Modifier.padding(5.dp))
                 Text(
-                    text = "Unit 22",
+                    text = "Unit 19",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center
 
@@ -56,19 +57,11 @@ fun Unit22(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
                 Row {
                     Button(
-                        onClick = { navController.navigate("Project107") }, modifier = Modifier
+                        onClick = { navController.navigate("Project95") }, modifier = Modifier
                             .width(200.dp)
                             .padding(15.dp, 0.dp)
                     ) {
-                        Text(text = "Project 107")
-                    }
-
-                    Button(
-                        onClick = { navController.navigate("Project108") }, modifier = Modifier
-                            .width(200.dp)
-                            .padding(15.dp, 0.dp)
-                    ) {
-                        Text(text = "Project 108")
+                        Text(text = "Project 95")
                     }
 
 
@@ -92,7 +85,7 @@ fun Unit22(navController: NavHostController) {
                 )
                 Spacer(modifier = Modifier.padding(5.dp))
                 Text(
-                    text = "Unit 22",
+                    text = "Unit 19",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center,
                 )
@@ -100,19 +93,13 @@ fun Unit22(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
 
                 Button(
-                    onClick = { navController.navigate("Project107") }, modifier = Modifier
+                    onClick = { navController.navigate("Project95") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 107")
+                    Text(text = "Project 95")
                 }
-                Button(
-                    onClick = { navController.navigate("Project108") }, modifier = Modifier
-                        .width(200.dp)
-                        .padding(15.dp, 0.dp)
-                ) {
-                    Text(text = "Project 108")
-                }
+
 
             }
         }

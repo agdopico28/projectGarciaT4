@@ -1,4 +1,4 @@
-package com.example.proyectogarciat4
+package com.example.proyectogarciat4.U14
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
@@ -24,9 +24,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.proyectogarciat4.R
 
 @Composable
-fun Unit12(navController: NavHostController) {
+fun Unit14(navController: NavHostController) {
 
     val configuration = LocalConfiguration.current
     when (configuration.orientation) {
@@ -46,9 +47,8 @@ fun Unit12(navController: NavHostController) {
                         .height(100.dp)
                 )
                 Spacer(modifier = Modifier.padding(5.dp))
-
                 Text(
-                    text = "Unit 12",
+                    text = "Unit 14",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center
 
@@ -57,27 +57,20 @@ fun Unit12(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
                 Row {
                     Button(
-                        onClick = { navController.navigate("Project63") }, modifier = Modifier
+                        onClick = { navController.navigate("Project72") }, modifier = Modifier
                             .width(200.dp)
                             .padding(15.dp, 0.dp)
                     ) {
-                        Text(text = "Project 63")
-                    }
-                    Button(
-                        onClick = { navController.navigate("Project64") }, modifier = Modifier
-                            .width(200.dp)
-                            .padding(15.dp, 0.dp)
-                    ) {
-                        Text(text = "Project 64")
-                    }
-                    Button(
-                        onClick = { navController.navigate("Project65") }, modifier = Modifier
-                            .width(200.dp)
-                            .padding(15.dp, 0.dp)
-                    ) {
-                        Text(text = "Project 65")
+                        Text(text = "Project 72")
                     }
 
+                    Button(
+                        onClick = { navController.navigate("Project73") }, modifier = Modifier
+                            .width(200.dp)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Project 73")
+                    }
 
                 }
 
@@ -99,7 +92,7 @@ fun Unit12(navController: NavHostController) {
                 )
                 Spacer(modifier = Modifier.padding(5.dp))
                 Text(
-                    text = "Unit 12",
+                    text = "Unit 14",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center,
                 )
@@ -107,29 +100,20 @@ fun Unit12(navController: NavHostController) {
                 Spacer(modifier = Modifier.size(50.dp))
 
                 Button(
-                    onClick = { navController.navigate("Project63") }, modifier = Modifier
+                    onClick = { navController.navigate("Project72") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 63")
+                    Text(text = "Project 72")
                 }
+
                 Button(
-                    onClick = { navController.navigate("Project64") }, modifier = Modifier
+                    onClick = { navController.navigate("Project73") }, modifier = Modifier
                         .width(200.dp)
                         .padding(15.dp, 0.dp)
                 ) {
-                    Text(text = "Project 64")
+                    Text(text = "Project 73")
                 }
-                Button(
-                    onClick = { navController.navigate("Project65") }, modifier = Modifier
-                        .width(200.dp)
-                        .padding(15.dp, 0.dp)
-                ) {
-                    Text(text = "Project 65")
-                }
-
-
-
 
 
             }

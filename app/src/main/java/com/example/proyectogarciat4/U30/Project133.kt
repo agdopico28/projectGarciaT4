@@ -25,15 +25,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.proyectogarciat4.U29.DiceDataClass
 import com.example.proyectogarciat4.ui.theme.Blue20
 
-@OptIn(ExperimentalMaterial3Api::class)
+/**We press the button and the program searches in the  enum class for the name of the country that I have entered by code (BOLIVIA)*/
 @Composable
 fun Project133() {
     val configuration = LocalConfiguration.current
-
-    var countries by remember { mutableStateOf("")}
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -61,18 +58,6 @@ fun Project133() {
                     )
                 }
 
-                OutlinedTextField(
-                    value = countries,
-                    onValueChange = { countries = it },
-                    label = {
-                        Text("First")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true
-                )
-
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -80,13 +65,14 @@ fun Project133() {
                 ) {
                     Button(
                         onClick = {
-
+                            val country = Countries.BOLIVIA //I passed this how could it be another
+                            outcome += "The country $country has ${country.population} population"
                         },
                         modifier = Modifier.padding(10.dp),
 
 
                         ) {
-                        Text(text = "Throw")
+                        Text(text = "Country")
                     }
                 }
                 Text(
@@ -132,13 +118,14 @@ fun Project133() {
                 ) {
                     Button(
                         onClick = {
-
+                            val country = Countries.BOLIVIA //I passed this how could it be another
+                            outcome += "The country $country has ${country.population} population"
                         },
                         modifier = Modifier.padding(10.dp),
 
 
                         ) {
-                        Text(text = "Throw")
+                        Text(text = "Country")
                     }
                 }
                 Text(
@@ -151,7 +138,7 @@ fun Project133() {
 }
 
 
-enum class Countries (val habitantes: Int) {
+enum class Countries (val population: Int) {
     BRASIL (202450649),
     COLOMBIA (50364000),
     PERU (31151643),
