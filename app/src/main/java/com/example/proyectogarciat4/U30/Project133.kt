@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -22,15 +23,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
 /**We press the button and the program searches in the  enum class for the name of the country that I have entered by code (BOLIVIA)*/
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project133() {
     val configuration = LocalConfiguration.current
+    var numberCountry by remember { mutableStateOf("") }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -58,6 +62,19 @@ fun Project133() {
                     )
                 }
 
+                OutlinedTextField(
+                    value = numberCountry,
+                    onValueChange = { numberCountry = it },
+                    label = {
+                        Text("Seniority in the club (years)")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                )
+
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -65,8 +82,25 @@ fun Project133() {
                 ) {
                     Button(
                         onClick = {
-                            val country = Countries.BOLIVIA //I passed this how could it be another
-                            outcome += "The country $country has ${country.population} population"
+                            outcome = ""
+                            if(numberCountry.toIntOrNull() != 0){
+                                val country: Countries = when {
+                                    numberCountry.toInt() == 1-> Countries.BRASIL
+                                    numberCountry.toInt() == 2-> Countries.COLOMBIA
+                                    numberCountry.toInt() == 3-> Countries.PERU
+                                    numberCountry.toInt() == 4-> Countries.VENEZUELA
+                                    numberCountry.toInt() == 5-> Countries.CHILE
+                                    numberCountry.toInt() == 6-> Countries.ECUADOR
+                                    numberCountry.toInt() == 7-> Countries.BOLIVIA
+                                    numberCountry.toInt() == 8-> Countries.PARAGUAY
+                                    numberCountry.toInt() == 9-> Countries.URUGUAY
+                                    else -> {Countries.BRASIL}
+                                }
+                                outcome = "The country $country has ${country.population} population"
+                            }else{
+                                outcome = "Enter correct parameters"
+                            }
+
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -90,8 +124,6 @@ fun Project133() {
                     .verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
-
-
                 Row(
                     Modifier
                         .padding(top = 20.dp)
@@ -109,7 +141,18 @@ fun Project133() {
                     )
                 }
 
-
+                OutlinedTextField(
+                    value = numberCountry,
+                    onValueChange = { numberCountry = it },
+                    label = {
+                        Text("NUmber Country")
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                )
 
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -118,8 +161,25 @@ fun Project133() {
                 ) {
                     Button(
                         onClick = {
-                            val country = Countries.BOLIVIA //I passed this how could it be another
-                            outcome += "The country $country has ${country.population} population"
+                            outcome = ""
+                            if(numberCountry.toIntOrNull() != 0){
+                                val country: Countries = when {
+                                    numberCountry.toInt() == 1-> Countries.BRASIL
+                                    numberCountry.toInt() == 2-> Countries.COLOMBIA
+                                    numberCountry.toInt() == 3-> Countries.PERU
+                                    numberCountry.toInt() == 4-> Countries.VENEZUELA
+                                    numberCountry.toInt() == 5-> Countries.CHILE
+                                    numberCountry.toInt() == 6-> Countries.ECUADOR
+                                    numberCountry.toInt() == 7-> Countries.BOLIVIA
+                                    numberCountry.toInt() == 8-> Countries.PARAGUAY
+                                    numberCountry.toInt() == 9-> Countries.URUGUAY
+                                    else -> {Countries.BRASIL}
+                                }
+                                outcome = "The country $country has ${country.population} population"
+                            }else{
+                                outcome = "Enter correct parameters"
+                            }
+
                         },
                         modifier = Modifier.padding(10.dp),
 

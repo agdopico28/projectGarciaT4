@@ -24,6 +24,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.U28.DiceRandom
+import com.example.proyectogarciat4.U29.DiceDataClass
 import com.example.proyectogarciat4.U31.Bigger
 import com.example.proyectogarciat4.ui.theme.Blue20
 import kotlin.random.Random
@@ -32,6 +33,7 @@ import kotlin.random.Random
 @Composable
 fun Project139() {
     val configuration = LocalConfiguration.current
+    var dice by remember { mutableStateOf(DiceAsterisk((1..6).random())) }
     var dieValue by remember { mutableStateOf(7) } //enter value 7
     val dieRandom = remember { Dice(dieValue) }
     var outcome by remember { mutableStateOf("") }
@@ -123,8 +125,9 @@ fun Project139() {
                     Button(
                         onClick = {
                             dieRandom.throwTheDice()
-                            val diceAsterisk = dieRandom.toString()
-                            outcome +="${diceAsterisk}/"
+                            dieValue = dieRandom.value
+                            val diceA = dieValue.toString()
+                            outcome +="${diceA}/"
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -155,7 +158,6 @@ open class Dice(initialValue: Int) {
 
 class DiceAsterisk(initialValue: Int) : Dice(initialValue) {
     override fun toString(): String {
-        value = value.coerceIn(1..6)
         return "*".repeat(value)
     }
 }
