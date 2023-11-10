@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -22,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -33,12 +35,8 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 @Composable
 fun Project107() {
     val configuration = LocalConfiguration.current
-    var x by remember { mutableStateOf(1) }
-    var arraySize by remember { mutableStateOf("") }
-    var numValue by remember { mutableStateOf("") }
-    var numArray  by remember { mutableStateOf<IntArray?>(null) }
-    var arrayEnter by remember { mutableStateOf(true) }
-    var outcome by remember { mutableStateOf("Enter numbers") }
+    var number1 by remember { mutableStateOf("") }
+    var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
@@ -64,25 +62,18 @@ fun Project107() {
                     )
                 }
 
-
-
-
-
-
                 OutlinedTextField(
-                    value = arraySize,
-                    onValueChange = { arraySize = it },
+                    value = number1,
+                    onValueChange = { number1 = it },
                     label = {
-                        Text("Number one")
+                        Text("First")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp),
+                        .padding(10.dp),
                     singleLine = true,
-
-
-                    )
-
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                )
 
 
                 Row(
@@ -92,35 +83,35 @@ fun Project107() {
                 ) {
                     Button(
                         onClick = {
-                            if (arraySize.toIntOrNull() != null) {
-                                arrayEnter = false
-                                if (x <= arraySize.toInt()) {
-                                    if (numArray == null) {
-                                        numArray = IntArray(arraySize.toInt())
-                                    }
-                                    numArray!![x - 1] = numValue.toInt()
-                                    x++
-                                    numValue = ""
-                                    if (x > arraySize.toInt()) {
-                                        val sum = numArray?.sum() ?: 0
-                                        outcome =
-                                            "Array creation completed. Sum of array elements: $sum"
-                                        arraySize = ""
-                                        x = 1
-                                        numArray = null
-                                        arrayEnter = true
-                                    }
-                                }
-
-                            } else {
-                                outcome = "Introduce numbers please"
-                            }
+                            outcome+= ""
+                            val numbers = load(number1)
+                            outcome += "Complete array listing:\n" + numbers.joinToString(separator = "\n")
                         },
                         modifier = Modifier.padding(10.dp),
 
 
                         ) {
-                        Text(text = "Calculate")
+                        Text(text = "Load")
+                    }
+                }
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Button(
+                        onClick = {
+                            outcome+= ""
+                            val numbers = load(number1)
+                            val sum = add(numbers)
+                            outcome += "The sum of all elements is $sum"
+                        },
+                        modifier = Modifier.padding(10.dp),
+
+
+                        ) {
+                        Text(text = "Addition")
                     }
                 }
                 Text(
@@ -138,8 +129,6 @@ fun Project107() {
                     .verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
-
-
                 Row(
                     Modifier
                         .padding(top = 20.dp)
@@ -157,25 +146,18 @@ fun Project107() {
                     )
                 }
 
-
-
-
-
-
                 OutlinedTextField(
-                    value = arraySize,
-                    onValueChange = { arraySize = it },
+                    value = number1,
+                    onValueChange = { number1 = it },
                     label = {
-                        Text("Number one")
+                        Text("First")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp),
+                        .padding(10.dp),
                     singleLine = true,
-
-
-                    )
-
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                )
 
 
                 Row(
@@ -185,35 +167,35 @@ fun Project107() {
                 ) {
                     Button(
                         onClick = {
-                            if (arraySize.toIntOrNull() != null) {
-                                arrayEnter = false
-                                if (x <= arraySize.toInt()) {
-                                    if (numArray == null) {
-                                        numArray = IntArray(arraySize.toInt())
-                                    }
-                                    numArray!![x - 1] = numValue.toInt()
-                                    x++
-                                    numValue = ""
-                                    if (x > arraySize.toInt()) {
-                                        val sum = numArray?.sum() ?: 0
-                                        outcome =
-                                            "Array creation completed. Sum of array elements: $sum"
-                                        arraySize = ""
-                                        x = 1
-                                        numArray = null
-                                        arrayEnter = true
-                                    }
-                                }
-
-                            } else {
-                                outcome = "Introduce numbers please"
-                            }
+                            outcome+= ""
+                            val numbers = load(number1)
+                            outcome += "Complete array listing:\n" + numbers.joinToString(separator = "\n")
                         },
                         modifier = Modifier.padding(10.dp),
 
 
                         ) {
-                        Text(text = "Calculate")
+                        Text(text = "Load")
+                    }
+                }
+
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Button(
+                        onClick = {
+                            outcome+= ""
+                            val numbers = load(number1)
+                            val sum = add(numbers)
+                            outcome += "The sum of all elements is $sum"
+                        },
+                        modifier = Modifier.padding(10.dp),
+
+
+                        ) {
+                        Text(text = "Addition")
                     }
                 }
                 Text(
@@ -223,4 +205,11 @@ fun Project107() {
             }
         }
     }
+}
+private fun load(input: String): List<Int> {
+    return input.split(",").mapNotNull { it.trim().toIntOrNull() }
+}
+
+private fun add(numbers: List<Int>): Int {
+    return numbers.sum()
 }

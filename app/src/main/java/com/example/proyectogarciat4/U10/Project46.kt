@@ -35,20 +35,16 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 @Composable
 fun Project46() {
     val configuration = LocalConfiguration.current
+    var accountNumber by remember { mutableStateOf("") }
     var balance by remember { mutableStateOf("") }
-    val listBalance by remember { mutableStateOf(mutableListOf<Pair<Int, Float>>()) }
-    var accountNum by remember { mutableStateOf("") }
+    var totalCreditors by remember { mutableStateOf(0.0) }
     var outcome by remember { mutableStateOf("") }
-    var total by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
             Column(
                 modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
-
-
-
                 Row(
                     Modifier
                         .padding(top = 20.dp)
@@ -67,18 +63,16 @@ fun Project46() {
                 }
 
                 OutlinedTextField(
-                    value = accountNum,
-                    onValueChange = { accountNum = it },
+                    value = accountNumber,
+                    onValueChange = { accountNumber = it },
                     label = {
-                        Text("Account Number")
+                        Text("Account number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
                     singleLine = true,
-                    keyboardOptions = KeyboardOptions.Default.copy(
-                        keyboardType = KeyboardType.Number
-                    ),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )
                 OutlinedTextField(
                     value = balance,
@@ -88,9 +82,11 @@ fun Project46() {
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp),
+                        .padding(10.dp),
                     singleLine = true,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )
+
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -98,27 +94,26 @@ fun Project46() {
                 ) {
                     Button(
                         onClick = {
-                            if (balance.toFloatOrNull() != null && accountNum.toIntOrNull() != null) {
-                                for (b in listBalance){
-                                    if (accountNum.toInt() == b.first) {
-                                        total = b.second.toString()
+                            val account = accountNumber.toIntOrNull()
+                            val saldo = balance.toDoubleOrNull()
+                            if (account != null && account >= 0 && saldo != null) {
+                                when {
+                                    saldo > 0 -> {
+                                        outcome += "Credit Balance."
+                                        totalCreditors += saldo
                                     }
-                                    total += balance.toFloat()
-                                    listBalance.add(Pair(accountNum.toInt(), total.toFloat()))
-                                    outcome = if (total.toFloat() < 0.0) {
-                                        "Debt Balance"
-                                    } else if (total.toFloat() > 0.0) {
-                                        "Credit balance"
-                                    } else {
-                                        "Zero balance"
-                                    }
+                                    saldo < 0 -> outcome += "Debit Balance."
+                                    else -> outcome += "Null Balance."
                                 }
+                                // Clear the input fields
+                                accountNumber = ""
                                 balance = ""
-                            } else {
-                                outcome = "Introduce correct parameters"
+                            } else if (account != null && account < 0) {
+                                outcome += "Total Credit Balances: $totalCreditors"
                             }
-                            accountNum = ""
+                            accountNumber = ""
                             balance = ""
+                            outcome += ""
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -138,8 +133,6 @@ fun Project46() {
                 modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.Top
             ) {
-
-
                 Row(
                     Modifier
                         .padding(top = 20.dp)
@@ -157,20 +150,17 @@ fun Project46() {
                     )
                 }
 
-
                 OutlinedTextField(
-                    value = accountNum,
-                    onValueChange = { accountNum = it },
+                    value = accountNumber,
+                    onValueChange = { accountNumber = it },
                     label = {
-                        Text("Account Number")
+                        Text("Account number")
                     },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
                     singleLine = true,
-                    keyboardOptions = KeyboardOptions.Default.copy(
-                        keyboardType = KeyboardType.Number
-                    ),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )
                 OutlinedTextField(
                     value = balance,
@@ -180,9 +170,11 @@ fun Project46() {
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp),
+                        .padding(10.dp),
                     singleLine = true,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
                 )
+
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -190,27 +182,26 @@ fun Project46() {
                 ) {
                     Button(
                         onClick = {
-                            if (balance.toFloatOrNull() != null && accountNum.toIntOrNull() != null) {
-                                for (b in listBalance){
-                                    if (accountNum.toInt() == b.first) {
-                                        total = b.second.toString()
+                            val account = accountNumber.toIntOrNull()
+                            val saldo = balance.toDoubleOrNull()
+                            if (account != null && account >= 0 && saldo != null) {
+                                when {
+                                    saldo > 0 -> {
+                                        outcome += "Credit Balance."
+                                        totalCreditors += saldo
                                     }
-                                    total += balance.toFloat()
-                                    listBalance.add(Pair(accountNum.toInt(), total.toFloat()))
-                                    outcome = if (total.toFloat() < 0.0) {
-                                        "Debt Balance"
-                                    } else if (total.toFloat() > 0.0) {
-                                        "Credit balance"
-                                    } else {
-                                        "Zero balance"
-                                    }
+                                    saldo < 0 -> outcome += "Debit Balance."
+                                    else -> outcome += "Null Balance."
                                 }
+                                // Clear the input fields
+                                accountNumber = ""
                                 balance = ""
-                            } else {
-                                outcome = "Introduce correct parameters"
+                            } else if (account != null && account < 0) {
+                                outcome += "Total Credit Balances: $totalCreditors"
                             }
-                            accountNum = ""
+                            accountNumber = ""
                             balance = ""
+                            outcome += ""
                         },
                         modifier = Modifier.padding(10.dp),
 
