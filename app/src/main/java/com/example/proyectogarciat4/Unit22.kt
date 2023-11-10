@@ -47,7 +47,7 @@ fun Unit22(navController: NavHostController) {
                 )
                 Spacer(modifier = Modifier.padding(5.dp))
                 Text(
-                    text = "Unit 21",
+                    text = "Unit 22",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center
 
@@ -92,7 +92,7 @@ fun Unit22(navController: NavHostController) {
                 )
                 Spacer(modifier = Modifier.padding(5.dp))
                 Text(
-                    text = "Unit 21",
+                    text = "Unit 22",
                     fontSize = 40.sp,
                     textAlign = TextAlign.Center,
                 )

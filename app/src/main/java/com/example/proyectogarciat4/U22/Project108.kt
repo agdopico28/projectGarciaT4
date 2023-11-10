@@ -92,8 +92,8 @@ fun Project108() {
                                 if (numbers.isNotEmpty()) {
                                     val minElement = minor(numbers)
                                     val seRepite = repeat(numbers, minElement)
-                                    outcome = "The largest element is: $minElement" +
-                                            if (seRepite) "\nThe largest element is repeated in the array." else "\nThe largest element is not repeated in the array."
+                                    outcome = "The minor element is: $minElement" +
+                                            if (seRepite) "\nThe minor element is repeated in the array." else "\nThe largest element is not repeated in the array."
                                 } else {
                                     outcome = "Please enter some numbers."
                                 }
@@ -134,7 +134,7 @@ fun Project108() {
                 )
                 {
                     Text(
-                        text = "Project 107",
+                        text = "Project 108",
                         textAlign = TextAlign.Center,
                         color = Blue20,
                         fontSize = 30.sp,
@@ -171,8 +171,8 @@ fun Project108() {
                                 if (numbers.isNotEmpty()) {
                                     val minElement = minor(numbers)
                                     val isRepeated = repeat(numbers, minElement)
-                                    outcome = "The largest element is: $minElement" +
-                                            if (isRepeated) "\nThe largest element is repeated in the array." else "\nThe largest element is not repeated in the array."
+                                    outcome = "The minor element is: $minElement" +
+                                            if (isRepeated) "\nThe minor element is repeated in the array." else "\nThe largest element is not repeated in the array."
                                 } else {
                                     outcome = "Please enter some numbers."
                                 }

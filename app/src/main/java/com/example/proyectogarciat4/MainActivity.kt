@@ -43,6 +43,14 @@ import com.example.proyectogarciat4.U21.Project104
 import com.example.proyectogarciat4.U22.Project107
 import com.example.proyectogarciat4.U22.Project108
 import com.example.proyectogarciat4.U23.Project111
+import com.example.proyectogarciat4.U24.Project115
+import com.example.proyectogarciat4.U24.Project116
+import com.example.proyectogarciat4.U25.Project118
+import com.example.proyectogarciat4.U26.Project121
+import com.example.proyectogarciat4.U27.Project124
+import com.example.proyectogarciat4.U28.Project126
+import com.example.proyectogarciat4.U28.Project127
+import com.example.proyectogarciat4.U29.Project130
 import com.example.proyectogarciat4.U4.Project5
 import com.example.proyectogarciat4.U4.Project6
 import com.example.proyectogarciat4.U4.Project7
@@ -184,6 +192,20 @@ class MainActivity : ComponentActivity() {
                         composable("Project108") { Project108() }
                         composable("Unit23"){ Unit23(navController = navController) }
                         composable("Project111") { Project111() }
+                        composable("Unit24"){ Unit24(navController = navController) }
+                        composable("Project115") { Project115() }
+                        composable("Project116") { Project116() }
+                        composable("Unit25"){ Unit25(navController = navController) }
+                        composable("Project118") { Project118() }
+                        composable("Unit26"){ Unit26(navController = navController) }
+                        composable("Project121") { Project121() }
+                        composable("Unit27"){ Unit27(navController = navController) }
+                        composable("Project124") { Project124() }
+                        composable("Unit28"){ Unit28(navController = navController) }
+                        composable("Project126") { Project126() }
+                        composable("Project127") { Project127() }
+                        composable("Unit29"){ Unit29(navController = navController) }
+                        composable("Project130") { Project130() }
                         composable("FrontPage") { FrontPage(navController = navController) }
                     }
 

@@ -30,7 +30,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
-
+/**There is a children's class.
+ * We enter five ages separated by commas.
+ * The program will obtain the May of the children and the average of these ages*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project118() {
@@ -96,6 +98,7 @@ fun Project118() {
                             } else {
                                 outcome = "Introduce numbers separated by comas please"
                             }
+                            outcome +=""
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -170,6 +173,7 @@ fun Project118() {
                             } else {
                                 outcome = "Introduce numbers separated by comas please"
                             }
+                            outcome +=""
                         },
                         modifier = Modifier.padding(10.dp),
 

@@ -29,6 +29,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Two classes, one Member and the other Club.
+ * That of Partner with two variables (name and seniority).
+ * In Club you have two methods, one to add a method and another to remove the oldest member.
+ * You enter the name and seniority of the member on the screen, and it will show the oldest*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project121() {
@@ -104,7 +108,7 @@ fun Project121() {
                     Button(
                         onClick = {
                             if (name.isNotBlank() && seniority.toIntOrNull() != null) {
-                                club.addMember(Member(name, seniority.toInt()))
+                                club.addMember(Partner(name, seniority.toInt()))
                                 name = ""
                                 seniority = ""
                                 val mostSeniorMember = club.memberWithMostSeniority()
@@ -114,6 +118,7 @@ fun Project121() {
                                 } else {
                                     "No members in the club yet."
                                 }
+                                outcome +=""
                             }
                         },
                         modifier = Modifier.padding(10.dp),
@@ -196,7 +201,7 @@ fun Project121() {
                     Button(
                         onClick = {
                             if (name.isNotBlank() && seniority.toIntOrNull() != null) {
-                                club.addMember(Member(name, seniority.toInt()))
+                                club.addMember(Partner(name, seniority.toInt()))
                                 name = ""
                                 seniority = ""
                                 val mostSeniorMember = club.memberWithMostSeniority()
@@ -206,6 +211,7 @@ fun Project121() {
                                 } else {
                                     "No members in the club yet."
                                 }
+                                outcome +=""
                             }
                         },
                         modifier = Modifier.padding(10.dp),
@@ -227,13 +233,13 @@ fun Project121() {
 
 
 
-//The Club class , with constructor method
-class Member(val name: String, val seniority: Int)
-
+//The Partner class
+class Partner(val name: String, val seniority: Int)
+//The Club class
 class Club {
-    private var members = arrayOf<Member>()
+    private var members = arrayOf<Partner>()
 
-    fun addMember(member: Member) {
+    fun addMember(member: Partner) {
         if (members.size < 3) {
             members += member
         } else {
@@ -241,7 +247,7 @@ class Club {
         }
     }
 
-    fun memberWithMostSeniority(): Member? {
+    fun memberWithMostSeniority(): Partner? {
         return members.maxByOrNull { it.seniority }
     }
 }

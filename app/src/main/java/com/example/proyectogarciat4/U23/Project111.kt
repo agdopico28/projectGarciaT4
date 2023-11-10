@@ -32,6 +32,8 @@ import com.example.proyectogarciat4.ui.theme.Blue20
 import java.lang.System.load
 import java.lang.System.out
 
+/**We pass a name and a note on the keyboard and if it is regular (greater than or equal to 4) we show a message.
+ * In the Student class, the name and grade are passed as variables.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project111() {

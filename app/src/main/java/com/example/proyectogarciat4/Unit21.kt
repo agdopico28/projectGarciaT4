@@ -63,6 +63,13 @@ fun Unit21(navController: NavHostController) {
                         Text(text = "Project 103")
                     }
 
+                    Button(
+                        onClick = { navController.navigate("Project104") }, modifier = Modifier
+                            .width(200.dp)
+                            .padding(15.dp, 0.dp)
+                    ) {
+                        Text(text = "Project 104")
+                    }
 
                 }
 
@@ -99,6 +106,13 @@ fun Unit21(navController: NavHostController) {
                     Text(text = "Project 103")
                 }
 
+                Button(
+                    onClick = { navController.navigate("Project104") }, modifier = Modifier
+                        .width(200.dp)
+                        .padding(15.dp, 0.dp)
+                ) {
+                    Text(text = "Project 104")
+                }
 
             }
         }

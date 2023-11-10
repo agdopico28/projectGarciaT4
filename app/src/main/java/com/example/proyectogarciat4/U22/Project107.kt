@@ -27,7 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
-/**We enter an array of the elements that you type by keyboard and it returns the sum of all the elements in the array*/
+/**We enter an array of the elements that you type by keyboard
+ * and it returns the sum of all the elements in the array*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project107() {
