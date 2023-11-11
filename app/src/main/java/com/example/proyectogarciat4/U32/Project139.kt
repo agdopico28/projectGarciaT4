@@ -23,19 +23,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.proyectogarciat4.U28.DiceRandom
-import com.example.proyectogarciat4.U29.DiceDataClass
-import com.example.proyectogarciat4.U31.Bigger
 import com.example.proyectogarciat4.ui.theme.Blue20
-import kotlin.random.Random
 
 
 @Composable
 fun Project139() {
     val configuration = LocalConfiguration.current
-    var dice by remember { mutableStateOf(DiceAsterisk((1..6).random())) }
-    var dieValue by remember { mutableStateOf(7) } //enter value 7
-    val dieRandom = remember { Dice(dieValue) }
+    var dice = Dice()
+    var diceAsterisk = DiceAsterisk()
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -70,9 +65,11 @@ fun Project139() {
                 ) {
                     Button(
                         onClick = {
-                            dieRandom.throwTheDice()
-                            val diceAsterisk = dieRandom.toString()
-                            outcome +="${diceAsterisk}/"
+                            dice.roll()
+                            outcome += dice.showValue()
+
+                            diceAsterisk.roll()
+                            outcome += diceAsterisk.showValue()
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -124,10 +121,11 @@ fun Project139() {
                 ) {
                     Button(
                         onClick = {
-                            dieRandom.throwTheDice()
-                            dieValue = dieRandom.value
-                            val diceA = dieValue.toString()
-                            outcome +="${diceA}/"
+                            dice.roll()
+                            outcome += dice.showValue()
+
+                            diceAsterisk.roll()
+                            outcome += diceAsterisk.showValue()
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -145,19 +143,19 @@ fun Project139() {
     }
 }
 
-open class Dice(initialValue: Int) {
-    var value: Int = if (initialValue in 1..6) initialValue else 1
-        set(value) {
-            field = if (value in 1..6) value else 1
-        }
-
-    fun throwTheDice() {
-        value = Random.nextInt(1, 7)
+open class Dice {
+    var value: Int = 0
+    open fun roll() {
+        value = (1..6).random()
+    }
+    open fun showValue(): String {
+        return "Dice value: $value \n"
     }
 }
 
-class DiceAsterisk(initialValue: Int) : Dice(initialValue) {
-    override fun toString(): String {
-        return "*".repeat(value)
+
+class DiceAsterisk : Dice() {
+    override fun showValue(): String {
+        return "Squared value: ${"*".repeat(value)}/ \n"
     }
 }
