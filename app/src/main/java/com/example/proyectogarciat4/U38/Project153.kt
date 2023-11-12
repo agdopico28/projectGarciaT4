@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**We insert 10 values per keyboard and they are saved in a FloatArray.
+ * The program shows how many values are less than 50.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project153() {

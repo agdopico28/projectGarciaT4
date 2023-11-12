@@ -25,7 +25,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
-
+/**We create a Dice class that generates a random value between 1 and 6.
+ * Another DiceAsterisk class that returns a value between 1 and 6 but with asterisks.
+ * The program displays them on the screen when you press the button*/
 @Composable
 fun Project139() {
     val configuration = LocalConfiguration.current

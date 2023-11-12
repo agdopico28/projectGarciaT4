@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
-
+/**We enter a name and age via keyboard and the program tells you if you are of legal age in both Argentina and the USA.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project148() {

@@ -102,12 +102,29 @@ import com.example.proyectogarciat4.U4.Project7
 import com.example.proyectogarciat4.U4.Project8
 import com.example.proyectogarciat4.U4.Project9
 import com.example.proyectogarciat4.U4.Unit4
+import com.example.proyectogarciat4.U40.Project160
+import com.example.proyectogarciat4.U40.Project161
 import com.example.proyectogarciat4.U40.Unit40
+import com.example.proyectogarciat4.U41.Project162
+import com.example.proyectogarciat4.U41.Project163
+import com.example.proyectogarciat4.U41.Project164
+import com.example.proyectogarciat4.U41.Project165
+import com.example.proyectogarciat4.U41.Project166
+import com.example.proyectogarciat4.U41.Project167
+import com.example.proyectogarciat4.U41.Project168
+import com.example.proyectogarciat4.U41.Project169
 import com.example.proyectogarciat4.U41.Unit41
+import com.example.proyectogarciat4.U42.Project172
 import com.example.proyectogarciat4.U42.Unit42
+import com.example.proyectogarciat4.U45.Project178
+import com.example.proyectogarciat4.U45.Project179
+import com.example.proyectogarciat4.U45.Project180
 import com.example.proyectogarciat4.U45.Unit45
+import com.example.proyectogarciat4.U46.Project186
 import com.example.proyectogarciat4.U46.Unit46
+import com.example.proyectogarciat4.U47.Project189
 import com.example.proyectogarciat4.U47.Unit47
+import com.example.proyectogarciat4.U48.Project191
 import com.example.proyectogarciat4.U48.Unit48
 import com.example.proyectogarciat4.U5.Project10
 import com.example.proyectogarciat4.U5.Project11
@@ -365,41 +382,41 @@ class MainActivity : ComponentActivity() {
 
                         //Unit 40
                         composable("Unit40"){ Unit40(navController = navController) }
-//                        composable("Project160") { Project160() }
-//                        composable("Project161") { Project161() }
+                        composable("Project160") { Project160() }
+                        composable("Project161") { Project161() }
 
                         //Unit 41
                         composable("Unit41"){ Unit41(navController = navController) }
-//                        composable("Project162") { Project162() }
-//                        composable("Project163") { Project163() }
-//                        composable("Project164") { Project164() }
-//                        composable("Project165") { Project165() }
-//                        composable("Project166") { Project166() }
-//                        composable("Project167") { Project167() }
-//                        composable("Project168") { Project168() }
-//                        composable("Project169") { Project169() }
+                        composable("Project162") { Project162() }
+                        composable("Project163") { Project163() }
+                        composable("Project164") { Project164() }
+                        composable("Project165") { Project165() }
+                        composable("Project166") { Project166() }
+                        composable("Project167") { Project167() }
+                        composable("Project168") { Project168() }
+                        composable("Project169") { Project169() }
 
                         //Unit 42
                         composable("Unit42"){ Unit42(navController = navController) }
-//                        composable("Project172") { Project172() }
+                        composable("Project172") { Project172() }
 
                         //Unit 45
                         composable("Unit45"){ Unit45(navController = navController) }
-//                        composable("Project178") { Project178() }
-//                        composable("Project179") { Project179() }
-//                        composable("Project180") { Project180() }
+                        composable("Project178") { Project178() }
+                        composable("Project179") { Project179() }
+                        composable("Project180") { Project180() }
 
                         //Unit 46
                         composable("Unit46"){ Unit46(navController = navController) }
-//                        composable("Project186") { Project186() }
+                        composable("Project186") { Project186() }
 
                         //Unit 47
                         composable("Unit47"){ Unit47(navController = navController) }
-//                        composable("Project189") { Project189() }
+                        composable("Project189") { Project189() }
 
                         //Unit 48
                         composable("Unit48"){ Unit48(navController = navController) }
-//                        composable("Project191") { Project191() }
+                        composable("Project191") { Project191() }
                     }
 
                 }
@@ -408,12 +425,3 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ProyectoGarciaT4Theme {
-
-
-    }
-}

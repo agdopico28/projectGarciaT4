@@ -29,13 +29,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Roll the dice and get 5 random numbers.
+ * The program shows on the screen the number of counters for each number.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project157() {
     val configuration = LocalConfiguration.current
-    var vectorValues by remember { mutableStateOf("") }
-    var vectorCount by remember { mutableStateOf(0) }
-    var vector = Array(5) { Dice157() }
     var outcome by remember { mutableStateOf("") }
     when (configuration.orientation) {
         Configuration.ORIENTATION_LANDSCAPE -> {
@@ -63,21 +62,6 @@ fun Project157() {
                     )
                 }
 
-                OutlinedTextField(
-                    value = vectorValues,
-                    onValueChange = {
-                        vectorValues = it
-                    },
-                    label = {
-                        Text("Enter element")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true,
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-                )
-
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Center,
@@ -85,35 +69,35 @@ fun Project157() {
                 ) {
                     Button(
                         onClick = {
-                            if (vectorCount < 5) {
-                                val element = vectorValues.toIntOrNull() ?: 0
-                                vector[vectorCount].valor = element
-                                vectorValues = ""
-                                vectorCount++
-
-                                if (vectorCount == 5) {
-                                    // Print the values of the dice
-                                    for (i in vector.indices) {
-                                        vector[i].throwDice()
-                                        vector[i].printValue()
-                                    }
-
-                                    val count1 = vector.count { it.valor == 1 }
-                                    val count2 = vector.count { it.valor == 2 }
-                                    val count3 = vector.count { it.valor == 3 }
-                                    val count4 = vector.count { it.valor == 4 }
-                                    val count5 = vector.count { it.valor == 5 }
-                                    val count6 = vector.count { it.valor == 6 }
-
-                                    outcome = "Occurrences:\n " +
-                                            "1: $count1 \n " +
-                                            "2: $count2 \n " +
-                                            "3: $count3 \n " +
-                                            "4: $count4 \n " +
-                                            "5: $count5 \n " +
-                                            "6: $count6"
+                            outcome = ""
+                            val arrayDice: Array<Dice157> =
+                                arrayOf(Dice157(),Dice157(),Dice157(), Dice157(), Dice157())
+                            for (dice in arrayDice) {
+                                dice.throwDice()
+                                outcome += dice.printValue()
+                            }
+                            var cant1 = 0
+                            var cant2 = 0
+                            var cant3 = 0
+                            var cant4 = 0
+                            var cant5 = 0
+                            var cant6 = 0
+                            arrayDice.forEach {
+                                when (it.value) {
+                                    1 -> cant1++
+                                    2 -> cant2++
+                                    3 -> cant3++
+                                    4 -> cant4++
+                                    5 -> cant5++
+                                    6 -> cant6++
                                 }
                             }
+                            outcome += "Amount of 1: $cant1\n" +
+                                    "Amount of 2: $cant2\n" +
+                                    "Amount of 3: $cant3\n" +
+                                    "Amount of 4: $cant4\n" +
+                                    "Amount of 5: $cant5\n" +
+                                    "Amount of 6: $cant6\n"
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -154,20 +138,6 @@ fun Project157() {
                     )
                 }
 
-                OutlinedTextField(
-                    value = vectorValues,
-                    onValueChange = {
-                        vectorValues = it
-                    },
-                    label = {
-                        Text("Enter element")
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(10.dp),
-                    singleLine = true,
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
-                )
 
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -176,35 +146,35 @@ fun Project157() {
                 ) {
                     Button(
                         onClick = {
-                            if (vectorCount < 5) {
-                                val element = vectorValues.toIntOrNull() ?: 0
-                                vector[vectorCount].valor = element
-                                vectorValues = ""
-                                vectorCount++
-
-                                if (vectorCount == 5) {
-                                    // Print the values of the dice
-                                    for (i in vector.indices) {
-                                        vector[i].throwDice()
-                                        vector[i].printValue()
-                                    }
-
-                                    val count1 = vector.count { it.valor == 1 }
-                                    val count2 = vector.count { it.valor == 2 }
-                                    val count3 = vector.count { it.valor == 3 }
-                                    val count4 = vector.count { it.valor == 4 }
-                                    val count5 = vector.count { it.valor == 5 }
-                                    val count6 = vector.count { it.valor == 6 }
-
-                                    outcome = "Occurrences:\n " +
-                                            "1: $count1 \n " +
-                                            "2: $count2 \n " +
-                                            "3: $count3 \n " +
-                                            "4: $count4 \n " +
-                                            "5: $count5 \n " +
-                                            "6: $count6"
+                            outcome = ""
+                            val arrayDice: Array<Dice157> =
+                                arrayOf(Dice157(),Dice157(),Dice157(), Dice157(), Dice157())
+                            for (dice in arrayDice) {
+                                dice.throwDice()
+                                outcome += dice.printValue()
+                            }
+                            var cant1 = 0
+                            var cant2 = 0
+                            var cant3 = 0
+                            var cant4 = 0
+                            var cant5 = 0
+                            var cant6 = 0
+                            arrayDice.forEach {
+                                when (it.value) {
+                                    1 -> cant1++
+                                    2 -> cant2++
+                                    3 -> cant3++
+                                    4 -> cant4++
+                                    5 -> cant5++
+                                    6 -> cant6++
                                 }
                             }
+                            outcome += "Amount of 1: $cant1\n" +
+                                    "Amount of 2: $cant2\n" +
+                                    "Amount of 3: $cant3\n" +
+                                    "Amount of 4: $cant4\n" +
+                                    "Amount of 5: $cant5\n" +
+                                    "Amount of 6: $cant6\n"
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -222,14 +192,14 @@ fun Project157() {
     }
 }
 
-private class Dice157 {
-    var valor: Int = 1
+private class Dice157(var value : Int = 1) {
+
 
     fun throwDice() {
-        valor = (1..6).random()
+        value = ((Math.random() * 6) + 1).toInt()
     }
 
-    fun printValue() {
-        println("Valor del dado: $valor")
+    fun printValue(): String {
+        return "$value\n"
     }
 }

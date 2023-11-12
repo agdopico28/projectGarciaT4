@@ -29,6 +29,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**We implement Figure143 and two classes Square and Rectangle.
+ * The program asks for three numbers and with the first it calculates the perimeter and area of ​​the square and with the other two the same of the rectangle.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project143() {

@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
-
+/**Every time you press the button, the program calculates 5 random numbers between 1 and 6 and shows them to you on the screen.*/
 @Composable
 fun Project146() {
     val configuration = LocalConfiguration.current

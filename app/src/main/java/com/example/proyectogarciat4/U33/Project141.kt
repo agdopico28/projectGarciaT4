@@ -30,6 +30,8 @@ import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 import java.time.chrono.HijrahEra
 
+/**We declare an abstract class BankDitch and subclasses SavingsBank and FixedTerm.
+ * The program asks you for the owner and the amount and shows it*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project141() {

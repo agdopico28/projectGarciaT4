@@ -29,7 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
-
+/**We create an interface Point142 and two classes PlanarPoint and SpatialPoint.
+ * The program prints the point on the plane and in the space that you enter on the keyboard.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project142() {

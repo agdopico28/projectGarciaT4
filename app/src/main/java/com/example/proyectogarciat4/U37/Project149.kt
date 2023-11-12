@@ -29,7 +29,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
-
+/**We enter three numbers using the keyboard and the program displays the addition and subtraction of the first two numbers on the screen.
+ * With the first and the third it makes the power of the first raised to the third number*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project149() {
