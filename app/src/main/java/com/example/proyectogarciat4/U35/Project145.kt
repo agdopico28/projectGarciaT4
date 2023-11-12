@@ -29,9 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
-/**
-
-The program increases the price by 10% every time you press the button.
+/**The program increases the price by 10% every time you press the button.
 For this we have a data class Article and two functions increasePrices and ArticleList*/
 @Composable
 fun Project145() {

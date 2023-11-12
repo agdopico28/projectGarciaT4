@@ -225,19 +225,19 @@ fun Project142() {
 
 // Interface definition
 interface Point142 {
-    fun print()
+    fun print(): String
 }
 
 // Implementing classes
 class PlanarPoint(val x: Int, val y: Int) : Point142 {
-    override fun print() {
-        println("Point on the plane: ($x,$y)\n")
+    override fun print(): String {
+        return "Point on the plane: ($x,$y)\n"
     }
 }
 
 // Implementing classes
 class SpatialPoint(val x: Int, val y: Int, val z: Int) : Point142 {
-    override fun print() {
-        println("Point in space: ($x,$y,$z)\n")
+    override fun print(): String {
+        return "Point in space: ($x,$y,$z)\n"
     }
 }
