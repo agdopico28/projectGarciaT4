@@ -11,6 +11,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -26,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**When you press the button, the columns and rows and the value that we have assigned by code will appear.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project166() {
@@ -72,7 +74,7 @@ fun Project166() {
                             play[1, 2] = 2
                             play[1, 0] = 1
 
-
+                            outcome += play.toString()
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -122,18 +124,13 @@ fun Project166() {
                     Button(
                         onClick = {
                             val play = TaTeTi()
-                            outcome += play.set(0,0,1)
+                            play[0, 0] = 1
                             play[0, 2] = 2
-                            outcome += play.set(0,2,2)
                             play[2, 0] = 1
-                            outcome += play.set(2,0,1)
-
                             play[1, 2] = 2
-                            outcome += play.imprimir()
-
                             play[1, 0] = 1
 
-                            outcome += play.imprimir()
+                            outcome += play.toString()
                         },
                         modifier = Modifier.padding(10.dp),
 
@@ -151,20 +148,20 @@ fun Project166() {
     }
 }
 
+
 class TaTeTi {
     val board = IntArray(9)
-    fun imprimir(): String {
-        var aux = ""
-        for(fila in 0..2) {
-            for (column in 0..2)
-                aux ="${this[fila, column]}\n "
-
+    override fun toString(): String {
+        val builder = StringBuilder()
+        for (fila in 0 until 3) {
+            for (columna in 0 until 3)
+                builder.append("${this[fila, columna]} \n")
+            builder.append("\n")
         }
-        return aux
+        return builder.toString().trim() // Eliminamos los espacios en blanco adicionales al final de la cadena
     }
-    operator fun set(row: Int, column: Int, valor: Int): String{
+    operator fun set(row: Int, column: Int, valor: Int){
         board[row*3 + column] = valor
-         return imprimir()
     }
     operator fun get(row: Int, column: Int): Int{
         return board[row*3 + column]

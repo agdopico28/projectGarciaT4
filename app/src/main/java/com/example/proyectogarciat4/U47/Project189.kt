@@ -81,7 +81,7 @@ fun Project189() {
 
 
                         ) {
-                        Text(text = "Date")
+                        Text(text = "Press")
                     }
                 }
                 Text(
@@ -138,7 +138,7 @@ fun Project189() {
 
 
                         ) {
-                        Text(text = "Date")
+                        Text(text = "Press")
                     }
                 }
                 Text(
