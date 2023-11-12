@@ -25,6 +25,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**It fills two arrays and the Vector class makes it so that when you put (+=) in the code it adds the two vectors created previously.
+ * Finally, it shows them on the screen*/
 @Composable
 fun Project168() {
     val configuration = LocalConfiguration.current

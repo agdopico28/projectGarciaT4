@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**We enter a name and a salary of 3 employees. The program will add your three salaries.
+ * It will also show you the name and salary of the person you have entered.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project179() {

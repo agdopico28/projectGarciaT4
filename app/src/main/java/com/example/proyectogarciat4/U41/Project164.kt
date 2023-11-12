@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**We press the button and it shows the 5 numbers that have been generated randomly,
+ * then it shows the incremented and decremented*/
 @Composable
 fun Project164() {
     val configuration = LocalConfiguration.current
@@ -64,15 +65,15 @@ fun Project164() {
                     Button(
                         onClick = {
                             outcome = ""
-                            val vec1 = Vector164()
+                            var vec1 = Vector164()
                             vec1.charge()
                             outcome += "${vec1.print()}\n"
 
-                            val vecInc = vec1
-                            outcome += "Addition component by component of the two vectors: ${vecInc.print()}\n"
+                            var vecInc = vec1.inc()
+                            outcome += "Increased (++): ${vecInc.print()}\n"
 
-                            val vecDec = vec1
-                            outcome += "Addition component by component of the two vectors: ${vecDec.print()}\n"
+                            val vecDec = vec1.dec()
+                            outcome += "Decreased (--): ${vecDec.print()}\n"
 
                         },
                         modifier = Modifier.padding(10.dp),
@@ -123,15 +124,15 @@ fun Project164() {
                     Button(
                         onClick = {
                             outcome = ""
-                            val vec1 = Vector164()
+                            var vec1 = Vector164()
                             vec1.charge()
                             outcome += "${vec1.print()}\n"
 
-                            val vecInc = vec1
-                            outcome += "Addition component by component of the two vectors: ${vecInc.print()}\n"
+                            var vecInc = vec1.inc()
+                            outcome += "Increased (++): ${vecInc.print()}\n"
 
-                            val vecDec = vec1
-                            outcome += "Addition component by component of the two vectors: ${vecDec.print()}\n"
+                            val vecDec = vec1.dec()
+                            outcome += "Decreased (--): ${vecDec.print()}\n"
 
                         },
                         modifier = Modifier.padding(10.dp),
@@ -175,7 +176,7 @@ class Vector164 {
     operator fun dec(): Vector164 {
         var suma1 = Vector164()
         for(i in array.indices)
-            suma1.array[i] = array[i] + 1
+            suma1.array[i] = array[i] - 1
         return suma1
     }
 

@@ -30,6 +30,8 @@ import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.U41.Course
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**An age is entered by keyboard. The program calculates if you are of legal age
+ * and if so, displays a message on the screen.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project172() {

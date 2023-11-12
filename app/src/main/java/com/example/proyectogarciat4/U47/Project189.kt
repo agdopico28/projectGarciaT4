@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**We press the button and it generates a lottery card with random numbers between 1 and 50.
+ * And it also shows the random numbers that were needed until the numbers on the card come out.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project189() {

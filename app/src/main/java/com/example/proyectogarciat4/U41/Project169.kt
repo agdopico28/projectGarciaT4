@@ -29,6 +29,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**I have generated an array with 3 students and the program asks you to enter the document number of a student by keyboard.
+ * If this student is within the array, a message will be displayed confirming it.
+ * Otherwise, a message will be displayed denying it.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project169() {

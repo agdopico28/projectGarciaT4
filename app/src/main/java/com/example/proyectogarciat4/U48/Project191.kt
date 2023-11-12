@@ -29,6 +29,7 @@ import com.example.proyectogarciat4.U47.loteryTicket
 import com.example.proyectogarciat4.U47.tries
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**You enter a number through the keyboard and when you press the button, the Int, Float and Double are displayed on the screen.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project191() {

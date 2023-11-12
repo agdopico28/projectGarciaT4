@@ -27,6 +27,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**We enter the height of 5 people.
+ * The program shows the average of the entered heights.
+ * It also shows people who are taller than average and those who are shorter than average.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project180() {

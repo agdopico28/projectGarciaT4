@@ -25,6 +25,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**It generates 10 random numbers and when you press the button it shows them.
+ * If you press it again it will regear them*/
 @Composable
 fun Project167() {
     val configuration = LocalConfiguration.current

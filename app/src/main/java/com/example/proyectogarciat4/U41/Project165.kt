@@ -29,6 +29,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**We enter the name and age of two people.
+ * The program compares the two ages and shows whichever is older.
+ * All this thanks to the Person class*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project165() {

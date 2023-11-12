@@ -30,6 +30,8 @@ import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.U42.amountAbove
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**Generates a list with 100 elements, with values between 1 and 20.
+ * The program shows the entire list that has been randomly generated and the number of numbers that have come out between 1-4, 5-8 and 10-13 and if the value 20 is on the list.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project178() {

@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
 
+/**We enter a day, month and year and an activity.
+ * The program checks if you already have an activity that day and prints the activity and if you don't have it, it generates it.*/
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Project186() {

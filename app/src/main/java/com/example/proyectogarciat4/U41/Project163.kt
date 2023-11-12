@@ -24,7 +24,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.proyectogarciat4.ui.theme.Blue20
-
+/**We press the button and the Vector class generates 5 numbers randomly between 1 and 10.
+ * These numbers are shown on the screen and these numbers are also shown multiplied by 5.*/
 @Composable
 fun Project163() {
     val configuration = LocalConfiguration.current
